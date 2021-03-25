@@ -94,12 +94,12 @@ public class Ficha2_ex2_Main {
     System.out.println(aux.somanotas(aluno,uc));
        */
        int [][]pauta = new int [5][5];
-
-        pauta[0][0] = 15; pauta[0][1] = 2; pauta [0][2]=19; pauta [0][3] = 10; pauta[0][4] = 12;
-        pauta[1][0] = 14; pauta[1][1] = 5; pauta [1][2]=14; pauta [1][3] = 11; pauta[1][4] = 12;
+        //12.8            //8.8              //    13            //10          10.2
+        pauta[0][0] = 15; pauta[0][1] = 2; pauta [0][2]=10; pauta [0][3] = 10; pauta[0][4] = 12;
+        pauta[1][0] = 17; pauta[1][1] = 5; pauta [1][2]=14; pauta [1][3] = 10; pauta[1][4] = 2;
         pauta[2][0] = 9; pauta[2][1] = 12; pauta [2][2]=13; pauta [2][3] = 10; pauta[2][4] = 13;
-        pauta[3][0] = 4; pauta[3][1] = 5; pauta [3][2]=14; pauta [3][3] = 11; pauta[3][4] = 12;
-        pauta[4][0] = 20; pauta[4][1] =20; pauta [4][2]=14; pauta [4][3] = 11; pauta[4][4] = 12;
+        pauta[3][0] = 4; pauta[3][1] = 5; pauta [3][2]=14; pauta [3][3] = 10; pauta[3][4] = 12;
+        pauta[4][0] = 19; pauta[4][1] =20; pauta [4][2]=14; pauta [4][3] = 10; pauta[4][4] = 12;
 
     //int[][] pauta = {{15,2,19,10,12},{14,5,14,11,12},{9,12,13,10,13},{4,5,14,11,12},{20,20,14,11,12}};
 
@@ -113,7 +113,7 @@ public class Ficha2_ex2_Main {
      */
      Ficha2_ex2 aux;
      aux = new Ficha2_ex2();
-    System.out.println(aux.notaalta(pauta));
+    System.out.println(aux.indice(pauta));
  
        
     }
