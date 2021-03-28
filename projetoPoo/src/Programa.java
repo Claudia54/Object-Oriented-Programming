@@ -5,7 +5,7 @@ public class Programa {
     public static void main (String[] args ){
      Scanner jogadores = new Scanner(System.in); 
      System.out.println ("Escolha um avançado");
-     String avancado = jogadores.next();
+     String avancado = jogadores.nextLine();
      System.out.println ("Sua velocidade");
      int velocidade =jogadores.nextInt();
      System.out.println ("Sua destreza");
