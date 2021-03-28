@@ -3,17 +3,17 @@ public class Guarda_redes extends Jogador{
 
     public  Guarda_redes() {
       super (); 
-      this.elasticidade=0;
+      this.elasticidade = 0;
     }
    
    public Guarda_redes(int elasticidade){
        super ();
-       this.elasticidade=elasticidade;
+       this.elasticidade = elasticidade;
    }
 
    public Guarda_redes( Guarda_redes guarda_redes){
        super();
-       this.elasticidade= guarda_redes.getElasticidade();
+       this.elasticidade = guarda_redes.getElasticidade();
 
    }
 
@@ -22,7 +22,7 @@ public class Guarda_redes extends Jogador{
   }
 
    public void setElasticidade (int elasticidade){
-     this.elasticidade= elasticidade;
+     this.elasticidade = elasticidade;
   }
 
   //@Override
@@ -34,7 +34,7 @@ public class Guarda_redes extends Jogador{
   }
 
   public Guarda_redes clone(){
-    return new Guarda_rede(this);
+    return new Guarda_redes(this);
   }
 
   public String toString (){
