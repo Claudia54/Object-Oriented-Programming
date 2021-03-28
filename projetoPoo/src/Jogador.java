@@ -1,4 +1,4 @@
-
+package src;
 public class Jogador{
     
     private int velocidade;
@@ -117,14 +117,14 @@ public Jogador(Jogador jogador){
     
     StringBuilder sb = new StringBuilder();
     
-    sb.append("Jogador -> ");
-    sb.append("Velocidade: ").append(this.velocidade).append(";");
-    sb.append("Destreza: ").append(this.destreza).append(";");
-    sb.append("Resistencia: ").append(this.resistencia).append(";");
-    sb.append("Impulsao: ").append(this.impulsao).append(";");
-    sb.append("Jogo de cabeca: ").append(this.jogoDeCabeca).append(";");
-    sb.append("Remate: ").append(this.remate).append(";");
-    sb.append("Cap. de Passe: ").append(this.capDePasse).append("\n");
+    sb.append("Jogador ");
+    sb.append("[Velocidade=").append(this.velocidade);
+    sb.append(", Destreza=").append(this.destreza);
+    sb.append(", Resistencia=").append(this.resistencia);
+    sb.append(", Impulsao=").append(this.impulsao);
+    sb.append(", Jogo de cabeca=").append(this.jogoDeCabeca);
+    sb.append(", Remate=").append(this.remate);
+    sb.append(", Cap. de Passe=").append(this.capDePasse).append("]\n");
     
     return sb.toString();
 }
