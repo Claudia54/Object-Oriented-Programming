@@ -3,7 +3,7 @@ public class Guarda_redes extends Jogador{
 
     public  Guarda_redes() {
       super (); 
-      this.elasticidade=10;
+      this.elasticidade=0;
     }
    
    public Guarda_redes(int elasticidade){
