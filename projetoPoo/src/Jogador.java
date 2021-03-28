@@ -1,6 +1,7 @@
-package src;
+
 public class Jogador{
     
+    private String nome;
     private int velocidade;
     private int destreza;
     private int resistencia;
@@ -10,6 +11,7 @@ public class Jogador{
     private int capDePasse;
     
     public Jogador(){
+        this.nome           = "n/a";
         this.velocidade     = 0;
         this.destreza       = 0;
         this.resistencia    = 0;
@@ -19,9 +21,10 @@ public class Jogador{
         this.capDePasse     = 0;
     }
 
-    public Jogador(int velocidade, int destreza, int resistencia, int impulsao, 
+    public Jogador(String nome, int velocidade, int destreza, int resistencia, int impulsao, 
     int jogoDeCabeca, int remate, int capDePasse){
 
+        this.nome           = nome;
         this.velocidade     = velocidade;
         this.destreza       = destreza;
         this.resistencia    = resistencia;
@@ -32,7 +35,7 @@ public class Jogador{
     }
 
 public Jogador(Jogador jogador){
-
+        this.nome           = jogador.getNome();
         this.velocidade     = jogador.getVelocidade();
         this.destreza       = jogador.getDestreza();
         this.resistencia    = jogador.getResistencia();
@@ -42,6 +45,12 @@ public Jogador(Jogador jogador){
         this.capDePasse     = jogador.getCapDePasse();
     }
 
+    public String getNome() {
+        return nome;
+    }
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
     public int getVelocidade() {
         return velocidade;
@@ -89,7 +98,7 @@ public Jogador(Jogador jogador){
     public int getCapDePasse() {
         return capDePasse;
     }    
-    public void setgetCapDePasse(int capDePasse){
+    public void setCapDePasse(int capDePasse){
         this.capDePasse = capDePasse;
     }
 
@@ -104,7 +113,8 @@ public Jogador(Jogador jogador){
         if(obj==null || obj.getClass() != this.getClass()) return false;
 
         Jogador jog = (Jogador) obj;
-        return  jog.getVelocidade()     == this.velocidade &&
+        return  jog.getNome()           == this.nome &&
+                jog.getVelocidade()     == this.velocidade &&
                 jog.getDestreza()       == this.destreza &&
                 jog.getResistencia()    == this.resistencia &&
                 jog.getImpulsao()       == this.impulsao &&
@@ -118,7 +128,8 @@ public Jogador(Jogador jogador){
     StringBuilder sb = new StringBuilder();
     
     sb.append("Jogador ");
-    sb.append("[Velocidade=").append(this.velocidade);
+    sb.append("[Nome=").append(this.nome);
+    sb.append(", Velocidade=").append(this.velocidade);
     sb.append(", Destreza=").append(this.destreza);
     sb.append(", Resistencia=").append(this.resistencia);
     sb.append(", Impulsao=").append(this.impulsao);
@@ -129,5 +140,6 @@ public Jogador(Jogador jogador){
     return sb.toString();
 }
 
+    
 
 }

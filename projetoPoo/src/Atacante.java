@@ -1,4 +1,3 @@
-package src;
 public class Atacante extends Jogador{
 
     public int calculaHabilidade(){
