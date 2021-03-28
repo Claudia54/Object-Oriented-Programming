@@ -8,13 +8,14 @@ public class Jogador 	-> metodo mudar jogador de equipa
 			-> list para guardar historico de equipas
 		
 
-public class equipa 	-> private int habilidade;
+public class Equipa 	-> private int habilidade;
 			-> private List<Jogador> jogadores;
 			-> public bollean calcularResultadoJogo(Equipa benfica){}
 			-> public String verJogadores(){}
 
 
-
-
-
+public class Jogo 	-> private double time;
+			-> private int scoreEq1; 
+			-> private int scoreEq2; 
+			-> 
 
