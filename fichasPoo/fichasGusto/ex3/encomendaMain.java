@@ -19,7 +19,7 @@ public class encomendaMain {
 
 		System.out.println( pckg.calculaValorDesconto());
 		System.out.println( pckg.calculaValorTotal());
-		System.out.println( pckg.existeProdutoEncomenda("QWERTY"));
+		System.out.println( pckg.toString());
 
 	}
 }

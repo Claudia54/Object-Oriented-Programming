@@ -1,0 +1,20 @@
+
+
+main 			-> para testar(nome dos jogadores,criar jog, criar equipa, consultar cenas // interface)
+
+
+
+public class Jogador 	-> metodo mudar jogador de equipa 
+			-> list para guardar historico de equipas
+		
+
+public class equipa 	-> private int habilidade;
+			-> private List<Jogador> jogadores;
+			-> public bollean calcularResultadoJogo(Equipa benfica){}
+			-> public String verJogadores(){}
+
+
+
+
+
+
