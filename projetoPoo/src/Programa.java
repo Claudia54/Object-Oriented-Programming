@@ -1,17 +1,32 @@
-
 import java.util.Scanner ;
-
 
 public class Programa {
     public static void main (String[] args ){
-        
+      
+   // SO CONSEGUI ASSIM -C A ELASTICIDADE A SER PERGUNTADA PRIMEIRO :
+    //AINDA TENHO DE ACRESCENTAR A PERG SE E AVANÇADO OU ASSIM DPS ACRESCENTO 
     
     
-    System.out.println(criarJogador().toString());
-     
-    GuardaRedes gua = new GuardaRedes(criarJogador(),1000);
+    /*GuardaRedes player =new GuardaRedes();
+    Scanner jogadores = new Scanner(System.in);
 
-     
+
+    System.out.println ("Escolha um jogador");
+    player.setNome(jogadores.next());
+   
+    System.out.println ("A sua elasticidade");
+    int p = jogadores.nextInt();
+    player.setElasticidade(p);
+
+    //System.out.println(criarJogador().toString());
+    //System.out.println(criarGuarda_redes().toString());
+
+    GuardaRedes gua = new GuardaRedes(criarJogador(),p);
+
+    System.out.println(gua);
+    jogadores.close();
+    */ 
+    criarGuardaRedes();
     }
 
 
@@ -21,8 +36,6 @@ public static Jogador criarJogador(){
 
     Scanner jogadores = new Scanner(System.in); 
 
-    System.out.println ("Escolha um avançado");
-    player.setNome(jogadores.next());
 
     System.out.println ("Sua velocidade");
     player.setVelocidade(jogadores.nextInt());
@@ -51,7 +64,32 @@ public static Jogador criarJogador(){
 
 }
 
+public static void criarGuardaRedes(){
+    
+    GuardaRedes player =new GuardaRedes();
+    Scanner jogadores = new Scanner(System.in);
 
+
+    System.out.println ("Escolha um jogador");
+    player.setNome(jogadores.next());
+   
+    System.out.println ("A sua elasticidade");
+    int p = jogadores.nextInt();
+    player.setElasticidade(p);
+
+    //System.out.println(criarJogador().toString());
+    //System.out.println(criarGuarda_redes().toString());
+
+    GuardaRedes gua = new GuardaRedes(criarJogador(),p);
+
+    System.out.println(gua);
+    jogadores.close();
 
 }
+
+}
+
+
+
+
 

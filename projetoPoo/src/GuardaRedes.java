@@ -10,11 +10,13 @@ public class GuardaRedes extends Jogador{
        super ();
        this.elasticidade = elasticidade;
    }
+///////PROF DISSE QUE TEMOS DE ALTERR ISTO O QUE POS AINDA MAIS CONFUSA DE JOGADOR ---->> PARA AS CARATERISTICAS DE CADA UM TP VELOCIDADE, 
+/// IMPULSÃO, ...
+   public  GuardaRedes (Jogador jog,int elasticidade) {
 
-   public  GuardaRedes(Jogador jog, int elasticidade) {
     super (jog); 
-    this.elasticidade = 0;
-  }
+    this.elasticidade = elasticidade;
+   }
 
    public GuardaRedes( GuardaRedes guarda_redes){
        super();
@@ -52,7 +54,7 @@ public class GuardaRedes extends Jogador{
     sb.append("Jogo de cabeca: ").append(this.getJogoDeCabeca()).append(";");
     sb.append("Remate: ").append(this.getRemate()).append(";");
     sb.append("Cap. de Passe: ").append(this.getCapDePasse()).append("\n");
-    sb.append("Elasticidade ").append(this.elasticidade).append("\n");
+    sb.append("Elasticidade: ").append(this.elasticidade).append("\n");
 
     return sb.toString();
 
