@@ -12,9 +12,4 @@ public class Lateral extends Jogador{
                             this.getCapDePasse()    * percentagem );
 
     }
-    public int cpRematebaliza (){
-        return 0;
-    }  
-    public int cpCanto (){}
-    public int cpPerda (){}
 }

@@ -141,5 +141,14 @@ public Jogador(Jogador jogador){
 }
 
     
+    public int cpRematebaliza (){
+        return 0;
+    }  
+    public int cpCanto (){
+        return 0;
+    }
+    public int cpPerda (){
+        return 0;
+    }
 
 }
