@@ -10,11 +10,11 @@ public class GuardaRedes extends Jogador{
        super ();
        this.elasticidade = elasticidade;
    }
-///////PROF DISSE QUE TEMOS DE ALTERR ISTO O QUE POS AINDA MAIS CONFUSA DE JOGADOR ---->> PARA AS CARATERISTICAS DE CADA UM TP VELOCIDADE, 
-/// IMPULSÃO, ...
-   public  GuardaRedes (Jogador jog,int elasticidade) {
 
-    super (jog); 
+   public  GuardaRedes (String nome, int velocidade, int destreza, int resistencia, int impulsao, 
+   int jogoDeCabeca, int remate, int capDePasse,int elasticidade) {
+
+    super (nome,velocidade, destreza,resistencia, impulsao,jogoDeCabeca,remate,capDePasse);
     this.elasticidade = elasticidade;
    }
 

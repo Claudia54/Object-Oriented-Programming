@@ -12,5 +12,10 @@ public class Medio extends Jogador{
                             this.getCapDePasse()    * percentagem );
 
     }
+    public int cpRematebaliza (){
+        return 0;
+    }  
+    public int cpCanto (){}
+    public int cpPerda (){}
 
 }

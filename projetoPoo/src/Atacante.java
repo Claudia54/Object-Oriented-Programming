@@ -9,7 +9,13 @@ public class Atacante extends Jogador{
                             this.getJogoDeCabeca()  * percentagem +
                             this.getRemate()        * percentagem +
                             this.getCapDePasse()    * percentagem );
-
     }
 
+    public int cpRematebaliza (){
+        return 0;
+    }  
+    public int cpCanto (){}
+    public int cpPerda (){}
+
 }
+
