@@ -1,13 +1,18 @@
 import java.util.Scanner ;
 
 public class Programa {
-    public static void main (String[] args ){
-      
-   // SO CONSEGUI ASSIM -C A ELASTICIDADE A SER PERGUNTADA PRIMEIRO :
-    //AINDA TENHO DE ACRESCENTAR A PERG SE E AVANÇADO OU ASSIM DPS ACRESCENTO 
+    private Equipa equipa1 = new Equipa();
+    private Equipa equipa2 = new Equipa();
+    private Jogo jogo = new Jogo();
     
-    System.out.println ("Escolha um jogador");
-    player.setNome(jogadores.next());
+    
+    public static void main (String[] args ){
+    
+    
+
+    //System.out.println ("Escolha um jogador");
+    //player.setNome(jogadores.next());
+
     /*GuardaRedes player =new GuardaRedes();
     Scanner jogadores = new Scanner(System.in);
 

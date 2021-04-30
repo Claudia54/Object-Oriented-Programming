@@ -1,19 +1,19 @@
 
-import java.util.ArrayList;
+
 import java.util.List;
 //import static java.util.stream.Collectors.toCollection;
 //import static java.lang.System.out;
 
 public class Equipa {
     private int habilidade;
-    private ArrayList<Jogador> jogadores;
+    private List<Jogador> jogadores;
 
     public Equipa(){
         this.habilidade = 0;
-        this.jogadores  = new ArrayList<>();
+        this.jogadores  = new List<>();
     }
 
-    public Equipa(int habilidade, ArrayList<Jogador> jogadores) {
+    public Equipa(int habilidade, List<Jogador> jogadores) {
         this.habilidade = habilidade;
         this.jogadores  = jogadores;
     }
@@ -30,7 +30,7 @@ public class Equipa {
         return jogadores;
     }
 
-    public void setJogadores(ArrayList<Jogador> jogadores) {
+    public void setJogadores(List<Jogador> jogadores) {
         this.jogadores = jogadores;
     }
   ///// MUDAR JOGADORES DE EQUIPA

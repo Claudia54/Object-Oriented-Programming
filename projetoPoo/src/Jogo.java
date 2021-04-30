@@ -3,21 +3,21 @@
 public class Jogo{
 
     private String time;
-    private int scoreEq1;
-    private int scoreEq2;
+    private int scoreEqCasa;
+    private int scoreEqFora;
     private int partes;
 
     public Jogo() {
         this.time     = "n/a";
-        this.scoreEq1 = 0;
-        this.scoreEq2 = 0;
+        this.scoreEqCasa = 0;
+        this.scoreEqFora = 0;
         this.partes   = 0;
     }
 
-    public Jogo(String time, int scoreEq1, int scoreEq2,int partes) {
+    public Jogo(String time, int scoreEqCasa, int scoreEqFora,int partes) {
         this.time     = time;
-        this.scoreEq1 = scoreEq1;
-        this.scoreEq2 = scoreEq2;
+        this.scoreEqCasa = scoreEqCasa;
+        this.scoreEqFora = scoreEqFora;
         this.partes   = partes;
     }
 
@@ -28,18 +28,18 @@ public class Jogo{
     public void setTime(String time) {
         this.time = time;
     }
-    public int getScoreEq1() {
-        return scoreEq1;
+    public int getScoreEqCasa() {
+        return scoreEqCasa;
     }
-    public void setScoreEq1(int scoreEq1) {
-        this.scoreEq1 = scoreEq1;
+    public void setScoreEqCasa(int scoreEqCasa) {
+        this.scoreEqCasa = scoreEqCasa;
     }
 
-    public int getScoreEq2() {
-        return scoreEq2;
+    public int getScoreEqFora() {
+        return scoreEqFora;
     }
-    public void setScoreEq2(int scoreEq2) {
-        this.scoreEq2 = scoreEq2;
+    public void setScoreEqFora(int scoreEqFora) {
+        this.scoreEqFora = scoreEqFora;
     }
     public int getPartes() {
         return partes;
@@ -51,10 +51,10 @@ public class Jogo{
 }
     
     public String toString() {
-        return "Jogo [scoreEq1=" +
-                        scoreEq1 +
-                   ", scoreEq2=" + 
-                        scoreEq2 + 
+        return "Jogo [scoreEqCasa=" +
+                        scoreEqCasa +
+                   ", scoreEqFora=" + 
+                        scoreEqFora + 
                        ", time=" + 
                             time +
                               "]";
