@@ -2,6 +2,7 @@
 
 public class Jogo{
 
+    
     private String time;
     private int scoreEqCasa;
     private int scoreEqFora;
