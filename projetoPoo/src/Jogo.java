@@ -1,4 +1,4 @@
-
+import java.lang.String;
 
 public class Jogo{
 
@@ -49,18 +49,23 @@ public class Jogo{
     public void setPartes(int partes) {
         this.partes = partes;
     }
-}
+
     
     public String toString() {
-        return "Jogo [scoreEqCasa=" +
-                        scoreEqCasa +
-                   ", scoreEqFora=" + 
-                        scoreEqFora + 
-                       ", time=" + 
-                            time +
-                              "]";
-    }
-    public boolean calcularResultadoJogo (){
+        
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("Jogo ");
+        sb.append("[scoreEqCasa= ").append(this.getScoreEqCasa()).append(";");
+        sb.append(", scoreEqFora= ").append(this.getScoreEqFora()).append(";");
+        sb.append(", time=").append(this.getTime()).append(";");
+        sb.append("]").append("\n");
+    
+        return sb.toString();
+    
+        }
+    
+        public boolean calcularResultadoJogo (){
       return false;
     }
 

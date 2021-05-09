@@ -9,30 +9,6 @@ public class Programa {
     public static void main (String[] args ){
     
     
-
-    //System.out.println ("Escolha um jogador");
-    //player.setNome(jogadores.next());
-
-    /*GuardaRedes player =new GuardaRedes();
-    Scanner jogadores = new Scanner(System.in);
-
-
-    System.out.println ("Escolha um jogador");
-    player.setNome(jogadores.next());
-   
-    System.out.println ("A sua elasticidade");
-    int p = jogadores.nextInt();
-    player.setElasticidade(p);
-
-    //System.out.println(criarJogador().toString());
-    //System.out.println(criarGuarda_redes().toString());
-
-    GuardaRedes gua = new GuardaRedes(criarJogador(),p);
-
-    System.out.println(gua);
-    jogadores.close();
-    */ 
-    criarGuardaRedes();
     }
 
 
@@ -111,9 +87,7 @@ public static void criarGuardaRedes(){
     //System.out.println(criarGuarda_redes().toString());
 
     
-    GuardaRedes gua = new GuardaRedes(criarJogador(),p);
-
-    System.out.println(gua);
+    
     jogadores.close();
 
 }

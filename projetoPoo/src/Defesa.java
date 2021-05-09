@@ -15,7 +15,11 @@ public class Defesa extends Jogador{
     public int cpRematebaliza (){
         return 0;
     }  
-    public int cpCanto (){}
-    public int cpPerda (){}
+    public int cpCanto (){
+        return 0;
+    }
+    public int cpPerda (){
+        return 0; 
+    }
 
 }

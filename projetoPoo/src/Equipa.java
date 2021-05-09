@@ -1,19 +1,18 @@
 
-
-import java.util.List;
+import java.util.ArrayList;
 //import static java.util.stream.Collectors.toCollection;
 //import static java.lang.System.out;
 
 public class Equipa {
     private int habilidade;
-    private List<Jogador> jogadores;
+    private ArrayList<Jogador> jogadores;
 
     public Equipa(){
         this.habilidade = 0;
-        this.jogadores  = new List<>();
+        this.jogadores  = new ArrayList<>();
     }
 
-    public Equipa(int habilidade, List<Jogador> jogadores) {
+    public Equipa(int habilidade, ArrayList<Jogador> jogadores) {
         this.habilidade = habilidade;
         this.jogadores  = jogadores;
     }
@@ -26,19 +25,34 @@ public class Equipa {
         this.habilidade = habilidade;
     }
 
-    public List<Jogador> getJogadores() {
-        return jogadores;
+    public ArrayList<Jogador> getJogadores() {
+        ArrayList<Jogador> list = jogadores;
+        return list;
     }
 
-    public void setJogadores(List<Jogador> jogadores) {
+    public void setJogadores(ArrayList<Jogador> jogadores) {
         this.jogadores = jogadores;
     }
-  ///// MUDAR JOGADORES DE EQUIPA
+  
     public  void removerjogador (Jogador jogador){
-   }
-    public void adicionarjogador(Jogador jogador){}
+        ArrayList<Jogador> list = this.getJogadores();
+        
+        list.remove(jogador);
+
+        setJogadores(list);
+  
+    }
+    
+    public void adicionarjogador(Jogador jogador){
+        ArrayList<Jogador> list = this.getJogadores();
+        
+        list.add(jogador);
+
+        setJogadores(list);
+    }
    
     public String verJogadores(){
         //aplicar a tostring a lista de jogadores
+        return "por fazer";
     }
 }

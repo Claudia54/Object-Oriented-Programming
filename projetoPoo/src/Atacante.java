@@ -1,8 +1,8 @@
 public class Atacante extends Jogador{
 
     public int calculaHabilidade(){
-        float percentagem = (float) 0.1;
-        return  Math.round( this.getVelocidade()    * percentagem +
+        double percentagem = 0.1;
+        return  (int) Math.round( this.getVelocidade()    * percentagem +
                             this.getDestreza()      * percentagem +
                             this.getResistencia()   * percentagem +
                             this.getImpulsao()      * percentagem +
@@ -11,11 +11,35 @@ public class Atacante extends Jogador{
                             this.getCapDePasse()    * percentagem );
     }
 
-    public int cpRematebaliza (){
-        return 0;
+    public int cpRemateBaliza (){
+
+        double perDes = 0.3;
+        double perRem = 0.7;
+        int destreza = this.getDestreza();
+        int remate = this.getRemate();
+        int cpReBa = (int) Math.round(destreza*perDes + remate*perRem);
+
+        return cpReBa;
     }  
-    public int cpCanto (){}
-    public int cpPerda (){}
+    public int cpCanto (){
+   
+        double perDes = 0.3;
+        double perPas = 0.7;
+        int destreza = this.getDestreza();
+        int passe = this.getCapDePasse();
+        int cpCan = (int) Math.round(destreza*perDes + passe*perPas);
+
+        return cpCan;
+   }
+    public int probPerda (){
+        double perDes = 0.3;
+        double perPas = 0.7;
+        int destreza = this.getDestreza();
+        int passe = this.getCapDePasse();
+        int cpCan = (int) Math.round(destreza*perDes + passe*perPas);
+
+        return cpCan;
+    }
 
 }
 
