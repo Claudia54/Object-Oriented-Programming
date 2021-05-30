@@ -1,5 +1,4 @@
-
-public class Jogador{
+public abstract class Jogador{
     
     private String nome;
     private int velocidade;
@@ -102,9 +101,7 @@ public Jogador(Jogador jogador){
         this.capDePasse = capDePasse;
     }
 
-    public Jogador clone(){
-        return new Jogador(this);
-    }
+    //abstract Jogador clone();
 
 
     public boolean equals(Object obj){

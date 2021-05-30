@@ -3,30 +3,31 @@ import java.lang.String;
 public class Jogo{
 
     
-    private String time;
+    private int time;
     private int scoreEqCasa;
     private int scoreEqFora;
+    private int parteAtual;
     private int partes;
 
     public Jogo() {
-        this.time     = "n/a";
+        this.time     = 0;
         this.scoreEqCasa = 0;
         this.scoreEqFora = 0;
-        this.partes   = 0;
+        this.partes   = 18;
     }
 
-    public Jogo(String time, int scoreEqCasa, int scoreEqFora,int partes) {
+    public Jogo(int time, int scoreEqCasa, int scoreEqFora) {
         this.time     = time;
         this.scoreEqCasa = scoreEqCasa;
         this.scoreEqFora = scoreEqFora;
-        this.partes   = partes;
+        this.partes   = 18;
     }
 
 
-    public String getTime() {
+    public float getTime() {
         return time;
     }
-    public void setTime(String time) {
+    public void setTime(int time) {
         this.time = time;
     }
     public int getScoreEqCasa() {
@@ -49,6 +50,13 @@ public class Jogo{
     public void setPartes(int partes) {
         this.partes = partes;
     }
+    public int getParteAtual() {
+        return parteAtual;
+    }
+
+    public void setParteAtual(int parteAtual) {
+        this.parteAtual = parteAtual;
+    }
 
     
     public String toString() {
@@ -65,8 +73,17 @@ public class Jogo{
     
         }
     
-        public boolean calcularResultadoJogo (){
-      return false;
+    public void calculaParte(){
+        setParteAtual(this.getParteAtual()+1);
+    }
+    
+    public boolean calcularResultadoJogo (){
+      
+      
+      
+      
+      
+    return false;
     }
 
 
