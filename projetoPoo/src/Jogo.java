@@ -1,9 +1,25 @@
 import java.lang.String;
+import java.util.Random;
 
 public class Jogo{
 
     
     private int time;
+    private EquipaJogo casa;
+    private EquipaJogo fora;
+
+    public Jogo(int time, EquipaJogo casa, EquipaJogo fora, int scoreEqCasa, int scoreEqFora, int parteAtual,
+            int partes) {
+
+        this.time = time;
+        this.casa = casa;
+        this.fora = fora;
+        this.scoreEqCasa = scoreEqCasa;
+        this.scoreEqFora = scoreEqFora;
+        this.parteAtual = parteAtual;
+        this.partes = partes;
+    }
+
     private int scoreEqCasa;
     private int scoreEqFora;
     private int parteAtual;
@@ -24,7 +40,7 @@ public class Jogo{
     }
 
 
-    public float getTime() {
+    public int getTime() {
         return time;
     }
     public void setTime(int time) {
@@ -64,8 +80,8 @@ public class Jogo{
         StringBuilder sb = new StringBuilder();
         
         sb.append("Jogo ");
-        sb.append("[scoreEqCasa= ").append(this.getScoreEqCasa()).append(";");
-        sb.append(", scoreEqFora= ").append(this.getScoreEqFora()).append(";");
+        sb.append("[scoreEqCasa= ").append(casa.getScore()).append(";");
+        sb.append(", scoreEqFora= ").append(fora.getScore()).append(";");
         sb.append(", time=").append(this.getTime()).append(";");
         sb.append("]").append("\n");
     
@@ -74,13 +90,35 @@ public class Jogo{
         }
     
     public void calculaParte(){
+        
+        if (casa.getEstado() == Estado.ATAQUE){
+            
+            int numRand = (int) Math.floor(Math.random()*(100-1+1)+1);
+            if ((this.casa.probSucAtaque(fora)) >= numRand) {
+        
+                casa.setScore(casa.getScore()+1);
+                casa.setEstado(Estado.DEFESA);
+                fora.setEstado(Estado.ATAQUE);
+            }
+        }else{
+            int numRand = (int) Math.floor(Math.random()*(100)+1);
+            if ((this.fora.probSucAtaque(casa)) >= numRand) {
+        
+                fora.setScore(fora.getScore()+1);
+                fora.setEstado(Estado.DEFESA);
+                casa.setEstado(Estado.ATAQUE);
+            }
+        }
+        setTime(this.getTime()+5);
         setParteAtual(this.getParteAtual()+1);
     }
     
     public boolean calcularResultadoJogo (){
       
       
-      
+      for(int i = 0; i < 18; i++){
+        calculaParte();
+      }
       
       
     return false;

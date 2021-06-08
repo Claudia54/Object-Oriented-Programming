@@ -1,4 +1,4 @@
-public abstract class Jogador{
+public class Jogador{
     
     private String nome;
     private int velocidade;
@@ -101,7 +101,11 @@ public Jogador(Jogador jogador){
         this.capDePasse = capDePasse;
     }
 
-    //abstract Jogador clone();
+    public Jogador clone(){
+        Jogador jog = new Jogador(this);
+    
+        return jog;
+    }
 
 
     public boolean equals(Object obj){
@@ -138,14 +142,43 @@ public Jogador(Jogador jogador){
 }
 
     
-    public int cpRematebaliza (){
-        return 0;
+    public int cpRemateBaliza (){
+
+        double perDes = 0.3;
+        double perRem = 0.7;
+        int destreza = this.getDestreza();
+        int remate = this.getRemate();
+        int cpReBa = (int) Math.round(destreza*perDes + remate*perRem);
+
+        return cpReBa;
     }  
     public int cpCanto (){
-        return 0;
+
+        double perDes = 0.3;
+        double perPas = 0.7;
+        int destreza = this.getDestreza();
+        int passe = this.getCapDePasse();
+        int cpCan = (int) Math.round(destreza*perDes + passe*perPas);
+
+        return cpCan;
     }
-    public int cpPerda (){
-        return 0;
+    
+    public int probPerda (){
+        
+        double perVel = 0.25;
+        double perDes = 0.5;
+        double perRes = 0.25;
+        
+        int velocidade = this.getVelocidade();
+        int destreza = this.getDestreza();
+        int resistencia = this.getResistencia();
+        
+        int probPerd = (int) Math.round( velocidade  * perVel + 
+                                         destreza    * perDes + 
+                                         resistencia * perRes );
+
+        return probPerd;
     }
+
 
 }

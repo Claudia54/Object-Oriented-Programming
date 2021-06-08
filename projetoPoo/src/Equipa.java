@@ -1,18 +1,20 @@
 
 import java.util.ArrayList;
+import java.util.HashMap;
 //import static java.util.stream.Collectors.toCollection;
 //import static java.lang.System.out;
+import java.util.Map;
 
 public class Equipa {
     private int habilidade;
-    private ArrayList<Jogador> jogadores;
+    private HashMap<Integer,Jogador> jogadores;
 
     public Equipa(){
         this.habilidade = 0;
-        this.jogadores  = new ArrayList<>();
+        this.jogadores  = new HashMap<>();
     }
 
-    public Equipa(int habilidade, ArrayList<Jogador> jogadores) {
+    public Equipa(int habilidade, HashMap<Integer, Jogador> jogadores) {
         this.habilidade = habilidade;
         this.jogadores  = jogadores;
     }
@@ -25,30 +27,30 @@ public class Equipa {
         this.habilidade = habilidade;
     }
 
-    public ArrayList<Jogador> getJogadores() {
-        ArrayList<Jogador> list = jogadores;
+    public HashMap<Integer, Jogador> getJogadores() {
+        HashMap<Integer, Jogador> list = jogadores;
         return list;
     }
 
-    public void setJogadores(ArrayList<Jogador> jogadores) {
+    public void setJogadores(HashMap<Integer, Jogador> jogadores) {
         this.jogadores = jogadores;
     }
   
     public  void removerjogador (Jogador jogador){
-        ArrayList<Jogador> list = this.getJogadores();
+        HashMap<Integer, Jogador> map = this.getJogadores();
         
-        list.remove(jogador);
+        map.remove(jogador);
 
-        setJogadores(list);
+        setJogadores(map);
   
     }
     
     public void adicionarjogador(Jogador jogador){
-        ArrayList<Jogador> list = this.getJogadores();
+        HashMap<Integer, Jogador> list = this.getJogadores();
         
-        list.add(jogador);
+        //list.add(jogador);
 
-        setJogadores(list);
+        //setJogadores(list);
     }
    
     public String verJogadores(){

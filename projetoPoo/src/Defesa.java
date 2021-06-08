@@ -12,13 +12,13 @@ public class Defesa extends Jogador{
                             this.getCapDePasse()    * percentagem );
 
     }
-    public int cpRematebaliza (){
+    public int cpRemateBaliza (){
         return 0;
     }  
     public int cpCanto (){
         return 0;
     }
-    public int cpPerda (){
+    public int probPerda (){
         return 0; 
     }
 
