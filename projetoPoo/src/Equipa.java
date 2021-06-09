@@ -8,35 +8,26 @@ import java.util.Map;
 public class Equipa {
     private String equipa;
     private HashMap<Integer,Jogador> jogadores;
-
+    
 
 
     public Equipa(){
-        this.habilidade = 0;
+    
         this.jogadores  = new HashMap<>();
         this.equipa = "n/a";
     }
 
     public Equipa(int habilidade, HashMap<Integer, Jogador> jogadores,String equipa) {
-        this.habilidade = habilidade;
         this.jogadores  = jogadores;
         this.equipa = equipa;
     }
     
-    public int getEquipa(){
+    public String getEquipa(){
         return this.equipa;
     }
 
     public void setEquipa(String equipa){
       this.equipa =equipa;
-    }
-
-    public int getHabilidade() {
-        return habilidade;
-    }
-
-    public void setHabilidade(int habilidade) {
-        this.habilidade = habilidade;
     }
 
     public HashMap<Integer, Jogador> getJogadores() {
@@ -50,7 +41,7 @@ public class Equipa {
   
     public  void removerjogador (int numero){ // assumir que so fica no historico qd sai da equipa 
         if ( this.jogadores.containsKey(numero)){
-           this.historico.get(numero).add(equipa);
+           this.historico.get(numero).addHistorico(equipa);
            this.jogadores.remove(numero);
           }
   }

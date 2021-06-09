@@ -84,7 +84,7 @@ public class EquipaJogo {
                                                    .collect(Collectors.toList());
 
         int mediaVel = listVel.stream().mapToInt(Integer::intValue).sum()/listVel.size();
-        //System.out.println(mediaRemate);
+        System.out.println(mediaRemate);
         
 
         return mediaRemate;

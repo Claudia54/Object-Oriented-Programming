@@ -80,8 +80,8 @@ public class Jogo{
         
         sb.append("Jogo ");
         sb.append("[scoreEqCasa= ").append(casa.getScore()).append(";");
-        sb.append(", scoreEqFora= ").append(fora.getScore()).append(";");
-        sb.append(", time=").append(this.getTime()).append(";");
+        sb.append(" scoreEqFora= ").append(fora.getScore()).append(";");
+        sb.append(" time=").append(this.getTime()).append(";");
         sb.append("]").append("\n");
     
         return sb.toString();

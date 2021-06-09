@@ -1,3 +1,7 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Jogador{
     
     private String nome;
@@ -21,7 +25,7 @@ public class Jogador{
         this.jogoDeCabeca   = 0;
         this.remate         = 0;
         this.capDePasse     = 0;
-        this.historico        = new ArrayList<>();
+        this.historico      = new ArrayList<>();
     }
 
     public Jogador(String nome, int velocidade, int destreza, int resistencia, int impulsao, 
@@ -36,10 +40,14 @@ public class Jogador{
         this.remate         = remate;
         this.capDePasse     = capDePasse;
 <<<<<<< HEAD
+<<<<<<< HEAD
         this.historico       = historico
 =======
         
 >>>>>>> c0fe22d... fazer jogo.java e equipaJogo
+=======
+        this.historico       = historico;
+>>>>>>> b586394... corrigir erros
     }
 
 public Jogador(Jogador jogador){
@@ -111,11 +119,14 @@ public Jogador(Jogador jogador){
         this.capDePasse = capDePasse;
     }
 
-    public String getHistorico() {
-        return this.historico=historico;
+    public List<String> getHistorico() {
+        
+        List<String> list = new ArrayList<>(this.historico);
+
+        return list;
     }
 
-    public void addHistorico(Equipa equipa) {
+    public void addHistorico(String equipa) {
         this.historico.add(equipa);
     }
 
