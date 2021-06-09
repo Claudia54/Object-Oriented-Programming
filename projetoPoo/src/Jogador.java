@@ -206,7 +206,7 @@ public class Jogador{
         int destreza = this.getDestreza();
         int resistencia = this.getResistencia();
         
-        int probPerd = (int) Math.round( velocidade  * perVel + 
+        int probPerd = 100 - (int) Math.round( velocidade  * perVel + 
                                          destreza    * perDes + 
                                          resistencia * perRes );
 

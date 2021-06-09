@@ -22,9 +22,9 @@ public class EquipaJogo {
         else return false;
     }
 
-    public boolean marcou(){
+    public boolean marcou(EquipaJogo adversaria){
         int numRand = (int) Math.floor(Math.random()*(100)+1);
-        if (this.probSucAtaque() >= numRand) return true;
+        if (this.probSucAtaque(adversaria) >= numRand) return true;
         else return false;
     }
 
@@ -80,10 +80,11 @@ public class EquipaJogo {
     }
 
 
-    public int probSucAtaque() {
+    public int probSucAtaque(EquipaJogo adversaria) {
         
         int mediaRemateBaliza = this.avgHabilidade(Jogador::cpRemateBaliza);
-       
+        
+
         //System.out.println(mediaVel);
         
 
@@ -93,10 +94,8 @@ public class EquipaJogo {
     public int probPerdaBola() {
         
         int mediaPerda = this.avgHabilidade(Jogador::probPerda);
-
+        //System.out.println(mediaPerda);
         return mediaPerda;
     }
     
 }
-
-//

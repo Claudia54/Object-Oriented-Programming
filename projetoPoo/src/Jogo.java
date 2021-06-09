@@ -92,27 +92,48 @@ public class Jogo{
         
         if (casa.estaAtacar()){
             
-            if (casa.marcou()) {
-        
+            System.out.println("Casa esta a Atacar");
+
+            if (casa.marcou(fora)) {
+                
+                System.out.println("Casa Marcou");
                 casa.setScore(casa.getScore()+1);
                 casa.setEstado(Estado.DEFESA);
                 fora.setEstado(Estado.ATAQUE);
             }else {
 
                 if(casa.perdeuBola()){
+                    System.out.println("Casa Perdeu a bola");
                     casa.setEstado(Estado.DEFESA);
                     fora.setEstado(Estado.ATAQUE);
+                }else{
+                    System.out.println("Casa Continua com a bola");
+                    
                 }
                 
             }
 
         }else{
             
-            if (fora.marcou()) {
-        
+            System.out.println("Fora esta a Atacar");
+            if (fora.marcou(casa)) {
+                
+                System.out.println("Fora Marcou");
+                
                 fora.setScore(fora.getScore()+1);
                 fora.setEstado(Estado.DEFESA);
                 casa.setEstado(Estado.ATAQUE);
+            }else {
+
+                if(fora.perdeuBola()){
+                    System.out.println("Fora Perdeu a bola");
+                    fora.setEstado(Estado.DEFESA);
+                    casa.setEstado(Estado.ATAQUE);
+                }else{
+                    System.out.println("Fora Continua com a bola");
+                    
+                }
+                
             }
         }
         

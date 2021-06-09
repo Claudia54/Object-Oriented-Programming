@@ -1,4 +1,4 @@
-
+/*
 import model.StringInvalidoException;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -31,15 +31,7 @@ public class Loadlog {
         }
     
 
-        /*
-    private int velocidade;
-    private int destreza;
-    private int resistencia;
-    private int impulsao;
-    private int jogoDeCabeca;
-    private int remate;
-    private int capDePasse;
-         */   
+       
         
         public void parse (Equipa equipa, String s, Jogador jogador, Jogo jogo ) {
 
@@ -72,3 +64,4 @@ public class Loadlog {
             this.catalogo.putIfAbsent(b.getBusinessId(),b.clone());
         }
 }
+*/
