@@ -97,6 +97,13 @@ public class Jogo{
                 casa.setScore(casa.getScore()+1);
                 casa.setEstado(Estado.DEFESA);
                 fora.setEstado(Estado.ATAQUE);
+            }else {
+
+                if(casa.perdeuBola()){
+                    casa.setEstado(Estado.DEFESA);
+                    fora.setEstado(Estado.ATAQUE);
+                }
+                
             }
 
         }else{

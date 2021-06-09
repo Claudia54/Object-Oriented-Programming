@@ -28,6 +28,14 @@ public class EquipaJogo {
         else return false;
     }
 
+    public boolean perdeuBola() {
+        int numRand = (int) Math.floor(Math.random()*(100)+1);
+        if (this.probPerdaBola() >= numRand) return true;
+        else return false;
+    }
+
+   
+
     public int getScore() {
         return score;
     }
@@ -70,25 +78,26 @@ public class EquipaJogo {
         
         return mediaRemate;
     }
+
+
     public int probSucAtaque() {
         
-        List<Integer> listRem =   this.getJogEmCampo().stream()
-                                                   .map(Jogador::getRemate)
-                                                   .collect(Collectors.toList());
-
-        //int mediaRemate = listRem.stream().mapToInt(Integer::intValue).sum()/listRem.size();
-
         int mediaRemate = this.avgHabilidade(Jogador::getRemate);
-        List<Integer> listVel =   this.getJogEmCampo().stream()
-                                                   .map(Jogador::getVelocidade)
-                                                   .collect(Collectors.toList());
-
-        int mediaVel = listVel.stream().mapToInt(Integer::intValue).sum()/listVel.size();
-        System.out.println(mediaRemate);
+        int mediaVel = this.avgHabilidade(Jogador::getVelocidade);
+        
+        System.out.println(mediaVel);
         
 
         return mediaRemate;
     }
+
+    public int probPerdaBola() {
+        
+        int mediaPerda = this.avgHabilidade(Jogador::probPerda);
+
+        return mediaPerda;
+    }
+    
 }
 
 //
