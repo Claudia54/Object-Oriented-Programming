@@ -94,6 +94,8 @@ public class EquipaJogo {
     public int probPerdaBola() {
         
         int mediaPerda = this.avgHabilidade(Jogador::probPerda);
+
+        
         //System.out.println(mediaPerda);
         return mediaPerda;
     }

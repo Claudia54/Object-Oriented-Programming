@@ -32,7 +32,7 @@ JCFLAGS := -d $(OUT_DIR)/ -cp $(SRC_DIR)/
 ##
 # targets that do not produce output files
 ##
-.PHONY: all clean
+.PHONY: all clean run
 
 ##
 # default target(s)
@@ -47,3 +47,6 @@ $(CLS): $(OUT_DIR)/%.class: $(SRC_DIR)/%.java
 ##
 clean:
 	rm $(OUT_DIR)/*.class
+
+run:
+	java -cp out Programa
