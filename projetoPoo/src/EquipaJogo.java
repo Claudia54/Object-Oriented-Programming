@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -59,16 +60,31 @@ public class EquipaJogo {
         this.suplentes = suplentes;
     }
 
+    public int avgHabilidade(Function <Jogador, Integer> f){
 
+        List<Integer> listRem =   this.getJogEmCampo().stream()
+                                                   .map(f)
+                                                   .collect(Collectors.toList());
+
+        int mediaRemate = listRem.stream().mapToInt(Integer::intValue).sum()/listRem.size();
+        
+        return mediaRemate;
+    }
     public int probSucAtaque() {
         
-        List<Integer> list =   this.getJogEmCampo().stream()
+        List<Integer> listRem =   this.getJogEmCampo().stream()
                                                    .map(Jogador::getRemate)
                                                    .collect(Collectors.toList());
 
-        int mediaRemate = list.stream().mapToInt(Integer::intValue).sum()/list.size();
+        //int mediaRemate = listRem.stream().mapToInt(Integer::intValue).sum()/listRem.size();
 
-        System.out.println(mediaRemate);
+        int mediaRemate = this.avgHabilidade(Jogador::getRemate);
+        List<Integer> listVel =   this.getJogEmCampo().stream()
+                                                   .map(Jogador::getVelocidade)
+                                                   .collect(Collectors.toList());
+
+        int mediaVel = listVel.stream().mapToInt(Integer::intValue).sum()/listVel.size();
+        //System.out.println(mediaRemate);
         
 
         return mediaRemate;
