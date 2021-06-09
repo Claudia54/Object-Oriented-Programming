@@ -25,7 +25,7 @@ public class Interpretador {
     public void tipoJogador (){
         StringBuilder sb = new StringBuilder();
         sb.append ("Criar:\n");
-        sb.append ("1-Avançado\n");
+        sb.append ("1-Atacante\n");
         sb.append ("2-Médio   \n");
         sb.append ("3-Defesa  \n");
         sb.append ("4-Lateral \n");
