@@ -33,25 +33,31 @@ public class Loadlog {
 
        
         
-        public void parse (Equipa equipa, String s, Jogador jogador, Jogo jogo ) {
+        public void parse (EquipaList equipa, String s, Jogador jogador, Jogo jogo,int i ) {
 
             String[] sDividida = s.split(":").split(",");
                 if (sDividida[0].equals("Equipa")){
-                    criaEquipa(sDividida[1]);  
+                    equipa.add(criaEquipa(sDividida[1]));  
                 }
                 //criar addjogador
                 else {
                     if (ssDividida[0].equals("Guarda-Redes")){
-                         addGuardaRedes(sDividida[1] //nome
-                                        ,sDividida[2], //
-                                        sDividida[3], 
-                                        sDividida[4],
-                                        sDividida[5], //
-                                        sDividida[6], 
-                                        sDividida[7]
-                                        
-                       
+                        GuardaRedes guardaredes = new GuardaRedes(sDividida[1], //nome
+                                                                  sDividida[2], //velocidade
+                                                                  sDividida[3], // destreza
+                                                                  sDividida[4],// res
+                                                                  sDividida[5], //impulsao
+                                                                  sDividida[6], //jogo de cabeça
+                                                                  sDividida[7],//remate
+                                                                  sDividida[8],// cap de passe  
+                                                                  sDividida[9] );
+                        
+                        
+                         equipa.getLast().adicionarjogador(guardaredes, 0);
                     }
+                    
+
+                     
                     adicionaJogador (sDividida[0], sDividida[1], sDividida[2], sDividida[3], sDividida[4]);
                 else adicionaJogador(sDividida[0], sDividida[1], sDividida[2], sDividida[3], "");
             }
