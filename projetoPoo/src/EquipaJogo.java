@@ -16,6 +16,17 @@ public class EquipaJogo {
         this.suplentes = suplentes;
     }
 
+    public boolean estaAtacar(){
+        if (estado == Estado.ATAQUE) return true;
+        else return false;
+    }
+
+    public boolean marcou(){
+        int numRand = (int) Math.floor(Math.random()*(100)+1);
+        if (this.probSucAtaque() >= numRand) return true;
+        else return false;
+    }
+
     public int getScore() {
         return score;
     }
@@ -49,14 +60,19 @@ public class EquipaJogo {
     }
 
 
-    public int probSucAtaque(EquipaJogo adversaria) {
+    public int probSucAtaque() {
         
         List<Integer> list =   this.getJogEmCampo().stream()
                                                    .map(Jogador::getRemate)
                                                    .collect(Collectors.toList());
 
+        int mediaRemate = list.stream().mapToInt(Integer::intValue).sum()/list.size();
+
+        System.out.println(mediaRemate);
         
 
-        return 0;
+        return mediaRemate;
     }
 }
+
+//

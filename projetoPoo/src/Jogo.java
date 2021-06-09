@@ -7,9 +7,13 @@ public class Jogo{
     private int time;
     private EquipaJogo casa;
     private EquipaJogo fora;
+    private int scoreEqCasa;
+    private int scoreEqFora;
+    private int parteAtual;
+    private int partes;
 
     public Jogo(int time, EquipaJogo casa, EquipaJogo fora, int scoreEqCasa, int scoreEqFora, int parteAtual,
-            int partes) {
+    int partes) {
 
         this.time = time;
         this.casa = casa;
@@ -18,12 +22,7 @@ public class Jogo{
         this.scoreEqFora = scoreEqFora;
         this.parteAtual = parteAtual;
         this.partes = partes;
-    }
-
-    private int scoreEqCasa;
-    private int scoreEqFora;
-    private int parteAtual;
-    private int partes;
+}
 
     public Jogo() {
         this.time     = 0;
@@ -91,24 +90,25 @@ public class Jogo{
     
     public void calculaParte(){
         
-        if (casa.getEstado() == Estado.ATAQUE){
+        if (casa.estaAtacar()){
             
-            int numRand = (int) Math.floor(Math.random()*(100-1+1)+1);
-            if ((this.casa.probSucAtaque(fora)) >= numRand) {
+            if (casa.marcou()) {
         
                 casa.setScore(casa.getScore()+1);
                 casa.setEstado(Estado.DEFESA);
                 fora.setEstado(Estado.ATAQUE);
             }
+
         }else{
-            int numRand = (int) Math.floor(Math.random()*(100)+1);
-            if ((this.fora.probSucAtaque(casa)) >= numRand) {
+            
+            if (fora.marcou()) {
         
                 fora.setScore(fora.getScore()+1);
                 fora.setEstado(Estado.DEFESA);
                 casa.setEstado(Estado.ATAQUE);
             }
         }
+        
         setTime(this.getTime()+5);
         setParteAtual(this.getParteAtual()+1);
     }

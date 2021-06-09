@@ -35,7 +35,11 @@ public class Jogador{
         this.jogoDeCabeca   = jogoDeCabeca;
         this.remate         = remate;
         this.capDePasse     = capDePasse;
+<<<<<<< HEAD
         this.historico       = historico
+=======
+        
+>>>>>>> c0fe22d... fazer jogo.java e equipaJogo
     }
 
 public Jogador(Jogador jogador){
