@@ -8,7 +8,10 @@ public class Jogador{
     private int jogoDeCabeca;
     private int remate;
     private int capDePasse;
-    
+    private List<String> historico;
+  
+
+
     public Jogador(){
         this.nome           = "n/a";
         this.velocidade     = 0;
@@ -18,10 +21,11 @@ public class Jogador{
         this.jogoDeCabeca   = 0;
         this.remate         = 0;
         this.capDePasse     = 0;
+        this.historico        = new ArrayList<>();
     }
 
     public Jogador(String nome, int velocidade, int destreza, int resistencia, int impulsao, 
-    int jogoDeCabeca, int remate, int capDePasse){
+    int jogoDeCabeca, int remate, int capDePasse, int numero , List<String> historico){
 
         this.nome           = nome;
         this.velocidade     = velocidade;
@@ -31,6 +35,7 @@ public class Jogador{
         this.jogoDeCabeca   = jogoDeCabeca;
         this.remate         = remate;
         this.capDePasse     = capDePasse;
+        this.historico       = historico
     }
 
 public Jogador(Jogador jogador){
@@ -42,6 +47,7 @@ public Jogador(Jogador jogador){
         this.jogoDeCabeca   = jogador.getJogoDeCabeca();
         this.remate         = jogador.getRemate();
         this.capDePasse     = jogador.getCapDePasse();
+        this.historico      = jogador. getHistorico();
     }
 
     public String getNome() {
@@ -101,6 +107,14 @@ public Jogador(Jogador jogador){
         this.capDePasse = capDePasse;
     }
 
+    public String getHistorico() {
+        return this.historico=historico;
+    }
+
+    public void addHistorico(Equipa equipa) {
+        this.historico.add(equipa);
+    }
+
     public Jogador clone(){
         Jogador jog = new Jogador(this);
     
@@ -121,7 +135,9 @@ public Jogador(Jogador jogador){
                 jog.getImpulsao()       == this.impulsao &&
                 jog.getJogoDeCabeca()   == this.jogoDeCabeca &&
                 jog.getRemate()         == this.remate &&
-                jog.getCapDePasse()     == this.capDePasse;
+                jog.getCapDePasse()     == this.capDePasse &&
+                jog.getHistorico()         == this.historico ;
+
     }
 
     public String toString(){
@@ -136,7 +152,8 @@ public Jogador(Jogador jogador){
     sb.append(", Impulsao=").append(this.impulsao);
     sb.append(", Jogo de cabeca=").append(this.jogoDeCabeca);
     sb.append(", Remate=").append(this.remate);
-    sb.append(", Cap. de Passe=").append(this.capDePasse).append("]\n");
+    sb.append(", Cap. de Passe=").append(this.capDePasse);
+    sb.append (", Historico=").append(this.historico).append("]\n");
     
     return sb.toString();
 }

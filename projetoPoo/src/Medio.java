@@ -21,5 +21,6 @@ public class Medio extends Jogador{
     public int cpPerda (){
         return 0;
     }
+    
 
 }

@@ -6,17 +6,29 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Equipa {
-    private int habilidade;
+    private String equipa;
     private HashMap<Integer,Jogador> jogadores;
+
+
 
     public Equipa(){
         this.habilidade = 0;
         this.jogadores  = new HashMap<>();
+        this.equipa = "n/a";
     }
 
-    public Equipa(int habilidade, HashMap<Integer, Jogador> jogadores) {
+    public Equipa(int habilidade, HashMap<Integer, Jogador> jogadores,String equipa) {
         this.habilidade = habilidade;
         this.jogadores  = jogadores;
+        this.equipa = equipa;
+    }
+    
+    public int getEquipa(){
+        return this.equipa;
+    }
+
+    public void setEquipa(String equipa){
+      this.equipa =equipa;
     }
 
     public int getHabilidade() {
@@ -36,25 +48,26 @@ public class Equipa {
         this.jogadores = jogadores;
     }
   
-    public  void removerjogador (Jogador jogador){
-        HashMap<Integer, Jogador> map = this.getJogadores();
-        
-        map.remove(jogador);
+    public  void removerjogador (int numero){ // assumir que so fica no historico qd sai da equipa 
+        if ( this.jogadores.containsKey(numero)){
+           this.historico.get(numero).add(equipa);
+           this.jogadores.remove(numero);
+          }
+  }
 
-        setJogadores(map);
-  
-    }
-    
-    public void adicionarjogador(Jogador jogador){
-        HashMap<Integer, Jogador> list = this.getJogadores();
-        
-        //list.add(jogador);
 
-        //setJogadores(list);
+    public void adicionarjogador(Jogador jogador, int numero){ //acresentei o numero assumindo q o numero é dado na identificacao
+        jogador.getEquipa()= equipa;
+        this.jogadores.put(numero,jogador);
+        this.historico.put(jogador,equipa);
     }
+
    
     public String verJogadores(){
         //aplicar a tostring a lista de jogadores
         return "por fazer";
     }
+
+
+
 }

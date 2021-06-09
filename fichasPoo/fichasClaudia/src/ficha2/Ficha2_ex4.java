@@ -3,7 +3,7 @@ import java.time.LocalDate;
 
 // ???? nao tenho a certeza 
 public class Ficha2_ex4 {
- public static int[] ordenar(int[] array)}{
+ public static int[] ordenar(int[] array){
      int i=0,a=0;
      while (i<array.length){
      if (array[i]>array[i+1]){
@@ -15,3 +15,4 @@ public class Ficha2_ex4 {
  }
  return array;
  }
+}
