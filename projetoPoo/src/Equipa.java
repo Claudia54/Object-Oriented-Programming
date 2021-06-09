@@ -41,16 +41,15 @@ public class Equipa {
   
     public  void removerjogador (int numero){ // assumir que so fica no historico qd sai da equipa 
         if ( this.jogadores.containsKey(numero)){
-           this.historico.get(numero).addHistorico(equipa);
            this.jogadores.remove(numero);
           }
   }
 
 
     public void adicionarjogador(Jogador jogador, int numero){ //acresentei o numero assumindo q o numero é dado na identificacao
-        jogador.getEquipa()= equipa;
         this.jogadores.put(numero,jogador);
-        this.historico.put(jogador,equipa);
+        this.jogadores.get(numero).addHistorico(equipa);
+        
     }
 
    
