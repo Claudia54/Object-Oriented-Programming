@@ -1,58 +1,60 @@
+import java.util.List;
 
 public class Medio extends Jogador{
-    private int recbola;
+    private int recBola;
 
 
 
     public Medio(){
         super();
-        recbola=0;
+        recBola=0;
     }
 
     public Medio(String nome, int velocidade, int destreza, int resistencia, 
-    int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico,int recbola){
+    int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico,int recBola){
         
         super(nome, velocidade, destreza, resistencia, impulsao, jogoDeCabeca, 
-        remate, capDePasse, List<String> historico);
-        this.recbola=recbola;
+        remate, capDePasse, historico);
+        this.recBola=recBola;
 
     }
 
     public Medio(Medio medio){
         super(medio);
-        this.medio=medio.getRecbola();
+        this.recBola = medio.getRecBola();
     }
 
 
-    public int getRecbola() {
-        return recbola;
+    public int getRecBola() {
+        return recBola;
     }
 
-    public void setRecbola(int recbola) {
-        this.recbola = recbola;
+    public void setRecBola(int recBola) {
+        this.recBola = recBola;
     }
     
 
     public int calculaHabilidade(){
-        float percentagem = (float) 0.1;
-        return  Math.round( this.getVelocidade()    * percentagem +
-                            this.getDestreza()      * percentagem +
-                            this.getResistencia()   * percentagem +
-                            this.getImpulsao()      * percentagem +
-                            this.getJogoDeCabeca()  * percentagem +
-                            this.getRemate()        * percentagem +
-                            this.getCapDePasse()    * percentagem );
+        double perVel = 0.1;
+        double perDes = 0.15;
+        double perRes = 0.15;
+        double perImp = 0.05;
+        double perJdc = 0.05;
+        double perRem = 0.15;
+        double perCdp = 0.2;
+        double perReb= 0.15;
+
+        return  (int) Math.round(   this.getVelocidade()    * perVel +
+                                    this.getDestreza()      * perDes +
+                                    this.getResistencia()   * perRes +
+                                    this.getImpulsao()      * perImp +
+                                    this.getJogoDeCabeca()  * perJdc +
+                                    this.getRemate()        * perRem +
+                                    this.getCapDePasse()    * perCdp +
+                                    this.getRecBola()       * perReb);
 
     }
-    public int cpRematebaliza (){
-        return 0;
-    }  
-    public int cpCanto (){
-        return 0;
-    }
-    public int cpPerda (){
-        return 0;
-    }
+    
     
 
 }

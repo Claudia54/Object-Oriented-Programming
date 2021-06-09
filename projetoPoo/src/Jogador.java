@@ -29,7 +29,7 @@ public class Jogador{
     }
 
     public Jogador(String nome, int velocidade, int destreza, int resistencia, int impulsao, 
-    int jogoDeCabeca, int remate, int capDePasse, int numero , List<String> historico){
+    int jogoDeCabeca, int remate, int capDePasse , List<String> historico){
 
         this.nome           = nome;
         this.velocidade     = velocidade;
@@ -50,7 +50,7 @@ public class Jogador{
 >>>>>>> b586394... corrigir erros
     }
 
-public Jogador(Jogador jogador){
+    public Jogador(Jogador jogador){
         this.nome           = jogador.getNome();
         this.velocidade     = jogador.getVelocidade();
         this.destreza       = jogador.getDestreza();
@@ -184,6 +184,7 @@ public Jogador(Jogador jogador){
 
         return cpReBa;
     }  
+
     public int cpCanto (){
 
         double perDes = 0.3;

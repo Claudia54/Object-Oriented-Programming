@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class GuardaRedes extends Jogador{
     private int elasticidade;
 
@@ -12,9 +14,9 @@ public class GuardaRedes extends Jogador{
    }
 
    public  GuardaRedes (String nome, int velocidade, int destreza, int resistencia, int impulsao, 
-   int jogoDeCabeca, int remate, int capDePasse,int elasticidade) {
+   int jogoDeCabeca, int remate, int capDePasse,List<String> historico, int elasticidade) {
 
-    super (nome,velocidade, destreza,resistencia, impulsao,jogoDeCabeca,remate,capDePasse);
+    super (nome,velocidade, destreza,resistencia, impulsao,jogoDeCabeca,remate,capDePasse,historico);
     this.elasticidade = elasticidade;
    }
 
@@ -61,7 +63,26 @@ public class GuardaRedes extends Jogador{
     return sb.toString();
 
     } 
-  
+    public int calculaHabilidade(){
+      double perVel = 0.05;
+      double perDes = 0.15;
+      double perRes = 0.05;
+      double perImp = 0.25;
+      double perJdc = 0.05;
+      double perRem = 0.05;
+      double perCdp = 0.15;
+      double perEle = 0.25;
+
+      return  (int) Math.round(   this.getVelocidade()    * perVel +
+                                  this.getDestreza()      * perDes +
+                                  this.getResistencia()   * perRes +
+                                  this.getImpulsao()      * perImp +
+                                  this.getJogoDeCabeca()  * perJdc +
+                                  this.getRemate()        * perRem +
+                                  this.getCapDePasse()    * perCdp +
+                                  this.getElasticidade()  * perEle);
+
+  }  
 
   }
 

@@ -1,3 +1,4 @@
+import java.util.List;
 
 public class Defesa extends Jogador{
     private int posicionamento;
@@ -12,7 +13,7 @@ public class Defesa extends Jogador{
     int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico, int posicionamento){
         
         super(nome, velocidade, destreza, resistencia, impulsao, jogoDeCabeca, 
-        remate, capDePasse, List<String> historico);
+        remate, capDePasse, historico);
 
         this.posicionamento=posicionamento;
     }
@@ -32,24 +33,25 @@ public class Defesa extends Jogador{
     }
 
     public int calculaHabilidade(){
-        float percentagem = (float) 0.1;
-        return  Math.round( this.getVelocidade()    * percentagem +
-                            this.getDestreza()      * percentagem +
-                            this.getResistencia()   * percentagem +
-                            this.getImpulsao()      * percentagem +
-                            this.getJogoDeCabeca()  * percentagem +
-                            this.getRemate()        * percentagem +
-                            this.getCapDePasse()    * percentagem );
+        double perVel = 0.05;
+        double perDes = 0.20;
+        double perRes = 0.10;
+        double perImp = 0.15;
+        double perJdc = 0.15;
+        double perRem = 0.05;
+        double perCdp = 0.15;
+        double perPos = 0.15;
+
+        return  (int) Math.round(   this.getVelocidade()    * perVel +
+                                    this.getDestreza()      * perDes +
+                                    this.getResistencia()   * perRes +
+                                    this.getImpulsao()      * perImp +
+                                    this.getJogoDeCabeca()  * perJdc +
+                                    this.getRemate()        * perRem +
+                                    this.getCapDePasse()    * perCdp +
+                                    this.getPosicionamento()* perPos);
 
     }
-    public int cpRemateBaliza (){
-        return 0;
-    }  
-    public int cpCanto (){
-        return 0;
-    }
-    public int probPerda (){
-        return 0; 
-    }
+    
 
 }

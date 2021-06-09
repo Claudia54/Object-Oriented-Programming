@@ -1,44 +1,54 @@
+import java.util.List;
 
 public class Lateral extends Jogador{
-    private int habilidadecruz;
+    private int habilidaDeCruz;
 
 
     public Lateral(){
         super();
-        habilidadecruz=0
+        habilidaDeCruz = 0;
     }
 
     public Lateral (String nome, int velocidade, int destreza, int resistencia, 
-    int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico, int habilidadecruz){
+    int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico, int habilidaDeCruz){
         
         super(nome, velocidade, destreza, resistencia, impulsao, jogoDeCabeca, 
-        remate, capDePasse, List<String> historico);
-        this.habilidadecruz=habilidadecruz;
+        remate, capDePasse, historico);
+        this.habilidaDeCruz = habilidaDeCruz;
 
     }
 
-    public Lateral(Lateral lateral{
+    public Lateral(Lateral lateral){
         super(lateral);
-        this.lateral=lateral.getHabilidadecruz();
+        this.habilidaDeCruz = lateral.getHabilidaDeCruz();
     }
 
-    public int getHabilidadecruz() {
-        return habilidadecruz;
+    public int getHabilidaDeCruz() {
+        return habilidaDeCruz;
     }
 
-    public void setHabilidadecruz(int habilidadecruz) {
-        this.habilidadecruz = habilidadecruz;
+    public void setHabilidaDeCruz(int habilidaDeCruz) {
+        this.habilidaDeCruz = habilidaDeCruz;
     }
 
     public int calculaHabilidade(){
-        float percentagem = (float) 0.1;
-        return  Math.round( this.getVelocidade()    * percentagem +
-                            this.getDestreza()      * percentagem +
-                            this.getResistencia()   * percentagem +
-                            this.getImpulsao()      * percentagem +
-                            this.getJogoDeCabeca()  * percentagem +
-                            this.getRemate()        * percentagem +
-                            this.getCapDePasse()    * percentagem );
+        double perVel = 0.15;
+        double perDes = 0.15;
+        double perRes = 0.10;
+        double perImp = 0.15;
+        double perJdc = 0.10;
+        double perRem = 0.05;
+        double perCdp = 0.15;
+        double perCru= 0.15;
+
+        return  (int) Math.round(   this.getVelocidade()    * perVel +
+                                    this.getDestreza()      * perDes +
+                                    this.getResistencia()   * perRes +
+                                    this.getImpulsao()      * perImp +
+                                    this.getJogoDeCabeca()  * perJdc +
+                                    this.getRemate()        * perRem +
+                                    this.getCapDePasse()    * perCdp +
+                                    this.getHabilidaDeCruz()* perCru);
 
     }
 }
