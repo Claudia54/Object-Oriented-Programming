@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public abstract class Jogador{
+public class Jogador{
     
     private String nome;
     private int velocidade;
@@ -136,7 +136,6 @@ public abstract class Jogador{
         return jog;
     }
 */
-    public abstract int calculaHabilidade();
     public boolean equals(Object obj){
 
         if(obj==this) return true;

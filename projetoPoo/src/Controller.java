@@ -138,7 +138,9 @@ public class Controller {
 
     public int getInt() {
         Scanner scan = new Scanner(System.in);
+       
         int inte = scan.nextInt();
+      
         scan.close();
         return inte;
     }

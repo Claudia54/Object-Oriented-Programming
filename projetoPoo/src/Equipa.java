@@ -107,7 +107,6 @@ public class Equipa {
    
     public void verJogadores(){
        jogadores.values().toString();
-        }
+    }
         
     }
-}

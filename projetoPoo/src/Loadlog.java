@@ -27,7 +27,7 @@ public class Loadlog {
 
             String[] sDividida = s.split("[:,]+");  //.split(",");
                 if (sDividida[0].equals("Equipa")){
-                    equipaList.addEquipa(sDividida[1]);  
+                    equipaList.criaEquipa(sDividida[1]);  
                 }else if(sDividida[0].equals("Jogo")){
 
                 }else{
@@ -62,8 +62,6 @@ public class Loadlog {
                         equipaList.getLast().adicionarjogador(lateral, Integer.parseInt( sDividida[2]));
     
                     }
-                    
-
             
             }
         }

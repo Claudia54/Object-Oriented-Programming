@@ -44,14 +44,31 @@ public class Programa {
     Equipa equi = cont.criarEquipa();
     equi.verJogadores();
     */
+    ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
+    jogadores.add(new Atacante("Gusto",52,80,70,4,5,28,7,new ArrayList<String>()));
+    jogadores.add(new Atacante("Gusto",48,26,39,4,5,100,7,new ArrayList<String>()));
+    jogadores.add(new Atacante("Gusto",48,60,60,4,5,38,7,new ArrayList<String>()));
 
+    EquipaJogo equipa1 = new EquipaJogo(0,Estado.ATAQUE,jogadores,new ArrayList<>());
+    EquipaJogo equipa2 = new EquipaJogo(0,Estado.DEFESA,jogadores,new ArrayList<>());
+    
+    Jogo jogo = new Jogo(0,equipa1,equipa2,0,0,0,0);
+    
     Scanner scan = new Scanner(System.in);
     View view = new View();
     Controller controller = new Controller();
     EquipaList listaEquipas = new EquipaList();
     
-    int instruction;
+    int instruction=0;
+    Loadlog log = new Loadlog();
+    log.load(log.getFichDefaut(), listaEquipas, jogo);
+    
+    System.out.println( listaEquipas.size());        
 
+    while(instruction!=-1){
+        view.clearScreen();
+        view.bola();
+        view.menu();
         try{
             instruction = scan.nextInt();
             scan.nextLine();
@@ -61,8 +78,9 @@ public class Programa {
             view.notAnInstruction();
         }
 
-    
     switch (instruction){
+
+        
         case 1:
         //Perguntar que tipo de jogador
 
@@ -77,12 +95,17 @@ public class Programa {
         case 4:
             view.queEquipa();
             // print das equipas por indice
-            int n = controller.getInt();
+            
+            int n = scan.nextInt();
+            scan.nextLine();
+
             listaEquipas.consultarEquipa(n);
+            scan.nextLine();
         break;
         case 5:
         break;
     }
+}
     }
 
 
