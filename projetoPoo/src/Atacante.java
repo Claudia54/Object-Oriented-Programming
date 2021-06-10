@@ -60,6 +60,22 @@ public class Atacante extends Jogador{
                                     this.getCapDePasse()    * perCdp +
                                     this.getDrible()        * perDri);
     }
-
+    public String toString(){
+    
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("Atacante ");
+        sb.append("[Nome=").append(this.getNome());
+        sb.append(", Velocidade=").append(this.getVelocidade());
+        sb.append(", Destreza=").append(this.destreza);
+        sb.append(", Resistencia=").append(this.resistencia);
+        sb.append(", Impulsao=").append(this.impulsao);
+        sb.append(", Jogo de cabeca=").append(this.jogoDeCabeca);
+        sb.append(", Remate=").append(this.remate);
+        sb.append(", Cap. de Passe=").append(this.capDePasse);
+        sb.append(", Historico=").append(this.historico).append("]\n");
+        sb.append(", Cap. de Passe=").append(this.capDePasse);
+        return sb.toString();
+    }
 }
 
