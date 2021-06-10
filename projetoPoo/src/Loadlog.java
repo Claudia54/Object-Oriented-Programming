@@ -1,4 +1,4 @@
-/*
+
 import model.StringInvalidoException;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -70,4 +70,3 @@ public class Loadlog {
             this.catalogo.putIfAbsent(b.getBusinessId(),b.clone());
         }
 }
-*/

@@ -12,11 +12,15 @@ public class Programa {
         HashMap<Integer,Jogador> map = new HashMap<>();
         Atacante a = new Atacante("atacante",1,2,3,4,5,28,7,new ArrayList<String>(),10); 
         map.put(10, a);
-
+--------------------------
+--------------------------
         Atacante ata = (Atacante) map.get(10);
         System.out.println(ata.getDrible());
 */
+    View view = new View();
 
+    view.bola();
+    view.menu();
 
 
 

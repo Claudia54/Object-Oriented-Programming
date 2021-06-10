@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Controller {
@@ -8,6 +10,7 @@ public class Controller {
     public void menuInt (){
         Scanner scan = new Scanner(System.in);
         int instruction;
+
         try{
             instruction = scan.nextInt();
             scan.nextLine();
@@ -17,7 +20,7 @@ public class Controller {
             notAnInstruction();
         }
 
-    }
+    
     switch (instruction){
         case 1:
         //Perguntar que tipo de jogador
@@ -32,10 +35,14 @@ public class Controller {
         case 5:
         break;
     }
+    }
+
 
     public void escolheJogador(){
+
         int instruction;
         Scanner scan = new Scanner(System.in);
+        View view = new View();
 
         try{
             instruction = scan.nextInt();
@@ -45,12 +52,49 @@ public class Controller {
             instruction = -1;
             notAnInstruction();
         }
+
+        view.printVar ("Nome");
+        String nome = scan.nextLine();
+ 
+        view.printVar ("Velocidade");
+        int velocidade = scan.nextInt();
+
+        view.printVar ("Destreza");
+        int destreza = scan.nextInt();
+
+        view.printVar ("Resistência");
+        int resistencia = scan.nextInt();
+
+
+        view.printVar ("Impulsão");
+        int impulsao = scan.nextInt();
+
+        view.printVar ("Jogo de Cabeça");
+        int jogodeCabeca = scan.nextInt();
+
+        view.printVar ("Remate");
+        int remate = scan.nextInt();
+
+        view.printVar ("Capacidade de Passe");
+        int capDePasse = scan.nextInt();
+        
+
         switch (instruction){
             case 1:
-            Atacante avancado = new Atacante ();
+            view.printVar ("Drible");
+            int drible = scan.nextInt();
+
+            Atacante avancado = new Atacante (nome,velocidade,destreza,resistencia,
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),drible);
             break;
             case 2:
-            Medio medio = new Medio();
+            
+            view.printVar ("Recuperacao de Bolas");
+            int recBol = scan.nextInt();
+
+            Medio medio = new Medio(nome,velocidade,destreza,resistencia,
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),recBol);
+
             break;
             case 3:
             Defesa defesa = new Defesa();
@@ -65,26 +109,6 @@ public class Controller {
     }
 
     public void addCarat(){
-        System.out.println ("Sua velocidade");
-        int velocidade =jogadores.nextInt();
-
-        System.out.println ("Sua destreza");
-        int destreza =jogadores.nextInt();
-
-        System.out.println ("Sua resistência");
-        int resistencia =jogadores.nextInt();
-
-        System.out.println ("Sua impulsão");
-        int impulsao =jogadores.nextInt();
-
-        System.out.println ("Seu jogo de cabeça");
-        int jogodeCabeca =jogadores.nextInt();
-
-        System.out.println ("Seu remate");
-        int remate=jogadores.nextInt();
-
-        System.out.println ("Sua capacidade de passe");
-        int capDePasse =jogadores.nextInt();
         
     }
     

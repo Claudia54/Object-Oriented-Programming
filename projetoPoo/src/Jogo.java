@@ -89,7 +89,6 @@ public class Jogo{
         }
     
     public void calculaParte(){
-        
         if (casa.estaAtacar()){
             
             System.out.println("Casa esta a Atacar");
@@ -138,6 +137,8 @@ public class Jogo{
         }
         
         setTime(this.getTime()+5);
+
+        System.out.println(time + " min");
         setParteAtual(this.getParteAtual()+1);
     }
     

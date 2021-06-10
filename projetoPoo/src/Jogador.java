@@ -213,5 +213,16 @@ public class Jogador{
         return probPerd;
     }
 
+    public int probSucPass (){
+        
+        double perDes        = 0.35;
+        double perCdp        = 0.65;
+        int destreza         = this.getDestreza();
+        int passe            = this.getCapDePasse();
+        
+        int probSucPass         = (int) Math.round(destreza*perDes + passe*perCdp);
 
+
+        return probSucPass;
+    }
 }

@@ -84,11 +84,11 @@ public class EquipaJogo {
         
         int mediaRemateBaliza = this.avgHabilidade(Jogador::cpRemateBaliza);
         
-
+        int mediaPasse = this.avgHabilidade(Jogador::probSucPass);
         //System.out.println(mediaVel);
         
 
-        return mediaRemateBaliza;
+        return (int) (mediaRemateBaliza*0.7+mediaPasse*0.3);
     }
 
     public int probPerdaBola() {
