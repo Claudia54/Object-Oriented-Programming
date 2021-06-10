@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import jdk.internal.module.SystemModuleFinders;
+
 public class EquipaList {
    private List<Equipa> list ; 
 
@@ -46,10 +48,12 @@ public class EquipaList {
     Iterator<Equipa> iterador = list.iterator();
     while(iterador.hasNext()){
       i++;
-       sb.append( i + "-"+iterador.getEquipa());
+       sb.append( i + "-" + iterador.getEquipa());
     }
-    }
-    System.out.print(sb.toString());
+    System.out.println(sb.toString());
 
+    }
+    
+    
 }
 
