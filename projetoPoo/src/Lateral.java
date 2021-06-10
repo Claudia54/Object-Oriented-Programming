@@ -1,8 +1,13 @@
 import java.util.List;
 
+
 public class Lateral extends Jogador{
     private int habilidaDeCruz;
 
+    public Lateral(Jogador jogador,int habilidade){
+        super(jogador);
+        this.habilidaDeCruz = habilidade;
+    }
 
     public Lateral(){
         super();

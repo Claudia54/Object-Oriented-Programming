@@ -3,6 +3,10 @@ import java.util.List;
 public class Defesa extends Jogador{
     private int posicionamento;
 
+    public Defesa (Jogador jogador, int pos){
+        super(jogador);
+        this.posicionamento=pos;
+    }
 
     public Defesa (){
         super();

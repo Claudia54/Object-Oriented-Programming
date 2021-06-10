@@ -38,15 +38,16 @@ public class Controller {
     }
 
 
-    public void escolheJogador(){
+    public Jogador criarJogador(){
 
         int instruction;
         Scanner scan = new Scanner(System.in);
         View view = new View();
+        view.menuJogador();
 
         try{
             instruction = scan.nextInt();
-            scan.nextLine();
+            //e preciso? scan.nextLine();
         }
         catch (InputMismatchException e) {
             instruction = -1;
@@ -64,7 +65,6 @@ public class Controller {
 
         view.printVar ("Resistência");
         int resistencia = scan.nextInt();
-
 
         view.printVar ("Impulsão");
         int impulsao = scan.nextInt();
@@ -118,6 +118,7 @@ public class Controller {
             GuardaRedes guardaredes = new GuardaRedes(nome,velocidade,destreza,resistencia,
             impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),ela);
            
+            return guardaredes;
             break;
         }
     }
@@ -125,13 +126,17 @@ public class Controller {
    
     
     public void criarequipa(){
-        Scanner scan = new Scanner();
+        //menu equipa
+        Scanner scan = new Scanner(System.in);
         Equipa equipa = new Equipa();
-        String nome=scan.nextLine();
+
+        String nome = scan.nextLine();
+        
         equipa.setEquipa(nome); 
-        while (scan.next()){
-            tipoJogador (); // falta pedir o numero do jogador;no intrep
-        equipa. menuInt();
+        
+        while (scan.next() != null){
+            criarJogador (); // falta pedir o numero do jogador;no intrep
+        
         }
 
     }

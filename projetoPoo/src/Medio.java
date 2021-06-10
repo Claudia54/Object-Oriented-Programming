@@ -3,7 +3,10 @@ import java.util.List;
 public class Medio extends Jogador{
     private int recBola;
 
-
+    public Medio(Jogador jogador, int bola){
+        super(jogador);
+        recBola=bola;
+    }
 
     public Medio(){
         super();

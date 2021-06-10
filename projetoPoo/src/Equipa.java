@@ -58,9 +58,11 @@ public class Equipa {
     }
 
    
-    public String verJogadores(){
+    public void verJogadores(){
         //aplicar a tostring a lista de jogadores
-        return "por fazer";
+
+        System.out.println( this.jogadores.values());
+        
     }
 
 

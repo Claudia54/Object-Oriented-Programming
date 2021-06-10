@@ -54,9 +54,21 @@ public class Loadlog {
                         GuardaRedes guardaredes = new GuardaRedes(jogador , Integer.parseInt(sDividida[9]));
                         equipaList.getLast().adicionarjogador(guardaredes, 0);
                     
-                    }else if(sDividida[0].equals("Avancado")){
+                    } else if(sDividida[0].equals("Avancado")){
                         Atacante atacante = new Atacante(jogador , Integer.parseInt(sDividida[9]));
                         equipaList.getLast().adicionarjogador(atacante, 0);
+    
+                    } else if(sDividida[0].equals("Medio")){
+                        Medio medio = new Medio(jogador , Integer.parseInt(sDividida[9]));
+                        equipaList.getLast().adicionarjogador(medio, 0);
+    
+                    } else if(sDividida[0].equals("Defesa")){
+                        Defesa defesa = new Defesa(jogador , Integer.parseInt(sDividida[9]));
+                        equipaList.getLast().adicionarjogador(defesa, 0);
+    
+                    } else if(sDividida[0].equals("Lateral")){
+                        Lateral lateral = new Lateral(jogador , Integer.parseInt(sDividida[9]));
+                        equipaList.getLast().adicionarjogador(lateral, 0);
     
                     }
                     

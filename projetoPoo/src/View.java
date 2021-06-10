@@ -39,7 +39,7 @@ public class View {
     }
 
 
-    public void tipoJogador (){
+    public void menuJogador (){
         StringBuilder sb = new StringBuilder();
 
         sb.append ("Criar:\n");

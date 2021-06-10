@@ -5,10 +5,14 @@ public class Atacante extends Jogador{
 
    
 
+    public Atacante (Jogador jogador, int drible){
+        super(jogador);
+        this.drible = drible;
+    }
+
     public Atacante (){
         super();
         this.drible=0;
-
     }
 
     public Atacante(String nome, int velocidade, int destreza, int resistencia, 
