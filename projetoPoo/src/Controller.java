@@ -82,11 +82,8 @@ public class Controller {
 
         switch (instruction){
             case 1:
-            view.printVar ("Drible");
-            int drible = scan.nextInt();
-
             Atacante atacante = new Atacante (nome,velocidade,destreza,resistencia,
-            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),drible);
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>());
 
             return atacante;
 
@@ -100,11 +97,9 @@ public class Controller {
             return medio;
 
             case 3:
-            view.printVar ("Posicionamento");
-            int pos = scan.nextInt();
 
             Defesa defesa = new Defesa(nome,velocidade,destreza,resistencia,
-            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),pos);
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>());
 
             return defesa;
 
@@ -132,7 +127,9 @@ public class Controller {
     }
 
    
-    
+    public void mudarJogadorDeEquipa(){}// todo
+
+
     public Equipa criarEquipa(){
         //menu equipa
         Scanner scan = new Scanner(System.in);

@@ -2,7 +2,7 @@ import java.util.List;
 
 public class Atacante extends Jogador{
    
-    public Atacante (Jogador jogador)
+    public Atacante (Jogador jogador){
         super(jogador);
     }
 

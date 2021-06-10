@@ -23,7 +23,7 @@ public class Programa {
     view.menu();
     view.clearScreen();
     ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-    jogadores.add(new Atacante("Gusto",52,80,70,4,5,28,7,new ArrayList<String>(),10));
+    jogadores.add(new Atacante("Gusto",52,80,70,4,5,28,7,new ArrayList<String>()));
     jogadores.add(new Jogador("Gusto",48,26,39,4,5,100,7,new ArrayList<String>()));
     jogadores.add(new Jogador("Gusto",48,60,60,4,5,38,7,new ArrayList<String>()));
 
