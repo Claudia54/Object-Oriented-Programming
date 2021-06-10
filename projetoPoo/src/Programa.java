@@ -22,20 +22,24 @@ public class Programa {
     view.bola();
     view.menu();
 
+    ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
+    jogadores.add(new Atacante("Gusto",52,80,70,4,5,28,7,new ArrayList<String>(),10));
+    jogadores.add(new Jogador("Gusto",48,26,39,4,5,100,7,new ArrayList<String>()));
+    jogadores.add(new Jogador("Gusto",48,60,60,4,5,38,7,new ArrayList<String>()));
 
+    EquipaJogo equipa1 = new EquipaJogo(0,Estado.ATAQUE,jogadores,new ArrayList<>());
+    EquipaJogo equipa2 = new EquipaJogo(0,Estado.DEFESA,jogadores,new ArrayList<>());
+    
+    Jogo jogo = new Jogo(0,equipa1,equipa2,0,0,0,0);
+    
+    Loadlog log = new Loadlog();
 
+    log.StreamLoader();
+    //String[] s = new String();
+    EquipaList lista = new EquipaList();
+    log.load(log.getFichDefaut(), lista, jogo);
 
-
-        ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-        jogadores.add(new Atacante("Gusto",52,80,70,4,5,28,7,new ArrayList<String>(),10));
-        jogadores.add(new Jogador("Gusto",48,26,39,4,5,100,7,new ArrayList<String>()));
-        jogadores.add(new Jogador("Gusto",48,60,60,4,5,38,7,new ArrayList<String>()));
-
-        EquipaJogo equipa1 = new EquipaJogo(0,Estado.ATAQUE,jogadores,new ArrayList<>());
-        EquipaJogo equipa2 = new EquipaJogo(0,Estado.DEFESA,jogadores,new ArrayList<>());
-        
-        Jogo jogo = new Jogo(0,equipa1,equipa2,0,0,0,0);
-        
+lista.getLast().verJogadores();        
         Equipa e = new Equipa();
         e.adicionarjogador(new Jogador("Gusto",48,60,60,4,5,38,7,new ArrayList<String>()), 1);
         

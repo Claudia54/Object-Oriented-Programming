@@ -49,6 +49,14 @@ public class Equipa {
            this.jogadores.remove(numero);
           }
   }
+  
+  public void adicionarjogadorRandom(Jogador jogador){ //acresentei o numero assumindo q o numero é dado na identificacao
+    int numero = (int) Math.floor(Math.random()*(100)+1);
+    while (jogadores.containsKey(numero)) numero = (int) Math.floor(Math.random()*(100)+1);
+    this.jogadores.put(numero,jogador);
+    this.jogadores.get(numero).addHistorico(equipa);
+    
+    }
 
 
     public void adicionarjogador(Jogador jogador, int numero){ //acresentei o numero assumindo q o numero é dado na identificacao
