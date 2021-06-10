@@ -16,8 +16,13 @@ public class Equipa {
         this.jogadores  = new HashMap<>();
         this.equipa = "n/a";
     }
+    
+    public Equipa(String equipa) {
+        this.jogadores  = new HashMap<Integer, Jogador>();
+        this.equipa = equipa;
+    }
 
-    public Equipa(int habilidade, HashMap<Integer, Jogador> jogadores,String equipa) {
+    public Equipa(HashMap<Integer, Jogador> jogadores,String equipa) {
         this.jogadores  = jogadores;
         this.equipa = equipa;
     }

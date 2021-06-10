@@ -1,23 +1,30 @@
-/*
-public class Equipas {
-   List<Equipa> equipa ; 
+import java.util.ArrayList;
+import java.util.List;
 
-   public Equipa (){
-       this.equipa = new ArrayList<>();
+public class EquipaList {
+   private List<Equipa> list ; 
+
+   public EquipaList (){
+       this.list = new ArrayList<>();
    }
 
    public Equipa getLast(){
-       Equipa e = equipa.get(equipa.size()-1);
+       Equipa e = list.get(list.size()-1);
        return e;
    }
 
-   public String criaEquipa(String nome ){
-       Equipa nova = new Equipa<>();
+   public Equipa criaEquipa(String nome ){
+       Equipa nova = new Equipa();
        nova.setEquipa(nome);
-       this.equipa.add(nova);
+       this.list.add(nova);
        return nova;
    }
-  
+
+   public void addEquipa(String nome){
+    Equipa equipa = new Equipa(nome);
+    this.list.add(equipa);
+    
+    }
 
 }
-*/
+
