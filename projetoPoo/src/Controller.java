@@ -1,4 +1,3 @@
-/*
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
@@ -127,6 +126,8 @@ public class Controller {
            
             return guardaredes;
             
+            default:
+            return null;
         }
     }
 
@@ -146,6 +147,13 @@ public class Controller {
 
         view.printVar("Pretende Adicionar Jogadores? S ou N\n");
         String res = scan.nextLine();
+        if(res.equals("S")) 
+
+        else if(res.equals("N"))
+
+        else{
+            view.printOpErrada();
+        }
         //nao sei comparar strings desculpa gusto
         if (res = s){
             while (res != null)
@@ -171,4 +179,3 @@ public class Controller {
 
 
 }
-*/
