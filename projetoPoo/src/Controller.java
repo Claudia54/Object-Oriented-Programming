@@ -88,8 +88,7 @@ public class Controller {
             impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),drible);
             break;
             case 2:
-            
-            view.printVar ("Recuperacao de Bolas");
+            view.printVar ("Recuperação de Bolas");
             int recBol = scan.nextInt();
 
             Medio medio = new Medio(nome,velocidade,destreza,resistencia,
@@ -97,19 +96,46 @@ public class Controller {
 
             break;
             case 3:
-            Defesa defesa = new Defesa();
+            view.printVar ("Posicionamento");
+            int pos = scan.nextInt();
+
+            Defesa defesa = new Defesa(nome,velocidade,destreza,resistencia,
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),pos);
+
             break;
             case 4:
-            Lateral lateral = new Lateral();
+            view.printVar ("Cruzamento");
+            int cru = scan.nextInt();
+
+            Lateral lateral = new Lateral(nome,velocidade,destreza,resistencia,
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),cru);
+
             break;
             case 5:
-            GuardaRedes guardaredes = new GuardaRedes();
+            view.printVar ("Elasticidade");
+            int ela = scan.nextInt();
+
+            GuardaRedes guardaredes = new GuardaRedes(nome,velocidade,destreza,resistencia,
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),ela);
+           
             break;
         }
     }
 
-    public void addCarat(){
-        
-    }
+   
     
+    public void criarequipa(){
+        Scanner scan = new Scanner();
+        Equipa equipa = new Equipa();
+        String nome=scan.nextLine();
+        equipa.setEquipa(nome); 
+        while (scan.next()){
+            tipoJogador (); // falta pedir o numero do jogador;no intrep
+        equipa. menuInt();
+        }
+
+    }
+}
+
+
 }
