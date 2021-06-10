@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -119,7 +120,7 @@ public class Controller {
             impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),ela);
            
             return guardaredes;
-            break;
+            
         }
     }
 
@@ -128,19 +129,27 @@ public class Controller {
     public void criarequipa(){
         //menu equipa
         Scanner scan = new Scanner(System.in);
-        Equipa equipa = new Equipa();
 
+        Equipa equipa = new Equipa();
+        View view = new View();
+
+        view.printVar("Nome");
         String nome = scan.nextLine();
         
         equipa.setEquipa(nome); 
-        
+        // pretende adicionador jogadores?
+        // S se sim N se nao
+        // se sim fazer while se nao passa a frente
+
         while (scan.next() != null){
-            criarJogador (); // falta pedir o numero do jogador;no intrep
+            //pedir num do jogador
+            int num = scan.nextInt();
+            equipa.adicionarjogador(criarJogador(), num); 
         
         }
 
     }
-}
+
 
 
 }
