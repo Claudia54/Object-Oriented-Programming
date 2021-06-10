@@ -60,6 +60,7 @@ public class Programa {
     EquipaList listaEquipas = new EquipaList();
     
     int instruction=0;
+    int n;
     Loadlog log = new Loadlog();
     log.load(log.getFichDefaut(), listaEquipas, jogo);
     
@@ -82,8 +83,22 @@ public class Programa {
 
         
         case 1:
-        //Perguntar que tipo de jogador
+        // print das equipas por indice
 
+
+        view.queEquipaJog();
+
+        n = scan.nextInt();
+        scan.nextLine();
+
+        Equipa equipa =  listaEquipas.getEquipa(n);        
+
+        view.printVar("Numero do Jogador");
+        int num = scan.nextInt();
+        scan.nextLine();
+        if (!equipa.containsJogador(num)) equipa.adicionarjogador(controller.criarJogador(), num); 
+        else view.jogJaExiste();
+        
         break;
         case 2:
         
@@ -96,7 +111,7 @@ public class Programa {
             view.queEquipa();
             // print das equipas por indice
             
-            int n = scan.nextInt();
+            n = scan.nextInt();
             scan.nextLine();
 
             listaEquipas.consultarEquipa(n);

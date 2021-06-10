@@ -13,6 +13,11 @@ public class EquipaList {
        return e;
    }
 
+   public Equipa getEquipa(int n){
+    Equipa e = list.get(n);
+    return e;
+    }
+
    public Equipa criaEquipa(String nome ){
        Equipa nova = new Equipa();
        nova.setEquipa(nome);

@@ -98,6 +98,10 @@ public class View {
     public void queEquipa() {
         System.out.print("Indice da equipa que pretende consultar\n");
     }
+
+    public void queEquipaJog() {
+        System.out.print("Indice da equipa que pretende adicionar o jogador\n");
+    }
     
 }
 

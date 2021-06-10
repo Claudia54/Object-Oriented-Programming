@@ -1,5 +1,7 @@
 import java.lang.String;
+import java.util.List;
 import java.util.Random;
+import java.util.AbstractMap.SimpleEntry;
 
 public class Jogo{
 
@@ -11,6 +13,8 @@ public class Jogo{
     private int scoreEqFora;
     private int parteAtual;
     private int partes;
+    private List<SimpleEntry<Integer,Integer>> substituicoes;
+
 
     public Jogo(int time, EquipaJogo casa, EquipaJogo fora, int scoreEqCasa, int scoreEqFora, int parteAtual,
     int partes) {
@@ -72,6 +76,15 @@ public class Jogo{
     public void setParteAtual(int parteAtual) {
         this.parteAtual = parteAtual;
     }
+
+    public List<SimpleEntry<Integer, Integer>> getSubstituicoes() {
+        return substituicoes;
+    }
+
+    public void setSubstituicoes(List<SimpleEntry<Integer, Integer>> substituicoes) {
+        this.substituicoes = substituicoes;
+    }
+
 
     
     public String toString() {
@@ -150,8 +163,7 @@ public class Jogo{
         
         calculaParte();
       }
-
-
+// FAZER SUBSTITUICOES
       
       for(int i = 0; i < 9; i++){
         
