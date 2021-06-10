@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class EquipaList {
@@ -38,6 +39,17 @@ public class EquipaList {
     public int size() {
         return list.size();
     }
+
+    public void mostrarequipas(){
+    StringBuilder sb = new StringBuilder();
+    int i=0;
+    Iterator<Equipa> iterador = list.iterator();
+    while(iterador.hasNext()){
+      i++;
+       sb.append( i + "-"+iterador.getEquipa());
+    }
+    }
+    System.out.print(sb.toString());
 
 }
 
