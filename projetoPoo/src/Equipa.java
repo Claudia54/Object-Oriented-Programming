@@ -58,6 +58,9 @@ public class Equipa {
     
     }
 
+    public Boolean containsJogador(int numero){
+        return jogadores.containsKey(numero);
+    }
 
     public void adicionarjogador(Jogador jogador, int numero){ //acresentei o numero assumindo q o numero é dado na identificacao
         this.jogadores.put(numero,jogador);

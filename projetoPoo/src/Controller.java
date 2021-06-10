@@ -145,34 +145,24 @@ public class Controller {
         
         equipa.setEquipa(nome); 
 
-        view.printVar("Pretende Adicionar Jogadores? S ou N\n");
+        view.printVar("Pretende Adicionar Mais Jogadores? S ou N\n");
         String res = scan.nextLine();
-        if(res.equals("S")) 
-
-        else if(res.equals("N"))
-
-        else{
-            view.printOpErrada();
-        }
-        //nao sei comparar strings desculpa gusto
-        if (res = s){
-            while (res != null)
         
+        while (!res.equals("N")){
+            if(res.equals("S")) {
+
+                view.printVar("Numero do Jogador");
+                int num = scan.nextInt();
+                if (!equipa.containsJogador(num)) equipa.adicionarjogador(criarJogador(), num); 
+                else view.jogJaExiste();
+                
+            }else{
+                view.printOpErrada();
+            }
+            res = scan.nextLine();
         }
 
-        else 
-            break;
-
-        // pretende adicionador jogadores?
-        // S se sim N se nao
-        // se sim fazer while se nao passa a frente
-
-        while (scan.next() != null){
-            //pedir num do jogador
-            int num = scan.nextInt();
-            equipa.adicionarjogador(criarJogador(), num); 
         
-        }
 
     }
 

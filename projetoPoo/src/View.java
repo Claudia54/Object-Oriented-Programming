@@ -67,6 +67,14 @@ public class View {
 
     }
 
+    public void printOpErrada() {
+        System.out.println ("OPCAO ERRADA, Tente Novamente\n");
+    }
+
+    public void jogJaExiste() {
+    }
+
+
     
 }
 
