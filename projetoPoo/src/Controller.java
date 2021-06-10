@@ -167,7 +167,9 @@ public class Controller {
     }
 
     public int getInt() {
-        return 0;
+        Scanner scan = new Scanner(System.in);
+        int inte = scan.nextInt();
+        return inte;
     }
 
 

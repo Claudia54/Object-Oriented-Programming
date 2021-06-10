@@ -80,9 +80,11 @@ public class View {
     }
 
     public void escJogTitu() {
+        System.out.println("Escolha os Jogadores Titulares\n");
     }
 
     public void jogadorNaoExite() {
+        System.out.println("Esse jogador não existe, Escolha outro\n");
     }
 
 
