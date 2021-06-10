@@ -31,7 +31,7 @@ public class Programa {
     EquipaJogo equipa2 = new EquipaJogo(0,Estado.DEFESA,jogadores,new ArrayList<>());
     
     Jogo jogo = new Jogo(0,equipa1,equipa2,0,0,0,0);
-    
+    jogo.calcularResultadoJogo();
     Loadlog log = new Loadlog();
 
     //String[] s = new String();

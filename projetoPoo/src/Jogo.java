@@ -144,11 +144,19 @@ public class Jogo{
     
     public boolean calcularResultadoJogo (){
       
+      View view = new View();
       
-      for(int i = 0; i < 18; i++){
+      for(int i = 0; i < 9; i++){
+        
         calculaParte();
       }
+
+
       
+      for(int i = 0; i < 9; i++){
+        
+        calculaParte();
+      }
       
     return false;
     }

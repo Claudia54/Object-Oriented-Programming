@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Jogador{
+public abstract class Jogador{
     
     private String nome;
     private int velocidade;
@@ -129,14 +129,14 @@ public class Jogador{
     public void addHistorico(String equipa) {
         this.historico.add(equipa);
     }
-
+/*
     public Jogador clone(){
         Jogador jog = new Jogador(this);
     
         return jog;
     }
-
-
+*/
+    public abstract int calculaHabilidade();
     public boolean equals(Object obj){
 
         if(obj==this) return true;
