@@ -3,6 +3,11 @@ import java.util.List;
 public class GuardaRedes extends Jogador{
     private int elasticidade;
 
+    public  GuardaRedes(Jogador jogador,int elasticidade) {
+      super (jogador); 
+      this.elasticidade = elasticidade;
+    }
+
     public  GuardaRedes() {
       super (); 
       this.elasticidade = 0;

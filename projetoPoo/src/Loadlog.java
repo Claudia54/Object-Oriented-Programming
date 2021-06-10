@@ -21,7 +21,7 @@ public class Loadlog {
 
             try {
                 Files.lines(Paths.get(path))
-                        .forEach(fields -> parse(equipa,fields,jogador,jogo));
+                        .forEach(fields -> parse(equipa,fields,jogo));
                 return true;
             } catch (IOException e){
                 e.printStackTrace();
@@ -32,28 +32,32 @@ public class Loadlog {
 
        
         
-        public void parse (EquipaList equipaList, String s, Jogador jogador, Jogo jogo) {
+        public void parse (EquipaList equipaList, String s, Jogo jogo) {
 
-            String[] sDividida = s.split(":");  //.split(",");
+            String[] sDividida = s.split("[:,]+");  //.split(",");
                 if (sDividida[0].equals("Equipa")){
                     equipaList.addEquipa(sDividida[1]);  
-                }
-                //criar addjogador
-                else {
+                }else if(sDividida[0].equals("Jogo")){
+
+                }else{
+                    Jogador jogador = new Jogador(sDividida[1], //nome
+                                                    Integer.parseInt(sDividida[2]), //velocidade
+                                                    Integer.parseInt(sDividida[3]), // destreza
+                                                    Integer.parseInt(sDividida[4]),// res
+                                                    Integer.parseInt(sDividida[5]), //impulsao
+                                                    Integer.parseInt(sDividida[6]), //jogo de cabeça
+                                                    Integer.parseInt(sDividida[7]),//remate
+                                                    Integer.parseInt(sDividida[8]),// cap de passe  
+                                                    new ArrayList<>());
+                    
                     if (sDividida[0].equals("Guarda-Redes")){
-                        GuardaRedes guardaredes = new GuardaRedes(sDividida[1], //nome
-                                                                  Integer.parseInt(sDividida[2]), //velocidade
-                                                                  Integer.parseInt(sDividida[3]), // destreza
-                                                                  Integer.parseInt(sDividida[4]),// res
-                                                                  Integer.parseInt(sDividida[5]), //impulsao
-                                                                  Integer.parseInt(sDividida[6]), //jogo de cabeça
-                                                                  Integer.parseInt(sDividida[7]),//remate
-                                                                  Integer.parseInt(sDividida[8]),// cap de passe  
-                                                                  new ArrayList<>(),
-                                                                  Integer.parseInt(sDividida[9]));
-                        
-                        
-                         equipaList.getLast().adicionarjogador(guardaredes, 0);
+                        GuardaRedes guardaredes = new GuardaRedes(jogador , Integer.parseInt(sDividida[9]));
+                        equipaList.getLast().adicionarjogador(guardaredes, 0);
+                    
+                    }else if(sDividida[0].equals("Avancado")){
+                        Atacante atacante = new Atacante(jogador , Integer.parseInt(sDividida[9]));
+                        equipaList.getLast().adicionarjogador(atacante, 0);
+    
                     }
                     
 
