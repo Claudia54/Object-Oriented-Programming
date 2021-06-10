@@ -56,4 +56,23 @@ public class Lateral extends Jogador{
                                     this.getHabilidaDeCruz()* perCru);
 
     }
+
+
+    public String toString(){
+    
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("Lateral ");
+        sb.append("[Nome=")           .append(this.getNome());
+        sb.append(", Velocidade=")    .append(this.getVelocidade());
+        sb.append(", Destreza=")      .append(this.getDestreza());
+        sb.append(", Resistencia=")   .append(this.getResistencia());
+        sb.append(", Impulsão=")      .append(this.getImpulsao());
+        sb.append(", Jogo de cabeca=").append(this.getJogoDeCabeca());
+        sb.append(", Remate=")        .append(this.getRemate());
+        sb.append(", Cap. de Passe=") .append(this.getCapDePasse());
+        sb.append(", Cruzamento=")    .append(this.getHabilidaDeCruz());
+        sb.append(", Histórico=")     .append(this.getHistorico()).append("]\n");
+        return sb.toString();
+    }
 }

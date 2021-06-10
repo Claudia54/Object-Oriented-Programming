@@ -76,7 +76,7 @@ public class GuardaRedes extends Jogador{
       double perJdc = 0.05;
       double perRem = 0.05;
       double perCdp = 0.15;
-      double perEle = 0.25;
+      double perEla = 0.25;
 
       return  (int) Math.round(   this.getVelocidade()    * perVel +
                                   this.getDestreza()      * perDes +
@@ -85,9 +85,27 @@ public class GuardaRedes extends Jogador{
                                   this.getJogoDeCabeca()  * perJdc +
                                   this.getRemate()        * perRem +
                                   this.getCapDePasse()    * perCdp +
-                                  this.getElasticidade()  * perEle);
+                                  this.getElasticidade()  * perEla);
 
   }  
+
+  public String toString(){
+    
+    StringBuilder sb = new StringBuilder();
+    
+    sb.append("GuardaRedes");
+    sb.append("[Nome=")           .append(this.getNome());
+    sb.append(", Velocidade=")    .append(this.getVelocidade());
+    sb.append(", Destreza=")      .append(this.getDestreza());
+    sb.append(", Resistencia=")   .append(this.getResistencia());
+    sb.append(", Impulsão=")      .append(this.getImpulsao());
+    sb.append(", Jogo de cabeca=").append(this.getJogoDeCabeca());
+    sb.append(", Remate=")        .append(this.getRemate());
+    sb.append(", Cap. de Passe=") .append(this.getCapDePasse());
+    sb.append(", Elasticidade=")  .append(this.getElasticidade());
+    sb.append(", Histórico=")     .append(this.getHistorico()).append("]\n");
+    return sb.toString();
+}
 
   }
 

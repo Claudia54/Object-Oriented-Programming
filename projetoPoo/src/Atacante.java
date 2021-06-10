@@ -65,16 +65,16 @@ public class Atacante extends Jogador{
         StringBuilder sb = new StringBuilder();
         
         sb.append("Atacante ");
-        sb.append("[Nome=").append(this.getNome());
-        sb.append(", Velocidade=").append(this.getVelocidade());
-        sb.append(", Destreza=").append(this.destreza);
-        sb.append(", Resistencia=").append(this.resistencia);
-        sb.append(", Impulsao=").append(this.impulsao);
-        sb.append(", Jogo de cabeca=").append(this.jogoDeCabeca);
-        sb.append(", Remate=").append(this.remate);
-        sb.append(", Cap. de Passe=").append(this.capDePasse);
-        sb.append(", Historico=").append(this.historico).append("]\n");
-        sb.append(", Cap. de Passe=").append(this.capDePasse);
+        sb.append("[Nome=")           .append(this.getNome());
+        sb.append(", Velocidade=")    .append(this.getVelocidade());
+        sb.append(", Destreza=")      .append(this.getDestreza());
+        sb.append(", Resistencia=")   .append(this.getResistencia());
+        sb.append(", Impulsão=")      .append(this.getImpulsao());
+        sb.append(", Jogo de cabeca=").append(this.getJogoDeCabeca());
+        sb.append(", Remate=")        .append(this.getRemate());
+        sb.append(", Cap. de Passe=") .append(this.getCapDePasse());
+        sb.append(", Drible=")        .append(this.getDrible());
+        sb.append(", Histórico=")     .append(this.getHistorico()).append("]\n");
         return sb.toString();
     }
 }

@@ -58,6 +58,22 @@ public class Medio extends Jogador{
 
     }
     
+    public String toString(){
     
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("Medio ");
+        sb.append("[Nome=")                .append(this.getNome());
+        sb.append(", Velocidade=")         .append(this.getVelocidade());
+        sb.append(", Destreza=")           .append(this.getDestreza());
+        sb.append(", Resistencia=")        .append(this.getResistencia());
+        sb.append(", Impulsão=")           .append(this.getImpulsao());
+        sb.append(", Jogo de cabeca=")     .append(this.getJogoDeCabeca());
+        sb.append(", Remate=")             .append(this.getRemate());
+        sb.append(", Cap. de Passe=")      .append(this.getCapDePasse());
+        sb.append(", Recuperacao de Bola=").append(this.getRecBola());
+        sb.append(", Histórico=")          .append(this.getHistorico()).append("]\n");
+        return sb.toString();
+    }
 
 }
