@@ -63,7 +63,7 @@ public class View {
         sb.append ("Qual o nome da sua Equipa?\n");
         sb.append ("Pretende adicionar jogadores?\n");
         sb.append ("Qual o nº de Jogadores?\n");
-        sb.append ("Para parar a criação de equipa, insira quit \n");
+        
 
     }
 

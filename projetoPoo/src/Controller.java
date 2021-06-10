@@ -86,9 +86,11 @@ public class Controller {
             view.printVar ("Drible");
             int drible = scan.nextInt();
 
-            Atacante avancado = new Atacante (nome,velocidade,destreza,resistencia,
+            Atacante atacante = new Atacante (nome,velocidade,destreza,resistencia,
             impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),drible);
-            break;
+            
+            return atacante;
+
             case 2:
             view.printVar ("Recuperação de Bolas");
             int recBol = scan.nextInt();
@@ -96,7 +98,8 @@ public class Controller {
             Medio medio = new Medio(nome,velocidade,destreza,resistencia,
             impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),recBol);
 
-            break;
+            return medio;
+
             case 3:
             view.printVar ("Posicionamento");
             int pos = scan.nextInt();
@@ -104,7 +107,8 @@ public class Controller {
             Defesa defesa = new Defesa(nome,velocidade,destreza,resistencia,
             impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),pos);
 
-            break;
+            return defesa;
+
             case 4:
             view.printVar ("Cruzamento");
             int cru = scan.nextInt();
@@ -112,7 +116,8 @@ public class Controller {
             Lateral lateral = new Lateral(nome,velocidade,destreza,resistencia,
             impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),cru);
 
-            break;
+            return lateral;
+
             case 5:
             view.printVar ("Elasticidade");
             int ela = scan.nextInt();
@@ -138,6 +143,18 @@ public class Controller {
         String nome = scan.nextLine();
         
         equipa.setEquipa(nome); 
+
+        view.printVar("Pretende Adicionar Jogadores? S ou N\n");
+        String res = scan.nextLine();
+        //nao sei comparar strings desculpa gusto
+        if (res = s){
+            while (res != null)
+        
+        }
+
+        else 
+            break;
+
         // pretende adicionador jogadores?
         // S se sim N se nao
         // se sim fazer while se nao passa a frente
