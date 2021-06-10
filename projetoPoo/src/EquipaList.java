@@ -44,11 +44,10 @@ public class EquipaList {
 
     public void mostrarequipas(){
     StringBuilder sb = new StringBuilder();
-    int i=0;
-    Iterator<Equipa> iterador = list.iterator();
-    while(iterador.hasNext()){
-      i++;
-       sb.append( i + "-" + iterador.getEquipa());
+    int aux=0;
+    for(Equipa i : list) {
+      aux++;
+       sb.append( aux + "-" + i.getEquipa());
     }
     System.out.println(sb.toString());
 
