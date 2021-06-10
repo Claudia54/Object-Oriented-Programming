@@ -76,8 +76,8 @@ public class Equipa {
         View view = new View();
         Controller controller = new Controller();
         this.verJogadores();
-        ArrayList jogEmCampo = new ArrayList<>();
-        ArrayList suplentes = new ArrayList<>();
+        ArrayList<Jogador> jogEmCampo = new ArrayList<>();
+        ArrayList<Jogador> suplentes = new ArrayList<>();
 
         view.escJogTitu();
 
@@ -102,7 +102,7 @@ public class Equipa {
         EquipaJogo eJogo = new EquipaJogo(0, Estado.NEUTRO, jogEmCampo, suplentes);
         
 
-        return null;
+        return eJogo;
     }
    
     public void verJogadores(){

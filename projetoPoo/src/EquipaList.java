@@ -20,10 +20,14 @@ public class EquipaList {
        return nova;
    }
 
-   public void addEquipa(String nome){
-    Equipa equipa = new Equipa(nome);
-    this.list.add(equipa);
-    
+   public void addEquipa(Equipa equ){
+    this.list.add(equ);
+    }
+
+    public void consultarEquipa(int n) {
+
+        list.get(n).verJogadores();
+        
     }
 
 }

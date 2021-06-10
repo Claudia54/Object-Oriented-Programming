@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Scanner ;
 
 public class Programa {
@@ -16,7 +17,7 @@ public class Programa {
 --------------------------
         Atacante ata = (Atacante) map.get(10);
         System.out.println(ata.getDrible());
-*/
+
     View view = new View();
 
     view.bola();
@@ -42,7 +43,46 @@ public class Programa {
     Controller cont = new Controller();      
     Equipa equi = cont.criarEquipa();
     equi.verJogadores();
+    */
+
+    Scanner scan = new Scanner(System.in);
+    View view = new View();
+    Controller controller = new Controller();
+    EquipaList listaEquipas = new EquipaList();
     
+    int instruction;
+
+        try{
+            instruction = scan.nextInt();
+            scan.nextLine();
+        }
+        catch (InputMismatchException e) {
+            instruction = -1;
+            view.notAnInstruction();
+        }
+
+    
+    switch (instruction){
+        case 1:
+        //Perguntar que tipo de jogador
+
+        break;
+        case 2:
+        
+        listaEquipas.addEquipa( controller.criarEquipa());
+        
+        break;
+        case 3:
+        break;
+        case 4:
+            view.queEquipa();
+            // print das equipas por indice
+            int n = controller.getInt();
+            listaEquipas.consultarEquipa(n);
+        break;
+        case 5:
+        break;
+    }
     }
 
 

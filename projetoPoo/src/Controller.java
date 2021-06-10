@@ -4,42 +4,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Controller {
-    public void notAnInstruction(){
-        System.out.print("Esta instruçao nao esta definida!\n");
-    }
-   
-    public void menu (){
-        Scanner scan = new Scanner(System.in);
-        int instruction;
-
-        try{
-            instruction = scan.nextInt();
-            scan.nextLine();
-        }
-        catch (InputMismatchException e) {
-            instruction = -1;
-            notAnInstruction();
-        }
-
     
-    switch (instruction){
-        case 1:
-        //Perguntar que tipo de jogador
-
-        break;
-        case 2:
-        
-        this.criarEquipa();
-        
-        break;
-        case 3:
-        break;
-        case 4:
-        break;
-        case 5:
-        break;
-    }
-    }
+   
+    
 
 
     public Jogador criarJogador(){
@@ -55,7 +22,7 @@ public class Controller {
         }
         catch (InputMismatchException e) {
             instruction = -1;
-            notAnInstruction();
+            view.notAnInstruction();
         }
 
         view.printVar ("Nome");
@@ -163,7 +130,7 @@ public class Controller {
                 view.printOpErrada();
             }
         }
-
+        scan.close();
         return equipa;
         
 
@@ -172,8 +139,12 @@ public class Controller {
     public int getInt() {
         Scanner scan = new Scanner(System.in);
         int inte = scan.nextInt();
+        scan.close();
         return inte;
     }
+
+
+    
 
 
 

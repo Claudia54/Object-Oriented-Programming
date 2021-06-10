@@ -87,7 +87,17 @@ public class View {
         System.out.println("Esse jogador não existe, Escolha outro\n");
     }
 
+    public void escJogSup() {
+        System.out.println("Escolha os Jogadores Suplentes\n");
+    }
 
+    public void notAnInstruction(){
+        System.out.print("Esta instruçao nao esta definida!\n");
+    }
+
+    public void queEquipa() {
+        System.out.print("Indice da equipa que pretende consultar\n");
+    }
     
 }
 
