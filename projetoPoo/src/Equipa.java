@@ -83,17 +83,19 @@ public class Equipa {
 
         while(jogEmCampo.size()!=12){
         
-            view.printVar("digite o numero da camisola do Jogador");
+            view.printVar("Digite o numero da camisola do Jogador");
             int num = controller.getInt();
-            if(this.containsJogador(num)) jogEmCampo.add( jogadores.get(num));
+            if(this.containsJogador(num) && (!jogEmCampo.contains(jogadores.get(num)))) jogEmCampo.add( jogadores.get(num));
             else view.jogadorNaoExite();
         } 
         
+        view.escJogSup();
+
         while(suplentes.size()!=7){
         
-            view.printVar("digite o numero da camisola do Jogador");
+            view.printVar("Digite o numero da camisola do Jogador");
             int num = controller.getInt();
-            if(this.containsJogador(num)) jogEmCampo.add( jogadores.get(num));
+            if(this.containsJogador(num) && (!suplentes.contains(jogadores.get(num)))) suplentes.add( jogadores.get(num));
             else view.jogadorNaoExite();
         }
 

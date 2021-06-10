@@ -4,12 +4,12 @@ public class View {
         StringBuilder sb = new StringBuilder ( );
         sb.append("\n---------------------------------------------------------\n\t\t\t  ");
         sb.append("Menu \n---------------------------------------------------------\n");
-        sb.append("0)- Criar Jogador\n");
-        sb.append("1)- Criar Equipa\n");
-        sb.append("2)- Consultar Jogador\n");
-        sb.append("3)- Consultar Equipa\n");
-        sb.append("4)- Mudar Jogador De Equipa\n");
-        sb.append("5)- Realizar Jogo\n\n");
+        sb.append("1)- Criar Jogador\n");
+        sb.append("2)- Criar Equipa\n");
+        sb.append("3)- Consultar Jogador\n");
+        sb.append("4)- Consultar Equipa\n");
+        sb.append("5)- Mudar Jogador De Equipa\n");
+        sb.append("6)- Realizar Jogo\n\n");
 
             System.out.print(sb.toString());
          
