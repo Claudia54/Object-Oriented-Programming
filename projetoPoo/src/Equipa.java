@@ -106,12 +106,8 @@ public class Equipa {
     }
    
     public void verJogadores(){
-        //aplicar a tostring a lista de jogadores
-
-        System.out.println( this.jogadores.values());
+       jogadores.values().toString();
+        }
         
     }
-
-
-
 }
