@@ -77,7 +77,10 @@ public class Equipa {
         Controller controller = new Controller();
         this.verJogadores();
         ArrayList jogEmCampo = new ArrayList<>();
+        ArrayList suplentes = new ArrayList<>();
+
         view.escJogTitu();
+
         while(jogEmCampo.size()!=12){
         
             view.printVar("digite o numero da camisola do Jogador");
@@ -86,7 +89,14 @@ public class Equipa {
             else view.jogadorNaoExite();
         } 
         
-        ArrayList suplentes = new ArrayList<>();
+        while(suplentes.size()!=7){
+        
+            view.printVar("digite o numero da camisola do Jogador");
+            int num = controller.getInt();
+            if(this.containsJogador(num)) jogEmCampo.add( jogadores.get(num));
+            else view.jogadorNaoExite();
+        }
+
         EquipaJogo eJogo = new EquipaJogo(0, Estado.NEUTRO, jogEmCampo, suplentes);
         
 
