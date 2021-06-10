@@ -8,7 +8,7 @@ public class Controller {
         System.out.print("Esta instruçao nao esta definida!\n");
     }
    
-    public void menuInt (){
+    public void menu (){
         Scanner scan = new Scanner(System.in);
         int instruction;
 
@@ -28,6 +28,9 @@ public class Controller {
 
         break;
         case 2:
+        
+        this.criarEquipa();
+        
         break;
         case 3:
         break;
