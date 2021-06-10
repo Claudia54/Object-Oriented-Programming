@@ -27,7 +27,7 @@ public class EquipaList {
     public void consultarEquipa(int n) {
 
         Equipa e = list.get(n);
-        System.out.println( e.toString());
+        e.verJogadores();
     }
 
     public int size() {

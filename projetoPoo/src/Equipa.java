@@ -122,10 +122,18 @@ public class Equipa {
         
 =======
     public void verJogadores( ){
+<<<<<<< HEAD
     for ( Integer i : jogadores.keySet()){
         System.out.print("Número de camisola : "+ i );
         jogadores.get(i).toString();
      }
         }     
 >>>>>>> c55ed60... aa
+=======
+        for ( Integer i : jogadores.keySet()){
+            System.out.print("Número de camisola : " + i + "\n" + jogadores.get(i).toString() + "\n" );
+
+         }
+    }     
+>>>>>>> 81d0d80... Print jogadores
     }
