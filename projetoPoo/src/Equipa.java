@@ -104,9 +104,28 @@ public class Equipa {
 
         return eJogo;
     }
+
+    private String nome;
+    private int velocidade;
+    private int destreza;
+    private int resistencia;
+    private int impulsao;
+    private int jogoDeCabeca;
+    private int remate;
+    private int capDePasse;
+    private List<String> historico;
    
+<<<<<<< HEAD
     public void verJogadores(){
        jogadores.values().toString();
     }
         
+=======
+    public void verJogadores( ){
+    for ( Integer i : jogadores.keySet()){
+        System.out.print("Número de camisola : "+ i );
+        jogadores.get(i).toString();
+     }
+        }     
+>>>>>>> c55ed60... aa
     }
