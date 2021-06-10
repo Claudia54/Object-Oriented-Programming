@@ -79,6 +79,12 @@ public class View {
        System.out.println("\033[H\033[2J"); 
     }
 
+    public void escJogTitu() {
+    }
+
+    public void jogadorNaoExite() {
+    }
+
 
     
 }

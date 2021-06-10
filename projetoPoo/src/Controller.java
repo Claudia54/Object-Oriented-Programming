@@ -166,6 +166,10 @@ public class Controller {
 
     }
 
+    public int getInt() {
+        return 0;
+    }
+
 
 
 }
