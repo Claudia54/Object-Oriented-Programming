@@ -48,7 +48,7 @@ public class Controller {
 
         try{
             instruction = scan.nextInt();
-            //e preciso? scan.nextLine();
+            scan.nextLine();
         }
         catch (InputMismatchException e) {
             instruction = -1;
@@ -87,7 +87,7 @@ public class Controller {
 
             Atacante atacante = new Atacante (nome,velocidade,destreza,resistencia,
             impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),drible);
-            
+
             return atacante;
 
             case 2:
@@ -122,8 +122,8 @@ public class Controller {
             int ela = scan.nextInt();
 
             GuardaRedes guardaredes = new GuardaRedes(nome,velocidade,destreza,resistencia,
-            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),ela);
-           
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),ela);            
+
             return guardaredes;
             
             default:
@@ -133,7 +133,7 @@ public class Controller {
 
    
     
-    public void criarequipa(){
+    public Equipa criarEquipa(){
         //menu equipa
         Scanner scan = new Scanner(System.in);
 
@@ -145,23 +145,26 @@ public class Controller {
         
         equipa.setEquipa(nome); 
 
-        view.printVar("Pretende Adicionar Mais Jogadores? S ou N\n");
-        String res = scan.nextLine();
-        
+        String res = new String();
         while (!res.equals("N")){
+            
+        view.printVar("Pretende Adicionar Mais Jogadores? S ou N");
+        res = scan.nextLine();
             if(res.equals("S")) {
 
                 view.printVar("Numero do Jogador");
                 int num = scan.nextInt();
+                scan.nextLine();
                 if (!equipa.containsJogador(num)) equipa.adicionarjogador(criarJogador(), num); 
                 else view.jogJaExiste();
                 
-            }else{
+            }else if (res.equals("N")){}
+            else{
                 view.printOpErrada();
             }
-            res = scan.nextLine();
         }
 
+        return equipa;
         
 
     }

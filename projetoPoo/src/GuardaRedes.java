@@ -52,22 +52,7 @@ public class GuardaRedes extends Jogador{
     return new GuardaRedes(this);
   }
 
-  public String toString (){
-    StringBuilder sb = new StringBuilder();
-
-    sb.append("Guarda redes -> ");
-    sb.append("Velocidade: ").append(this.getVelocidade()).append(";");
-    sb.append("Destreza: ").append(this.getDestreza()).append(";");
-    sb.append("Resistencia: ").append(this.getResistencia()).append(";");
-    sb.append("Impulsao: ").append(this.getImpulsao()).append(";");
-    sb.append("Jogo de cabeca: ").append(this.getJogoDeCabeca()).append(";");
-    sb.append("Remate: ").append(this.getRemate()).append(";");
-    sb.append("Cap. de Passe: ").append(this.getCapDePasse()).append("\n");
-    sb.append("Elasticidade: ").append(this.elasticidade).append("\n");
-
-    return sb.toString();
-
-    } 
+  
     public int calculaHabilidade(){
       double perVel = 0.05;
       double perDes = 0.15;

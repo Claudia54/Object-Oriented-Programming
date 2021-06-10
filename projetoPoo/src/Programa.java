@@ -21,7 +21,7 @@ public class Programa {
 
     view.bola();
     view.menu();
-
+    view.clearScreen();
     ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
     jogadores.add(new Atacante("Gusto",52,80,70,4,5,28,7,new ArrayList<String>(),10));
     jogadores.add(new Jogador("Gusto",48,26,39,4,5,100,7,new ArrayList<String>()));
@@ -34,19 +34,14 @@ public class Programa {
     
     Loadlog log = new Loadlog();
 
-    log.StreamLoader();
     //String[] s = new String();
     EquipaList lista = new EquipaList();
     log.load(log.getFichDefaut(), lista, jogo);
 
-lista.getLast().verJogadores();        
-        Equipa e = new Equipa();
-        e.adicionarjogador(new Jogador("Gusto",48,60,60,4,5,38,7,new ArrayList<String>()), 1);
-        
-        //jogo.calcularResultadoJogo();
-
-        e.verJogadores();
-
+    lista.getLast().verJogadores();  
+    Controller cont = new Controller();      
+    Equipa equi = cont.criarEquipa();
+    equi.verJogadores();
     
     }
 

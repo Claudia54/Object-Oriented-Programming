@@ -7,20 +7,11 @@ import java.util.ArrayList;
 import java.util.stream.Stream;
 
 public class Loadlog {
-
-        private String[] ficheirosDef;
         
-        public void StreamLoader (){
-            this.ficheirosDef = new String[1];
-            this.ficheirosDef[0] ="log2.txt";
-        }
-        
-        public boolean load(String paths[],EquipaList equipa, Jogo jogo){
-            String path;
-            path = paths[0];
+        public boolean load(String path,EquipaList equipa, Jogo jogo){
 
             try {
-                Files.lines(Paths.get("/home/gusto/Desktop/POO/projetoPoo/out/log2.txt"))
+                Files.lines(Paths.get(path))
                         .forEach(fields -> parse(equipa,fields,jogo));
                 return true;
             } catch (IOException e){
@@ -77,9 +68,9 @@ public class Loadlog {
             }
         }
 
-        public String[] getFichDefaut() {
-            String[] ficheirosDefault = new String[1];
-            ficheirosDefault[0] ="log2.txt";
+        public String getFichDefaut() {
+            String ficheirosDefault = new String();
+            ficheirosDefault ="log2.txt";
             return ficheirosDefault;
             }
 

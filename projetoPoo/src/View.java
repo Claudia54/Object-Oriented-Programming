@@ -72,6 +72,11 @@ public class View {
     }
 
     public void jogJaExiste() {
+        System.out.println ("JOGADOR COM ESSE NUMERO JA EXISTE, Tente Novamente\n");
+    }
+
+    public void clearScreen(){
+       System.out.println("\033[H\033[2J"); 
     }
 
 
