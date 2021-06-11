@@ -43,6 +43,7 @@ public class EquipaList {
         return list.size();
     }
 
+    // so o nome de tds as equipas 
     public void mostrarEquipas(){
     StringBuilder sb = new StringBuilder();
     int aux=0;
@@ -54,6 +55,7 @@ public class EquipaList {
 
     }
 
+    // dado o nome do jogador diz td sobre ele 
     public Jogador consultajogador (String nome) {
         View view = new View ();
         Jogador f = null ;

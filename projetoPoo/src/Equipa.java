@@ -104,6 +104,7 @@ public class Equipa {
 
         return eJogo;
     }
+<<<<<<< HEAD
 
     private String nome;
     private int velocidade;
@@ -121,6 +122,9 @@ public class Equipa {
     }
         
 =======
+=======
+ // mostra os jogadores da equipa ;
+>>>>>>> a0edccd... ..
     public void verJogadores( ){
 <<<<<<< HEAD
     for ( Integer i : jogadores.keySet()){
@@ -134,6 +138,15 @@ public class Equipa {
             System.out.print("Número de camisola : " + i + "\n" + jogadores.get(i).toString() + "\n" );
 
          }
+<<<<<<< HEAD
     }     
 >>>>>>> 81d0d80... Print jogadores
+=======
+>>>>>>> a0edccd... ..
     }
+
+    public Jogador getJogador (int num) {
+      return jogadores.get(num);
+
+    }
+}
