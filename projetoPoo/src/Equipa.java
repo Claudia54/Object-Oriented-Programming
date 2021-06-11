@@ -53,6 +53,21 @@ public class Equipa {
            this.jogadores.remove(numero);
           }
   }
+
+  // vai devolver o numero do jogador pois e util numa funcao
+  public  Integer removerjogador (String nome){ 
+      int key =-1;
+    for (Map.Entry<Integer,Jogador> i : jogadores.entrySet()){
+       if ( i.getValue().getNome().equals(nome)){
+           jogadores.remove(i.getKey(), i.getValue());
+           key= i.getKey();
+       
+      }
+    }
+    return key;
+}
+
+
   
   public void adicionarjogadorRandom(Jogador jogador){ //acresentei o numero assumindo q o numero é dado na identificacao
     int numero = (int) Math.floor(Math.random()*(100)+1);

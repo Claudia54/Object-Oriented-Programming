@@ -96,10 +96,12 @@ public class EquipaList {
     }
 
     public void mudaJogador(Jogador jogador , Equipa novEquipa){
-        Equipa equipa = new Equipa();
-        
+        int i;
+        i= verEquipa(jogador.getNome()).removerjogador(jogador.getNome());
+        if (i>=0){
+        novEquipa.adicionarjogador(jogador, i);
 
-
+        }
     }
 
  
