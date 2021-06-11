@@ -1,6 +1,8 @@
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map.Entry;
 
 
 public class EquipaList {
@@ -51,7 +53,28 @@ public class EquipaList {
     System.out.println(sb.toString());
 
     }
-    
-    
+
+    public Jogador consultajogador (String nome) {
+        View view = new View ();
+        Jogador f = null ;
+    try{
+    for (Equipa aux :list ){
+        for (Jogador i : aux.getJogadores().values()){
+             if (i.getNome().equals(nome)){
+                  f= i;
+                }
+        
+            }
+        }
+    }
+    catch (InputMismatchException e) {
+       view.notAnInstruction();
+        }
+    return f ;
+    }
+
+ 
+
+
 }
 
