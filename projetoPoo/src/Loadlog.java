@@ -25,23 +25,24 @@ public class Loadlog {
 
        
         
-        public void parse (EquipaList equipaList, String s, Jogo jogo) {
+        public void parse (EquipaList equipaList, String s, JogoList jogoList) {
 
             String[] sDividida = s.split("[:,->]+");  //.split(",");
                 if (sDividida[0].equals("Equipa")){
                     equipaList.criaEquipa(sDividida[1]);  
                 }else if(sDividida[0].equals("Jogo")){
-                //Sporting Club Chopin,
-                //Sporting Club Schubert,
-                //4,
-                //0,
-                //2021
+                //Sporting Club Chopin,     1
+                //Sporting Club Schubert,   2
+                //4,                        3 
+                //0,                        4
+                //2021                      5
                 //-03
                 //-28,
                 //20,42,8,44,16,25,4,26,50,35,37,
                 //44->40,20->47,42->38,
                 //36,23,1,48,16,50,15,11,17,22,39,
                 //17->5,39->30,30->43
+                equipaList.consultarEquipa(n);
                 ArrayList<Jogador> titularesCasa = new ArrayList<>();
                 ArrayList<Jogador> titularesFora = new ArrayList<>();
 
@@ -56,7 +57,14 @@ public class Loadlog {
                                                                     Estado.NEUTRO, 
                                                                     titularesFora, 
                                                                     suplentesFora);
-                Jogo jogo = new Jogo(LocalDate.of(year, month, dayOfMonth));
+                Jogo jogo = new Jogo(LocalDate.of(Integer.parseInt( sDividida[5]), 
+                                                  Integer.parseInt( sDividida[6]), 
+                                                  Integer.parseInt( sDividida[7])),
+                                                  casa,
+                                                  fora,
+                                                  3,
+                                                  3);
+                jogoList.addJogo(jogo);
                 }else{
                     Jogador jogador = new Jogador(sDividida[1], //nome
                                                     Integer.parseInt(sDividida[3]), //velocidade

@@ -1,4 +1,5 @@
 import java.lang.String;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Random;
 import java.util.AbstractMap.SimpleEntry;
@@ -6,47 +7,40 @@ import java.util.AbstractMap.SimpleEntry;
 public class Jogo{
 
     
-    private int time;
+    private LocalDate time;
     private EquipaJogo casa;
     private EquipaJogo fora;
     private int substCasa;
     private int substFora;
-    private int parteAtual;
-    private int partes;
     private List<SimpleEntry<Integer,Integer>> substituicoes;
 
 
-    public Jogo(int time, EquipaJogo casa, EquipaJogo fora, int substCasa, int substFora, int parteAtual,
-    int partes) {
+    public Jogo(LocalDate time, EquipaJogo casa, EquipaJogo fora, int substCasa, int substFora) {
 
         this.time = time;
         this.casa = casa;
         this.fora = fora;
         this.substCasa = substCasa;
         this.substFora = substFora;
-        this.parteAtual = parteAtual;
-        this.partes = partes;
 }
 
     public Jogo() {
-        this.time     = 0;
+        this.time     = LocalDate.now();
         this.substCasa = 0;
         this.substFora = 0;
-        this.partes   = 18;
     }
 
-    public Jogo(int time, int substCasa, int substFora) {
+    public Jogo(LocalDate time, int substCasa, int substFora) {
         this.time     = time;
         this.substCasa = substCasa;
         this.substFora = substFora;
-        this.partes   = 18;
     }
 
 
-    public int getTime() {
+    public LocalDate getTime() {
         return time;
     }
-    public void setTime(int time) {
+    public void setTime(LocalDate time) {
         this.time = time;
     }
     public int setSubstCasa() {
@@ -62,21 +56,7 @@ public class Jogo{
     public void setSubstFora(int substFora) {
         this.substFora = substFora;
     }
-    public int getPartes() {
-        return partes;
-    }
-
-    public void setPartes(int partes) {
-        this.partes = partes;
-    }
-    public int getParteAtual() {
-        return parteAtual;
-    }
-
-    public void setParteAtual(int parteAtual) {
-        this.parteAtual = parteAtual;
-    }
-
+    
     public List<SimpleEntry<Integer, Integer>> getSubstituicoes() {
         return substituicoes;
     }
@@ -149,10 +129,6 @@ public class Jogo{
             }
         }
         
-        setTime(this.getTime()+5);
-
-        System.out.println(time + " min");
-        setParteAtual(this.getParteAtual()+1);
     }
     
     public boolean calcularResultadoJogo (){
