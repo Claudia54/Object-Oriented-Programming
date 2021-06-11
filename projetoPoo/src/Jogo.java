@@ -12,8 +12,11 @@ public class Jogo{
     private EquipaJogo fora;
     private int substCasa;
     private int substFora;
-    private List<SimpleEntry<Integer,Integer>> substituicoes;
+    private List<SimpleEntry<Integer,Integer>> substituicoesCasa;
+    private List<SimpleEntry<Integer,Integer>> substituicoesFora;
 
+
+    
 
     public Jogo(LocalDate time, EquipaJogo casa, EquipaJogo fora, int substCasa, int substFora) {
 
@@ -57,14 +60,21 @@ public class Jogo{
         this.substFora = substFora;
     }
     
-    public List<SimpleEntry<Integer, Integer>> getSubstituicoes() {
-        return substituicoes;
+    public List<SimpleEntry<Integer, Integer>> getSubstituicoesCasa() {
+        return substituicoesCasa;
     }
 
-    public void setSubstituicoes(List<SimpleEntry<Integer, Integer>> substituicoes) {
-        this.substituicoes = substituicoes;
+    public void setSubstituicoesCasa(List<SimpleEntry<Integer, Integer>> substituicoesCasa) {
+        this.substituicoesCasa = substituicoesCasa;
     }
 
+    public List<SimpleEntry<Integer, Integer>> getSubstituicoesFora() {
+        return substituicoesFora;
+    }
+
+    public void setSubstituicoesFora(List<SimpleEntry<Integer, Integer>> substituicoesFora) {
+        this.substituicoesFora = substituicoesFora;
+    }
 
     
     public String toString() {
@@ -134,23 +144,36 @@ public class Jogo{
     public boolean calcularResultadoJogo (){
       
       View view = new View();
-      
+      casa.setEstado(Estado.ATAQUE);
+      fora.setEstado(Estado.DEFESA);
+
       for(int i = 0; i < 9; i++){
         
         calculaParte();
 
-        if (casa.substituicao() && (substCasa<3)) casa.substituir();setSubstCasa(setSubstCasa()+1);
-        if (fora.substituicao() && (substFora<3)) fora.substituir();setSubstFora(setSubstFora()+1);
+        if (casa.substituicao() && (substCasa<3)){
+            substituicoesCasa.add( casa.substituir());
+            setSubstCasa(setSubstCasa()+1);
+        } 
+        if (fora.substituicao() && (substFora<3)){
+            substituicoesCasa.add( fora.substituir());
+            setSubstFora(setSubstFora()+1);
+        } 
     }
       
       view.listTitulares(casa);
-      // FAZER SUBSTITUICOES
       
       for(int i = 0; i < 9; i++){
         
         calculaParte();
-        if (casa.substituicao() && (substCasa>3)) casa.substituir();
-        if (fora.substituicao() && (substFora>3)) fora.substituir();
+        if (casa.substituicao() && (substCasa>3)){
+            substituicoesCasa.add( casa.substituir());
+            setSubstCasa(setSubstCasa()+1);
+           } 
+        if (fora.substituicao() && (substFora>3)){
+            substituicoesFora.add( fora.substituir());
+            setSubstFora(setSubstFora()+1);
+        } 
     }
         view.listTitulares(casa);
 

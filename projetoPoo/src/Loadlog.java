@@ -29,10 +29,10 @@ public class Loadlog {
             
             String[] sDividida = s.split("[:,[->]]+");  //.split(",");
                 if (sDividida[0].equals("Equipa")){
-                    System.out.println("EQUIPA"); 
+                    //System.out.println("EQUIPA"); 
                     equipaList.criaEquipa(sDividida[1]);  
                 }else if(sDividida[0].equals("Jogo")){
-                    System.out.println("JOGO"); 
+                    //System.out.println("JOGO"); 
                 //Sporting Club Chopin,     1
                 //Sporting Club Schubert,   2
                 //4,                        3 
@@ -88,7 +88,7 @@ public class Loadlog {
                                                 
                 jogoList.addJogo(jogo);
                 }else{
-                    System.out.println("jOGADOR"); 
+                    //System.out.println("jOGADOR"); 
                     Jogador jogador = new Jogador(sDividida[1], //nome
                                                     Integer.parseInt(sDividida[3]), //velocidade
                                                     Integer.parseInt(sDividida[4]), // destreza

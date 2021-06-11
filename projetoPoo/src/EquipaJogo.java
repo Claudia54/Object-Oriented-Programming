@@ -68,11 +68,11 @@ public class EquipaJogo {
 
     public boolean substituicao() {
         int numRand = (int) Math.floor(Math.random()*(100)+1);
-        if (5 >= numRand) return true;
+        if (10 >= numRand) return true;
         else return false;
     }
 
-    public void substituir(){
+    public SimpleEntry<Integer,Integer> substituir(){
 
         int numTit = (int) Math.floor(Math.random()*(jogEmCampo.size()));
         int numSup = (int) Math.floor(Math.random()*(suplentes.size()));
@@ -81,7 +81,8 @@ public class EquipaJogo {
             Jogador suplente = suplentes.get(numSup);
             suplentes.remove(numSup);
             jogEmCampo.add(suplente);
-    }
+        }
+        return new SimpleEntry<>(numSup,numTit);
     }
 
     public void substituir(Jogador entra,Jogador sai){
