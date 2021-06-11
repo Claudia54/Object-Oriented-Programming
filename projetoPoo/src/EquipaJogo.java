@@ -84,6 +84,11 @@ public class EquipaJogo {
     }
     }
 
+    public void substituir(Jogador entra,Jogador sai){
+            jogEmCampo.remove(sai);
+            jogEmCampo.add(entra);
+    
+    }
     public int avgHabilidade(Function <Jogador, Integer> f){
 
         List<Integer> listRem =   this.getJogEmCampo().stream()

@@ -44,30 +44,32 @@ public class Programa {
     Equipa equi = cont.criarEquipa();
     equi.verJogadores();
     */
-    ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-    jogadores.add(new Atacante("GUSTO",52,80,70,4,5,28,7,new ArrayList<String>()));
-    jogadores.add(new Atacante("CLAUDIA",0,0,0,0,0,0,0,new ArrayList<String>()));
-    jogadores.add(new Atacante("CARLOS",48,60,60,4,5,38,7,new ArrayList<String>()));
+    //ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
+    //jogadores.add(new Atacante("GUSTO",52,80,70,4,5,28,7,new ArrayList<String>()));
+    //jogadores.add(new Atacante("CLAUDIA",0,0,0,0,0,0,0,new ArrayList<String>()));
+    //jogadores.add(new Atacante("CARLOS",48,60,60,4,5,38,7,new ArrayList<String>()));
+//
+    //ArrayList<Jogador> suplentes = new ArrayList<Jogador>();
+    //suplentes.add(new Atacante("cesar",52,80,70,4,5,28,7,new ArrayList<String>()));
+    //suplentes.add(new Atacante("duarte",0,0,0,0,0,0,0,new ArrayList<String>()));
+    //suplentes.add(new Atacante("alberto",48,60,60,4,5,38,7,new ArrayList<String>()));
+//
+    //EquipaJogo equipa1 = new EquipaJogo(0,Estado.ATAQUE,jogadores,suplentes);
+    //EquipaJogo equipa2 = new EquipaJogo(0,Estado.DEFESA,jogadores,suplentes);
+    //
+    //Jogo jogo = new Jogo(0,equipa1,equipa2,0,0,0,0);
+    //jogo.calcularResultadoJogo();
 
-    ArrayList<Jogador> suplentes = new ArrayList<Jogador>();
-    suplentes.add(new Atacante("cesar",52,80,70,4,5,28,7,new ArrayList<String>()));
-    suplentes.add(new Atacante("duarte",0,0,0,0,0,0,0,new ArrayList<String>()));
-    suplentes.add(new Atacante("alberto",48,60,60,4,5,38,7,new ArrayList<String>()));
-
-    EquipaJogo equipa1 = new EquipaJogo(0,Estado.ATAQUE,jogadores,suplentes);
-    EquipaJogo equipa2 = new EquipaJogo(0,Estado.DEFESA,jogadores,suplentes);
-    
-    Jogo jogo = new Jogo(0,equipa1,equipa2,0,0,0,0);
-    jogo.calcularResultadoJogo();
     Scanner scan = new Scanner(System.in);
     View view = new View();
     Controller controller = new Controller();
     EquipaList listaEquipas = new EquipaList();
-    
+    JogoList listaJogos = new JogoList();
+
     int instruction=0;
     int n;
     Loadlog log = new Loadlog();
-    log.load(log.getFichDefaut(), listaEquipas, jogo);
+    log.load(log.getFichDefaut(), listaEquipas, listaJogos);
     
     System.out.println( listaEquipas.size());        
 
