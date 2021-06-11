@@ -9,36 +9,36 @@ public class Jogo{
     private int time;
     private EquipaJogo casa;
     private EquipaJogo fora;
-    private int scoreEqCasa;
-    private int scoreEqFora;
+    private int substCasa;
+    private int substFora;
     private int parteAtual;
     private int partes;
     private List<SimpleEntry<Integer,Integer>> substituicoes;
 
 
-    public Jogo(int time, EquipaJogo casa, EquipaJogo fora, int scoreEqCasa, int scoreEqFora, int parteAtual,
+    public Jogo(int time, EquipaJogo casa, EquipaJogo fora, int substCasa, int substFora, int parteAtual,
     int partes) {
 
         this.time = time;
         this.casa = casa;
         this.fora = fora;
-        this.scoreEqCasa = scoreEqCasa;
-        this.scoreEqFora = scoreEqFora;
+        this.substCasa = substCasa;
+        this.substFora = substFora;
         this.parteAtual = parteAtual;
         this.partes = partes;
 }
 
     public Jogo() {
         this.time     = 0;
-        this.scoreEqCasa = 0;
-        this.scoreEqFora = 0;
+        this.substCasa = 0;
+        this.substFora = 0;
         this.partes   = 18;
     }
 
-    public Jogo(int time, int scoreEqCasa, int scoreEqFora) {
+    public Jogo(int time, int substCasa, int substFora) {
         this.time     = time;
-        this.scoreEqCasa = scoreEqCasa;
-        this.scoreEqFora = scoreEqFora;
+        this.substCasa = substCasa;
+        this.substFora = substFora;
         this.partes   = 18;
     }
 
@@ -49,18 +49,18 @@ public class Jogo{
     public void setTime(int time) {
         this.time = time;
     }
-    public int getScoreEqCasa() {
-        return scoreEqCasa;
+    public int setSubstCasa() {
+        return substCasa;
     }
-    public void setScoreEqCasa(int scoreEqCasa) {
-        this.scoreEqCasa = scoreEqCasa;
+    public void setSubstCasa(int substCasa) {
+        this.substCasa = substCasa;
     }
 
-    public int getScoreEqFora() {
-        return scoreEqFora;
+    public int setSubstFora() {
+        return substFora;
     }
-    public void setScoreEqFora(int scoreEqFora) {
-        this.scoreEqFora = scoreEqFora;
+    public void setSubstFora(int substFora) {
+        this.substFora = substFora;
     }
     public int getPartes() {
         return partes;
@@ -162,17 +162,22 @@ public class Jogo{
       for(int i = 0; i < 9; i++){
         
         calculaParte();
-      }
-      view.listTitulares(casa);
-      casa.substituir(casa.getJogEmCampo().get(0), casa.getSuplentes().get(1));
 
+        if (casa.substituicao() && (substCasa<3)) casa.substituir();setSubstCasa(setSubstCasa()+1);
+        if (fora.substituicao() && (substFora<3)) fora.substituir();setSubstFora(setSubstFora()+1);
+    }
+      
       view.listTitulares(casa);
       // FAZER SUBSTITUICOES
       
       for(int i = 0; i < 9; i++){
         
         calculaParte();
-      }
+        if (casa.substituicao() && (substCasa>3)) casa.substituir();
+        if (fora.substituicao() && (substFora>3)) fora.substituir();
+    }
+        view.listTitulares(casa);
+
       
     return false;
     }

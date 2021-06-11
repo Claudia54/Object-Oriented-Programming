@@ -45,12 +45,17 @@ public class Programa {
     equi.verJogadores();
     */
     ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-    jogadores.add(new Atacante("Gusto",52,80,70,4,5,28,7,new ArrayList<String>()));
-    jogadores.add(new Atacante("Gusto",0,0,0,0,0,0,0,new ArrayList<String>()));
-    jogadores.add(new Atacante("Gusto",48,60,60,4,5,38,7,new ArrayList<String>()));
+    jogadores.add(new Atacante("GUSTO",52,80,70,4,5,28,7,new ArrayList<String>()));
+    jogadores.add(new Atacante("CLAUDIA",0,0,0,0,0,0,0,new ArrayList<String>()));
+    jogadores.add(new Atacante("CARLOS",48,60,60,4,5,38,7,new ArrayList<String>()));
 
-    EquipaJogo equipa1 = new EquipaJogo(0,Estado.ATAQUE,jogadores,jogadores);
-    EquipaJogo equipa2 = new EquipaJogo(0,Estado.DEFESA,jogadores,new ArrayList<>());
+    ArrayList<Jogador> suplentes = new ArrayList<Jogador>();
+    suplentes.add(new Atacante("cesar",52,80,70,4,5,28,7,new ArrayList<String>()));
+    suplentes.add(new Atacante("duarte",0,0,0,0,0,0,0,new ArrayList<String>()));
+    suplentes.add(new Atacante("alberto",48,60,60,4,5,38,7,new ArrayList<String>()));
+
+    EquipaJogo equipa1 = new EquipaJogo(0,Estado.ATAQUE,jogadores,suplentes);
+    EquipaJogo equipa2 = new EquipaJogo(0,Estado.DEFESA,jogadores,suplentes);
     
     Jogo jogo = new Jogo(0,equipa1,equipa2,0,0,0,0);
     jogo.calcularResultadoJogo();

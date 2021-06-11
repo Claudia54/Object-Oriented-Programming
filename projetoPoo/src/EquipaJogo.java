@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.AbstractMap.SimpleEntry;
 import java.util.function.Function;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
@@ -9,7 +10,6 @@ public class EquipaJogo {
     private Estado estado;
     private ArrayList<Jogador> jogEmCampo;
     private ArrayList<Jogador> suplentes;
-
     public EquipaJogo(int score, Estado estado, ArrayList<Jogador> jogEmCampo, ArrayList<Jogador> suplentes) {
         this.score = score;
         this.estado = estado;
@@ -66,12 +66,22 @@ public class EquipaJogo {
         this.suplentes = suplentes;
     }
 
-    public void substituir(Jogador titular, Jogador suplente){
-        if(jogEmCampo.contains(titular) && suplentes.contains(suplente)){
-            jogEmCampo.remove(titular);
-            suplentes.remove(suplente);
+    public boolean substituicao() {
+        int numRand = (int) Math.floor(Math.random()*(100)+1);
+        if (5 >= numRand) return true;
+        else return false;
+    }
+
+    public void substituir(){
+
+        int numTit = (int) Math.floor(Math.random()*(jogEmCampo.size()));
+        int numSup = (int) Math.floor(Math.random()*(suplentes.size()));
+        if(suplentes.size()>0){
+            jogEmCampo.remove(numTit);
+            Jogador suplente = suplentes.get(numSup);
+            suplentes.remove(numSup);
             jogEmCampo.add(suplente);
-        }
+    }
     }
 
     public int avgHabilidade(Function <Jogador, Integer> f){
