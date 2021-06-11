@@ -46,14 +46,14 @@ public class Programa {
     */
     ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
     jogadores.add(new Atacante("Gusto",52,80,70,4,5,28,7,new ArrayList<String>()));
-    jogadores.add(new Atacante("Gusto",48,26,39,4,5,100,7,new ArrayList<String>()));
+    jogadores.add(new Atacante("Gusto",0,0,0,0,0,0,0,new ArrayList<String>()));
     jogadores.add(new Atacante("Gusto",48,60,60,4,5,38,7,new ArrayList<String>()));
 
-    EquipaJogo equipa1 = new EquipaJogo(0,Estado.ATAQUE,jogadores,new ArrayList<>());
+    EquipaJogo equipa1 = new EquipaJogo(0,Estado.ATAQUE,jogadores,jogadores);
     EquipaJogo equipa2 = new EquipaJogo(0,Estado.DEFESA,jogadores,new ArrayList<>());
     
     Jogo jogo = new Jogo(0,equipa1,equipa2,0,0,0,0);
-    
+    jogo.calcularResultadoJogo();
     Scanner scan = new Scanner(System.in);
     View view = new View();
     Controller controller = new Controller();
@@ -70,6 +70,7 @@ public class Programa {
         view.clearScreen();
         view.bola();
         view.menu();
+        view.promptNivel1();
         try{
             instruction = scan.nextInt();
             scan.nextLine();
@@ -78,26 +79,37 @@ public class Programa {
             instruction = -1;
             view.notAnInstruction();
         }
-
+        view.clearScreen();
     switch (instruction){
 
         
         case 1:
         // print das equipas por indice
-
+        listaEquipas.mostrarEquipas();
 
         view.queEquipaJog();
+        view.promptNivel2();
 
         n = scan.nextInt();
+        n--;
         scan.nextLine();
 
         Equipa equipa =  listaEquipas.getEquipa(n);        
-
+        Boolean flag = true;
+        while(flag){
+        
         view.printVar("Numero do Jogador");
+        view.promptNivel2();
+        
         int num = scan.nextInt();
         scan.nextLine();
-        if (!equipa.containsJogador(num)) equipa.adicionarjogador(controller.criarJogador(), num); 
-        else view.jogJaExiste();
+        if (!equipa.containsJogador(num)) {
+            equipa.adicionarjogador(controller.criarJogador(), num);
+            flag=false;
+        }
+            else view.jogJaExiste();
+        }
+
         
         break;
         case 2:
@@ -108,16 +120,23 @@ public class Programa {
         case 3:
         break;
         case 4:
-            view.queEquipa();
             // print das equipas por indice
+            listaEquipas.mostrarEquipas();
+            
+            view.queEquipa();
+            view.promptNivel2();
             
             n = scan.nextInt();
+            n--;
             scan.nextLine();
 
             listaEquipas.consultarEquipa(n);
             scan.nextLine();
         break;
         case 5:
+        break;
+
+        case 6:
         break;
     }
 }

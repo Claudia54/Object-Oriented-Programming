@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class View {
     public void  menu(){
         
@@ -11,14 +13,14 @@ public class View {
         sb.append("5)- Mudar Jogador De Equipa\n");
         sb.append("6)- Realizar Jogo\n\n");
 
-            System.out.print(sb.toString());
+        System.out.print(sb.toString());
          
     }
 
     public void bola(){
 
         StringBuilder sb = new StringBuilder ( );
-        sb.append("\n\n\t    ");
+        sb.append("\n\t    ");
         sb.append("          _...----.._").append("\n\t    ");
         sb.append("        ,:':::::.     `>.").append("\n\t    ");
         sb.append("      ,' |:::::;'     |:::.").append("\n\t    ");
@@ -62,11 +64,23 @@ public class View {
         sb.append ("Criação de Equipa\n");
         sb.append ("Qual o nome da sua Equipa?\n");
         sb.append ("Pretende adicionar jogadores?\n");
-        sb.append ("Qual o nº de Jogadores?\n");
-        
+        sb.append ("Qual o nº de Jogadores?\n");   
 
     }
 
+    public void listTitulares(EquipaJogo equipa){
+        StringBuilder sb = new StringBuilder();
+        int aux=0;
+        ArrayList<Jogador> list = equipa.getJogEmCampo();
+        for(Jogador i : list) {
+          aux++;
+           sb.append( aux + "-" + i.toString()).append("\n");
+        }
+        System.out.println(sb.toString());
+    }
+
+
+    
     public void printOpErrada() {
         System.out.println ("OPCAO ERRADA, Tente Novamente\n");
     }
@@ -96,13 +110,24 @@ public class View {
     }
 
     public void queEquipa() {
-        System.out.print("Indice da equipa que pretende consultar\n");
+        System.out.print("Indice da equipa que pretende consultar:\n");
     }
 
     public void queEquipaJog() {
-        System.out.print("Indice da equipa que pretende adicionar o jogador\n");
+        System.out.print("Indice da equipa que pretende adicionar o jogador:\n");
     }
-    
+
+
+    public void promptNivel1 (){
+        System.out.print("\n# > ");
+    }
+    public void promptNivel2 (){
+        System.out.print("\n# >> ");
+    }
+ 
+    public void promptNivel3 (){
+        System.out.print("\n# >>> ");
+    }   
 }
 
     

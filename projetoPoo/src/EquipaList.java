@@ -2,7 +2,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import jdk.internal.module.SystemModuleFinders;
 
 public class EquipaList {
    private List<Equipa> list ; 
@@ -42,12 +41,12 @@ public class EquipaList {
         return list.size();
     }
 
-    public void mostrarequipas(){
+    public void mostrarEquipas(){
     StringBuilder sb = new StringBuilder();
     int aux=0;
     for(Equipa i : list) {
       aux++;
-       sb.append( aux + "-" + i.getEquipa());
+       sb.append( aux + "-" + i.getEquipa()).append("\n");
     }
     System.out.println(sb.toString());
 

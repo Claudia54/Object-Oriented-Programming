@@ -34,8 +34,6 @@ public class EquipaJogo {
         else return false;
     }
 
-   
-
     public int getScore() {
         return score;
     }
@@ -66,6 +64,14 @@ public class EquipaJogo {
 
     public void setSuplentes(ArrayList<Jogador> suplentes) {
         this.suplentes = suplentes;
+    }
+
+    public void substituir(Jogador titular, Jogador suplente){
+        if(jogEmCampo.contains(titular) && suplentes.contains(suplente)){
+            jogEmCampo.remove(titular);
+            suplentes.remove(suplente);
+            jogEmCampo.add(suplente);
+        }
     }
 
     public int avgHabilidade(Function <Jogador, Integer> f){

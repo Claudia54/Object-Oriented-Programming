@@ -163,7 +163,11 @@ public class Jogo{
         
         calculaParte();
       }
-// FAZER SUBSTITUICOES
+      view.listTitulares(casa);
+      casa.substituir(casa.getJogEmCampo().get(0), casa.getSuplentes().get(1));
+
+      view.listTitulares(casa);
+      // FAZER SUBSTITUICOES
       
       for(int i = 0; i < 9; i++){
         
