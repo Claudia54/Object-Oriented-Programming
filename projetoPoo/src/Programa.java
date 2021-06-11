@@ -123,6 +123,13 @@ public class Programa {
         
         break;
         case 3:
+        
+        String nome = scan.nextLine();
+        Jogador jog = listaEquipas.consultajogador(nome);
+        if(jog!=null) view.print(jog.toString());
+        view.pressEnter();
+        scan.nextLine();
+        
         break;
         case 4:
             // print das equipas por indice

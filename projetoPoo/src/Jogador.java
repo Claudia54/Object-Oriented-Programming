@@ -167,7 +167,7 @@ public class Jogador{
         sb.append(", Jogo de cabeca=").append(this.getJogoDeCabeca());
         sb.append(", Remate=")        .append(this.getRemate());
         sb.append(", Cap. de Passe=") .append(this.getCapDePasse());
-        sb.append(", Histórico=")     .append(this.getHistorico()).append("]\n");
+        sb.append(", Histórico=")     .append(this.getHistorico()).append(" ]\n");
         return sb.toString();
     }
 

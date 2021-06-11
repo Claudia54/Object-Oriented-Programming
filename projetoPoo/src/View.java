@@ -55,9 +55,6 @@ public class View {
 
     }
 
-    public void printVar(String var){
-        System.out.println (var + ":");
-    }
 
     public void menuEquipa (){
         StringBuilder sb = new StringBuilder();
@@ -80,7 +77,14 @@ public class View {
     }
 
 
+    public void print(String string) {
+        System.out.println (string);
+    }   
     
+    public void printVar(String var){
+        System.out.println (var + ":");
+    }
+
     public void printOpErrada() {
         System.out.println ("OPCAO ERRADA, Tente Novamente\n");
     }
@@ -127,7 +131,12 @@ public class View {
  
     public void promptNivel3 (){
         System.out.print("\n# >>> ");
-    }   
+    }
+
+    public void pressEnter() {
+        System.out.println("Press Enter to Continue");
+    }
+
 }
 
     
