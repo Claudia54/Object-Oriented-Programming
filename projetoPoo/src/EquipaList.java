@@ -55,6 +55,26 @@ public class EquipaList {
 
     }
 
+    // consulta a equipa consoante o nome da msm 
+    public Equipa verEquipa(String nome ) {
+        View view = new View ();
+        Equipa eq =null;
+        try{
+        for (Equipa i : list ){
+          if (i.getEquipa().equals(nome)){
+             eq= i;
+          }
+        }
+    }
+        catch (InputMismatchException e) {
+            view.notAnInstruction();
+             }
+       return eq;
+
+    }
+
+
+
     // dado o nome do jogador diz td sobre ele 
     public Jogador consultajogador (String nome) {
         View view = new View ();
@@ -73,6 +93,13 @@ public class EquipaList {
        view.notAnInstruction();
         }
     return f ;
+    }
+
+    public void mudaJogador(Jogador jogador , Equipa novEquipa){
+        Equipa equipa = new Equipa();
+        
+
+
     }
 
  

@@ -37,8 +37,8 @@ public class JogoList {
          return jogos.size();
      }
  
-     // so o nome de tds as equipas 
-     public void mostrarEquipas(){
+     /* 
+     public void mostrarJogo(){
      StringBuilder sb = new StringBuilder();
      int aux=0;
      for(Equipa i : list) {
@@ -47,27 +47,7 @@ public class JogoList {
      }
      System.out.println(sb.toString());
  
-     }
- 
-     // dado o nome do jogador diz td sobre ele 
-     public Jogador consultajogador (String nome) {
-         View view = new View ();
-         Jogador f = null ;
-     try{
-     for (Equipa aux :list ){
-         for (Jogador i : aux.getJogadores().values()){
-              if (i.getNome().equals(nome)){
-                   f= i;
-                 }
-         
-             }
-         }
-     }
-     catch (InputMismatchException e) {
-        view.notAnInstruction();
-         }
-     return f ;
-     }
+     }*/
  
   
  
@@ -81,4 +61,3 @@ public class JogoList {
     
 
   
-}
