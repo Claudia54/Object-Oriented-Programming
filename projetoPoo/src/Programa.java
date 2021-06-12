@@ -49,21 +49,6 @@ public class Programa {
     Equipa equi = cont.criarEquipa();
     equi.verJogadores();
     */
-    ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
-    jogadores.add(new Atacante("GUSTO",52,80,70,4,5,28,7,new ArrayList<String>()));
-    jogadores.add(new Atacante("CLAUDIA",0,0,0,0,0,0,0,new ArrayList<String>()));
-    jogadores.add(new Atacante("CARLOS",48,60,60,4,5,38,7,new ArrayList<String>()));
-
-    ArrayList<Jogador> suplentes = new ArrayList<Jogador>();
-    suplentes.add(new Atacante("cesar",52,80,70,4,5,28,7,new ArrayList<String>()));
-    suplentes.add(new Atacante("duarte",0,0,0,0,0,0,0,new ArrayList<String>()));
-    suplentes.add(new Atacante("alberto",48,60,60,4,5,38,7,new ArrayList<String>()));
-
-    EquipaJogo equipa1 = new EquipaJogo(0,Estado.ATAQUE,jogadores,suplentes);
-    EquipaJogo equipa2 = new EquipaJogo(0,Estado.DEFESA,jogadores,suplentes);
-    
-    Jogo jogo = new Jogo(LocalDate.now(),equipa1,equipa2,0,0);
-    jogo.calcularResultadoJogo();
 
     Scanner scan = new Scanner(System.in);
     View view = new View();
@@ -75,8 +60,7 @@ public class Programa {
     int n;
     Loadlog log = new Loadlog();
     log.load(log.getFichDefaut(), listaEquipas, listaJogos);
-    
-    System.out.println( listaEquipas.size());        
+       
 
     while(instruction!=-1){
         view.clearScreen();
@@ -130,12 +114,13 @@ public class Programa {
         
         break;
         case 3:
-        
-        String nome = scan.nextLine();
-        Jogador jog = listaEquipas.consultajogador(nome);
-        if(jog!=null) view.print(jog.toString());
-        view.pressEnter();
-        scan.nextLine();
+            view.jogConsultar();
+
+            String nome = scan.nextLine();
+            Jogador jog = listaEquipas.consultajogador(nome);
+            if(jog!=null) view.print(jog.toString());
+            view.pressEnter();
+            scan.nextLine();
         
         break;
         case 4:
@@ -153,9 +138,61 @@ public class Programa {
             scan.nextLine();
         break;
         case 5:
+
+            view.jogConsultar();
+
+            String nom = scan.nextLine();
+            Jogador jogador = listaEquipas.consultajogador(nom);
+        
+            view.escEquipaMudar();
+            listaEquipas.mostrarEquipas();
+            view.queEquipa();
+            view.promptNivel2();
+            
+            n = scan.nextInt();
+            n--;
+            scan.nextLine();
+    
+            Equipa novEquipa = listaEquipas.getEquipa(n);
+            
+            listaEquipas.mudaJogador(jogador, novEquipa);
+        break;
+        case 6:
+            listaJogos.mostrarJogos();
+        break;
+        case 7:
+            view.escEquipaCasa();
+            listaEquipas.mostrarEquipas();
+            view.queEquipa();
+            view.promptNivel2();
+
+            n = scan.nextInt();
+            n--;
+            scan.nextLine();
+
+            EquipaJogo casa = listaEquipas.getEquipa(n).criarEquipaJogo();
+
+            view.clearScreen();
+
+            view.escEquipaFora();
+            listaEquipas.mostrarEquipas();
+            view.queEquipa();
+            view.promptNivel2();
+
+            n = scan.nextInt();
+            n--;
+            scan.nextLine();
+
+            EquipaJogo fora = listaEquipas.getEquipa(n).criarEquipaJogo();
+
+        
+            Jogo jogo = new Jogo(LocalDate.now(),casa,fora,0,0);
+            jogo.calcularResultadoJogo();
+            listaJogos.addJogo(jogo);
         break;
 
-        case 6:
+        case 8:
+        // guardar estado do progama
         break;
     }
 }

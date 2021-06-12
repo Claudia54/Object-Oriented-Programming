@@ -54,13 +54,14 @@ public class EquipaList {
 
     // so o nome de tds as equipas 
     public void mostrarEquipas(){
+    View view = new View();
     StringBuilder sb = new StringBuilder();
     int aux=0;
     for(Equipa i : list) {
       aux++;
        sb.append( aux + "-" + i.getEquipa()).append("\n");
     }
-    System.out.println(sb.toString());
+    view.print(sb.toString());
 
     }
 
@@ -106,7 +107,7 @@ public class EquipaList {
 
     public void mudaJogador(Jogador jogador , Equipa novEquipa){
         int i;
-        i= verEquipa(jogador.getNome()).removerjogador(jogador.getNome());
+        i = verEquipa(novEquipa.getEquipa()).removerjogador(jogador.getNome());
         if (i>=0){
         novEquipa.adicionarjogador(jogador, i);
 

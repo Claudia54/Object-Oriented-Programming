@@ -86,34 +86,35 @@ public class Jogo{
         StringBuilder sb = new StringBuilder();
         
         sb.append("Jogo ");
-        sb.append("[scoreEqCasa= ").append(casa.getScore()).append(";");
+        sb.append("scoreEqCasa= ").append(casa.getScore()).append(";");
         sb.append(" scoreEqFora= ").append(fora.getScore()).append(";");
         sb.append(" time=").append(this.getTime()).append(";");
-        sb.append("]").append("\n");
+        sb.append("").append("\n");
     
         return sb.toString();
     
         }
     
     public void calculaParte(){
+        View view = new View();
         if (casa.estaAtacar()){
             
-            System.out.println("Casa esta a Atacar");
+            view.print("Casa esta a Atacar");
 
             if (casa.marcou(fora)) {
                 
-                System.out.println("Casa Marcou");
+                view.print("Casa Marcou");
                 casa.setScore(casa.getScore()+1);
                 casa.setEstado(Estado.DEFESA);
                 fora.setEstado(Estado.ATAQUE);
             }else {
 
                 if(casa.perdeuBola()){
-                    System.out.println("Casa Perdeu a bola");
+                    view.print("Casa Perdeu a bola");
                     casa.setEstado(Estado.DEFESA);
                     fora.setEstado(Estado.ATAQUE);
                 }else{
-                    System.out.println("Casa Continua com a bola");
+                    view.print("Casa Continua com a bola");
                     
                 }
                 
@@ -121,10 +122,10 @@ public class Jogo{
 
         }else{
             
-            System.out.println("Fora esta a Atacar");
+            view.print("Fora esta a Atacar");
             if (fora.marcou(casa)) {
                 
-                System.out.println("Fora Marcou");
+                view.print("Fora Marcou");
                 
                 fora.setScore(fora.getScore()+1);
                 fora.setEstado(Estado.DEFESA);
@@ -132,11 +133,11 @@ public class Jogo{
             }else {
 
                 if(fora.perdeuBola()){
-                    System.out.println("Fora Perdeu a bola");
+                    view.print("Fora Perdeu a bola");
                     fora.setEstado(Estado.DEFESA);
                     casa.setEstado(Estado.ATAQUE);
                 }else{
-                    System.out.println("Fora Continua com a bola");
+                    view.print("Fora Continua com a bola");
                     
                 }
                 

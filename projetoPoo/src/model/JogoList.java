@@ -3,6 +3,8 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
+import view.View;
+
 public class JogoList {
     List<Jogo> jogos;
 
@@ -39,17 +41,18 @@ public class JogoList {
          return jogos.size();
      }
  
-     /* 
-     public void mostrarJogo(){
+      
+     public void mostrarJogos(){
+     View view = new View();
      StringBuilder sb = new StringBuilder();
      int aux=0;
-     for(Equipa i : list) {
+     for(Jogo i : jogos) {
        aux++;
-        sb.append( aux + "-" + i.getEquipa()).append("\n");
+        sb.append( aux + "-" + i.toString()).append("\n");
      }
-     System.out.println(sb.toString());
+     view.print(sb.toString());
  
-     }*/
+     }
  
   
  

@@ -10,6 +10,7 @@ import java.util.HashMap;
 //import static java.util.stream.Collectors.toCollection;
 //import static java.lang.System.out;
 import java.util.Map;
+import java.util.Scanner;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -93,17 +94,20 @@ public class Equipa {
     
     public EquipaJogo criarEquipaJogo(){
         View view = new View();
+        Scanner scan = new Scanner(System.in);
         Controller controller = new Controller();
         this.verJogadores();
         ArrayList<Jogador> jogEmCampo = new ArrayList<>();
         ArrayList<Jogador> suplentes = new ArrayList<>();
+        
 
         view.escJogTitu();
 
         while(jogEmCampo.size()!=12){
         
             view.printVar("Digite o numero da camisola do Jogador");
-            int num = controller.getInt();
+            int num = scan.nextInt();
+            scan.nextLine();
             if(this.containsJogador(num) && (!jogEmCampo.contains(jogadores.get(num)))) jogEmCampo.add( jogadores.get(num));
             else view.jogadorNaoExite();
         } 
@@ -113,7 +117,8 @@ public class Equipa {
         while(suplentes.size()!=7){
         
             view.printVar("Digite o numero da camisola do Jogador");
-            int num = controller.getInt();
+            int num = scan.nextInt();
+            scan.nextLine();
             if(this.containsJogador(num) && (!suplentes.contains(jogadores.get(num)))) suplentes.add( jogadores.get(num));
             else view.jogadorNaoExite();
         }

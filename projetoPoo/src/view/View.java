@@ -15,7 +15,9 @@ public class View {
         sb.append("3)- Consultar Jogador\n");
         sb.append("4)- Consultar Equipa\n");
         sb.append("5)- Mudar Jogador De Equipa\n");
-        sb.append("6)- Realizar Jogo\n\n");
+        sb.append("6)- Consultar Historico de Jogos\n");
+        sb.append("7)- Realizar Jogo\n");
+        sb.append("8)- Guardar Estado do Progama\n");
 
         System.out.print(sb.toString());
          
@@ -60,14 +62,6 @@ public class View {
     }
 
 
-    public void menuEquipa (){
-        StringBuilder sb = new StringBuilder();
-        sb.append ("Criação de Equipa\n");
-        sb.append ("Qual o nome da sua Equipa?\n");
-        sb.append ("Pretende adicionar jogadores?\n");
-        sb.append ("Qual o nº de Jogadores?\n");   
-
-    }
 
     public void listTitulares(EquipaJogo equipa){
         StringBuilder sb = new StringBuilder();
@@ -118,13 +112,12 @@ public class View {
     }
 
     public void queEquipa() {
-        System.out.print("Indice da equipa que pretende consultar:\n");
+        System.out.print("Indice da equipa que pretende :\n");
     }
 
     public void queEquipaJog() {
         System.out.print("Indice da equipa que pretende adicionar o jogador:\n");
     }
-
 
     public void promptNivel1 (){
         System.out.print("\n# > ");
@@ -141,6 +134,20 @@ public class View {
         System.out.println("Press Enter to Continue");
     }
 
+    public void escEquipaCasa() {
+        System.out.println("Escolha a equipa que joga em Casa\n");
+    }
+
+    public void escEquipaFora() {
+        System.out.println("Escolha a equipa que joga Fora\n");
+    }
+    public void escEquipaMudar() {
+        System.out.println("Escolha a equipa para a qual o jogar vai\n");
+    }
+
+    public void jogConsultar() {
+        System.out.println("Nome do jogador que pretende\n");
+    }
 }
 
     
