@@ -16,6 +16,11 @@ public class EquipaList {
        this.list = new ArrayList<>();
    }
 
+   public List<Equipa> getList () {
+       List<Equipa> nova =list;
+    return nova;
+   }
+
    public Equipa getLast(){
        Equipa e = list.get(list.size()-1);
        return e;
