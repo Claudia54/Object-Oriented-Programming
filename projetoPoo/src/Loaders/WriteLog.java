@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
+import java.util.AbstractMap.SimpleEntry;
 import java.util.Map.Entry;
 
 public class WriteLog {
@@ -69,17 +70,24 @@ public class WriteLog {
     
 }
           for (Jogo i : jogoList.getListjog ()){
-
                 sb.append("Jogo:" );
                 sb.append(i.getEquipaCasa().getNome()).append(",");
                 sb.append(i.getEquipaFora().getNome()).append(",");
                 sb.append(i.getEquipaCasa().getScore()).append(",") ;
                 sb.append(i.getEquipaFora().getScore()).append(",");
                 sb.append(i.getTime()).append(",");
-                sb.append(i.getEquipaCasa().getJogEmCampo()).append(",");
-                sb.append(i.getSubstituicoesCasa()).append(",");
-                sb.append( i.getEquipaFora().getJogEmCampo()).append(",");
-                sb.append(i.getSubstituicoesFora()).append(",");
+                for ( Jogador jogador : i.getEquipaCasa().getJogEmCampo()){
+                    sb.append(jogador.getCamisola());
+                }
+                for ( SimpleEntry<Integer,Integer> auxiliar : i.getSubstituicoesCasa()){ ///////???????????
+                     sb.append(auxiliar.getKey()).append("->").append(auxiliar.getValue());
+                }
+                for (Jogador auxi : i.getEquipaFora().getJogEmCampo()){
+                    sb.append(auxi.getCamisola());
+                }
+                for ( SimpleEntry<Integer,Integer> auxiliar : i.getSubstituicoesFora()){ ///////???????????
+                    sb.append(auxiliar.getKey()).append("->").append(auxiliar.getValue());
+               }
                 sb.append("\n");
           }
 
