@@ -212,7 +212,6 @@ public class Programa {
             WriteLog logescrita = new WriteLog(listaEquipas,listaJogos);
             logescrita.criarFicheiro();
           
-        // guardar estado do progama
         break;
         case 9:
             view.fichQueQuer();
@@ -226,7 +225,7 @@ public class Programa {
 
             if(log.load(fich, listaEquipas, listaJogos));
             else log.load(log.getFichDefaut(), listaEquipas, listaJogos);
-        // guardar estado do progama
+   
         break;
     }
 }
