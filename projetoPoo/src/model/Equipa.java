@@ -87,6 +87,12 @@ public class Equipa {
     }
 
     public void adicionarjogador(Jogador jogador, int numero){ //acresentei o numero assumindo q o numero é dado na identificacao
+        int numRand;
+        if (this.jogadores.containsKey(numero)){
+                numRand = (int) Math.floor(Math.random()*(100)+1);
+                numero =numRand; 
+                jogador.setCamisola(numero);
+        }
         this.jogadores.put(numero,jogador);
         this.jogadores.get(numero).addHistorico(equipa);
         

@@ -8,14 +8,6 @@ public class Jogador{
     
     private String nome;
     private int camisola;
-    public int getCamisola() {
-        return camisola;
-    }
-
-    public void setCamisola(int camisola) {
-        this.camisola = camisola;
-    }
-
     private int velocidade;
     private int destreza;
     private int resistencia;
@@ -80,6 +72,15 @@ public class Jogador{
     public void setNome(String nome) {
         this.nome = nome;
     }
+    
+    public int getCamisola() {
+        return camisola;
+    }
+
+    public void setCamisola(int camisola) {
+        this.camisola = camisola;
+    }
+
 
     public int getVelocidade() {
         return velocidade;
