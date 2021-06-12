@@ -1,3 +1,7 @@
+package model;
+
+import view.View;
+
 import java.lang.String;
 import java.time.LocalDate;
 import java.util.List;

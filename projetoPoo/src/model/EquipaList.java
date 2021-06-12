@@ -1,3 +1,7 @@
+package model;
+
+import view.View;
+
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Iterator;

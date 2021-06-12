@@ -1,4 +1,8 @@
+package view;
+
+import model.*;
 import java.util.ArrayList;
+
 
 public class View {
     public void  menu(){

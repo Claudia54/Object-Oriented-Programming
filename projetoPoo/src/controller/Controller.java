@@ -1,7 +1,12 @@
+package controller;
+import view.View;
+import model.*;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+
 
 public class Controller {
     
