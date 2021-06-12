@@ -102,7 +102,7 @@ public class Controller {
     }
 
    
-    public void mudarJogadorDeEquipa(){}// todo
+    //public void mudarJogadorDeEquipa(){}// todo
 
 
     public Equipa criarEquipa(){

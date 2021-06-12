@@ -142,7 +142,7 @@ public class View {
         System.out.println("Escolha a equipa que joga Fora\n");
     }
     public void escEquipaMudar() {
-        System.out.println("Escolha a equipa para a qual o jogar vai\n");
+        System.out.println("Escolha a equipa para a qual o jogador vai\n");
     }
 
     public void jogConsultar() {

@@ -10,17 +10,31 @@ import java.util.stream.Collectors;
 
 public class EquipaJogo {
 
+    private String nome;
     private int score;
     private Estado estado;
     private ArrayList<Jogador> jogEmCampo;
     private ArrayList<Jogador> suplentes;
 
-    public EquipaJogo(int score, Estado estado, ArrayList<Jogador> jogEmCampo, ArrayList<Jogador> suplentes) {
+    public EquipaJogo() {
+        this.nome="n/a";
+        this.score=0;
+        this.jogEmCampo =new ArrayList<>();
+        this.suplentes= new ArrayList<>();
+    }
+
+    public EquipaJogo(String nome ,int score, Estado estado, ArrayList<Jogador> jogEmCampo, ArrayList<Jogador> suplentes) {
+        this.nome=nome;
         this.score = score;
         this.estado = estado;
         this.jogEmCampo = jogEmCampo;
         this.suplentes = suplentes;
     }
+
+    public String getNome(){
+        return this.nome;
+    }
+
 
     public boolean estaAtacar(){
         if (estado == Estado.ATAQUE) return true;

@@ -113,7 +113,6 @@ public class EquipaList {
            }
         }
         return i;
-
     }
 
     public void mudaJogador(Jogador jogador , Equipa novEquipa){
@@ -121,7 +120,6 @@ public class EquipaList {
         i= getEquipaa(jogador.getNome()).removerjogador(jogador.getNome());
         if (i>=0){
         novEquipa.adicionarjogador(jogador, i);
-
         }
     }
 

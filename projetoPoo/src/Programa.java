@@ -2,6 +2,8 @@ import model.*;
 import controller.*;
 import view.*;
 import Loaders.*;
+
+import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -12,7 +14,7 @@ public class Programa {
 
     
     
-    public static void main (String[] args ){
+    public static void main (String[] args ) throws IOException{
     
 /*
         HashMap<Integer,Jogador> map = new HashMap<>();
@@ -55,6 +57,7 @@ public class Programa {
     Controller controller = new Controller();
     EquipaList listaEquipas = new EquipaList();
     JogoList listaJogos = new JogoList();
+    WriteLog logescrita = new WriteLog();
 
     int instruction=0;
     int n;
@@ -192,6 +195,10 @@ public class Programa {
         break;
 
         case 8:
+
+            
+            logescrita.criarFicheiro();
+          
         // guardar estado do progama
         break;
     }

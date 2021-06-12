@@ -10,7 +10,7 @@ import java.util.AbstractMap.SimpleEntry;
 
 public class Jogo{
 
-    
+    // private  String equipa1
     private LocalDate time;
     private EquipaJogo casa;
     private EquipaJogo fora;
@@ -42,6 +42,19 @@ public class Jogo{
         this.substCasa = substCasa;
         this.substFora = substFora;
     }
+
+    public EquipaJogo getEquipaCasa(){
+        EquipaJogo equipa = casa ;
+        return equipa ;
+
+    }
+    public EquipaJogo getEquipaFora(){
+        EquipaJogo equipa = fora ;
+        return equipa ;
+
+    }
+
+
 
 
     public LocalDate getTime() {

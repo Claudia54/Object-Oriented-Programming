@@ -12,6 +12,12 @@ public class JogoList {
         this.jogos= new ArrayList <>();
     }
     
+
+    public List<Jogo> getListjog () {
+        List<Jogo> nova =jogos;
+     return nova;
+    }
+
     public Jogo getLast(){
         Jogo e = jogos.get(jogos.size()-1);
         return e;
@@ -53,7 +59,7 @@ public class JogoList {
      view.print(sb.toString());
  
      }
- 
+
   
  
  
