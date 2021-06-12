@@ -6,10 +6,12 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class EquipaJogo {
+
     private int score;
     private Estado estado;
     private ArrayList<Jogador> jogEmCampo;
     private ArrayList<Jogador> suplentes;
+
     public EquipaJogo(int score, Estado estado, ArrayList<Jogador> jogEmCampo, ArrayList<Jogador> suplentes) {
         this.score = score;
         this.estado = estado;
@@ -82,13 +84,13 @@ public class EquipaJogo {
             suplentes.remove(numSup);
             jogEmCampo.add(suplente);
         }
-        return new SimpleEntry<>(numSup,numTit);
+        return new SimpleEntry<Integer,Integer>(numSup,numTit);
     }
 
     public void substituir(Jogador entra,Jogador sai){
             jogEmCampo.remove(sai);
             jogEmCampo.add(entra);
-    
+
     }
     public int avgHabilidade(Function <Jogador, Integer> f){
 

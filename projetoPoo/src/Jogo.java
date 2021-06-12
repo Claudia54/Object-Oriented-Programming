@@ -156,13 +156,13 @@ public class Jogo{
             setSubstCasa(setSubstCasa()+1);
         } 
         if (fora.substituicao() && (substFora<3)){
-            substituicoesCasa.add( fora.substituir());
+            substituicoesFora.add( fora.substituir());
             setSubstFora(setSubstFora()+1);
         } 
     }
       
       view.listTitulares(casa);
-      
+
       for(int i = 0; i < 9; i++){
         
         calculaParte();
