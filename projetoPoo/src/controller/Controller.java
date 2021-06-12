@@ -14,7 +14,7 @@ public class Controller {
     
 
 
-    public Jogador criarJogador(){
+    public Jogador criarJogador(int camisola){
 
         int instruction;
         Scanner scan = new Scanner(System.in);
@@ -32,7 +32,8 @@ public class Controller {
 
         view.printVar ("Nome");
         String nome = scan.nextLine();
- 
+
+
         view.printVar ("Velocidade");
         int velocidade = scan.nextInt();
 
@@ -58,7 +59,7 @@ public class Controller {
         switch (instruction){
             case 1:
             Atacante atacante = new Atacante (nome,velocidade,destreza,resistencia,
-            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>());
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),camisola);
 
             return atacante;
 
@@ -67,14 +68,14 @@ public class Controller {
             int recBol = scan.nextInt();
 
             Medio medio = new Medio(nome,velocidade,destreza,resistencia,
-            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),recBol);
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),recBol,camisola);
 
             return medio;
 
             case 3:
 
             Defesa defesa = new Defesa(nome,velocidade,destreza,resistencia,
-            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>());
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),camisola);
 
             return defesa;
 
@@ -83,7 +84,7 @@ public class Controller {
             int cru = scan.nextInt();
 
             Lateral lateral = new Lateral(nome,velocidade,destreza,resistencia,
-            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),cru);
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),cru,camisola);
 
             return lateral;
 
@@ -92,7 +93,7 @@ public class Controller {
             int ela = scan.nextInt();
 
             GuardaRedes guardaredes = new GuardaRedes(nome,velocidade,destreza,resistencia,
-            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),ela);            
+            impulsao,jogodeCabeca,remate,capDePasse,new ArrayList<String>(),ela,camisola);            
 
             return guardaredes;
             

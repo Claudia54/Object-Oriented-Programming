@@ -117,10 +117,17 @@ public class EquipaList {
 
     public void mudaJogador(Jogador jogador , Equipa novEquipa){
         int i;
+<<<<<<< HEAD
         i= getEquipaa(jogador.getNome()).removerjogador(jogador.getNome());
             novEquipa.adicionarjogador(jogador, i);
         
         
+=======
+        i = getEquipaa(jogador.getNome()).removerjogador(jogador.getNome());
+        if (i>=0){
+        novEquipa.adicionarjogador(jogador, i);
+        }
+>>>>>>> 8b9c5c8... controller
     }
 
 

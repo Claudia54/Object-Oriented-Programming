@@ -168,13 +168,13 @@ public class Jogo{
       for(int i = 0; i < 9; i++){
         
         calculaParte();
-        
+
         if (casa.substituicao() && (substCasa<3)){
             int sai = (int) Math.floor(Math.random()*(casa.getJogEmCampo().size()));
             int entra = (int) Math.floor(Math.random()*(casa.getSuplentes().size()));
 
-            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(casa.getJogEmCampo().get(sai).getCamisola(),
-                                                                   casa.getSuplentes().get(entra).getCamisola());
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<Integer,Integer>(0,//casa.getJogEmCampo().get(sai).getCamisola(),
+                                                                                  0);  //casa.getSuplentes().get(entra).getCamisola());
             casa.substituir(entra,sai);
             if (subst != null){
                 substituicoesCasa.add( subst);
@@ -186,8 +186,8 @@ public class Jogo{
             int sai = (int) Math.floor(Math.random()*(fora.getJogEmCampo().size()));
             int entra = (int) Math.floor(Math.random()*(fora.getSuplentes().size()));
 
-            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(fora.getJogEmCampo().get(sai).getCamisola(),
-                                                                   fora.getSuplentes().get(entra).getCamisola());
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<Integer,Integer>(0,//fora.getJogEmCampo().get(sai).getCamisola(),
+                                                                                  0); // fora.getSuplentes().get(entra).getCamisola());
             fora.substituir(entra,sai);
             
             if (subst != null){
@@ -207,8 +207,8 @@ public class Jogo{
             int sai = (int) Math.floor(Math.random()*(casa.getJogEmCampo().size()));
             int entra = (int) Math.floor(Math.random()*(casa.getSuplentes().size()));
 
-            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(casa.getJogEmCampo().get(sai).getCamisola(),
-                                                                   casa.getSuplentes().get(entra).getCamisola());
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>( 0,//casa.getJogEmCampo().get(sai).getCamisola(),
+                                                                    0);//casa.getSuplentes().get(entra).getCamisola());
             casa.substituir(entra,sai);
             if (subst != null){
                 substituicoesCasa.add( subst);
@@ -220,8 +220,8 @@ public class Jogo{
             int sai = (int) Math.floor(Math.random()*(fora.getJogEmCampo().size()));
             int entra = (int) Math.floor(Math.random()*(fora.getSuplentes().size()));
 
-            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(fora.getJogEmCampo().get(sai).getCamisola(),
-                                                                   fora.getSuplentes().get(entra).getCamisola());
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(0,//fora.getJogEmCampo().get(sai).getCamisola(),
+                                                                   0);//fora.getSuplentes().get(entra).getCamisola());
             fora.substituir(entra,sai);
             
             if (subst != null){

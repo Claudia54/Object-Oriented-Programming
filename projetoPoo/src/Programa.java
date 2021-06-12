@@ -102,7 +102,7 @@ public class Programa {
         int num = scan.nextInt();
         scan.nextLine();
         if (!equipa.containsJogador(num)) {
-            equipa.adicionarjogador(controller.criarJogador(), num);
+            equipa.adicionarjogador(controller.criarJogador(num), num);
             flag=false;
         }
             else view.jogJaExiste();
@@ -204,6 +204,7 @@ public class Programa {
         
             Jogo jogo = new Jogo(LocalDate.now(),equipa1,equipa2,0,0);
             jogo.calcularResultadoJogo();
+            //view.print(jogo.getSubstituicoesCasa().toString());
             listaJogos.addJogo(jogo);
         break;
 
