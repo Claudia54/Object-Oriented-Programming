@@ -64,8 +64,9 @@ public class Equipa {
       int key =-1;
     for (Map.Entry<Integer,Jogador> i : jogadores.entrySet()){
        if ( i.getValue().getNome().equals(nome)){
-           jogadores.remove(i.getKey(), i.getValue());
-           key= i.getKey();
+        key= i.getKey();   
+        jogadores.remove(i.getKey());
+           
        
       }
     }
@@ -87,11 +88,11 @@ public class Equipa {
     }
 
     public void adicionarjogador(Jogador jogador, int numero){ //acresentei o numero assumindo q o numero é dado na identificacao
-        int numRand;
-        if (this.jogadores.containsKey(numero)){
-                numRand = (int) Math.floor(Math.random()*(100)+1);
-                numero =numRand; 
-                jogador.setCamisola(numero);
+        
+        while (this.jogadores.containsKey(numero)){
+            numero = (int) Math.floor(Math.random()*(100)+1);
+                 
+            jogador.setCamisola(numero);
         }
         this.jogadores.put(numero,jogador);
         this.jogadores.get(numero).addHistorico(equipa);
@@ -108,7 +109,7 @@ public class Equipa {
 
         view.escJogTitu();
 
-        while(jogEmCampo.size()!=12){
+        while(jogEmCampo.size()!=11){
         
             view.printVar("Digite o numero da camisola do Jogador");
             int num = scan.nextInt();

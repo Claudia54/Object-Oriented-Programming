@@ -76,17 +76,18 @@ public class WriteLog {
                 sb.append(i.getEquipaCasa().getScore()).append(",") ;
                 sb.append(i.getEquipaFora().getScore()).append(",");
                 sb.append(i.getTime()).append(",");
+                
                 for ( Jogador jogador : i.getEquipaCasa().getJogEmCampo()){
-                    sb.append(jogador.getCamisola());
+                    if(jogador!=null) sb.append(jogador.getCamisola()).append(",");
                 }
                 for ( SimpleEntry<Integer,Integer> auxiliar : i.getSubstituicoesCasa()){ ///////???????????
-                     sb.append(auxiliar.getKey()).append("->").append(auxiliar.getValue());
+                     sb.append(auxiliar.getKey()).append("->").append(auxiliar.getValue()).append(",");
                 }
                 for (Jogador auxi : i.getEquipaFora().getJogEmCampo()){
-                    sb.append(auxi.getCamisola());
+                    sb.append(auxi.getCamisola()).append(",");
                 }
                 for ( SimpleEntry<Integer,Integer> auxiliar : i.getSubstituicoesFora()){ ///////???????????
-                    sb.append(auxiliar.getKey()).append("->").append(auxiliar.getValue());
+                    sb.append(auxiliar.getKey()).append("->").append(auxiliar.getValue()).append(",");
                }
                 sb.append("\n");
           }

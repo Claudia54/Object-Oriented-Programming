@@ -4,6 +4,7 @@ import view.View;
 
 import java.lang.String;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.AbstractMap.SimpleEntry;
@@ -29,7 +30,9 @@ public class Jogo{
         this.fora = fora;
         this.substCasa = substCasa;
         this.substFora = substFora;
-}
+        this.substituicoesCasa = new ArrayList<>();
+        this.substituicoesFora = new ArrayList<>();
+    }
 
     public Jogo() {
         this.time     = LocalDate.now();
@@ -63,14 +66,14 @@ public class Jogo{
     public void setTime(LocalDate time) {
         this.time = time;
     }
-    public int setSubstCasa() {
+    public int getSubstCasa() {
         return substCasa;
     }
     public void setSubstCasa(int substCasa) {
         this.substCasa = substCasa;
     }
 
-    public int setSubstFora() {
+    public int getSubstFora() {
         return substFora;
     }
     public void setSubstFora(int substFora) {
@@ -110,6 +113,9 @@ public class Jogo{
     
     public void calculaParte(){
         View view = new View();
+        System.out.println(substCasa);
+
+        System.out.println(substFora);
         if (casa.estaAtacar()){
             
             view.print("Casa esta a Atacar");
@@ -169,70 +175,72 @@ public class Jogo{
         
         calculaParte();
 
-        if (casa.substituicao() && (substCasa<3)){
+        if (casa.substituicao() && (casa.getSuplentes().size() != 0)){
             int sai = (int) Math.floor(Math.random()*(casa.getJogEmCampo().size()));
             int entra = (int) Math.floor(Math.random()*(casa.getSuplentes().size()));
 
-            SimpleEntry<Integer,Integer> subst = new SimpleEntry<Integer,Integer>(0,//casa.getJogEmCampo().get(sai).getCamisola(),
-                                                                                  0);  //casa.getSuplentes().get(entra).getCamisola());
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<Integer,Integer>(casa.getJogEmCampo().get(sai).getCamisola(),  
+                                                                                    casa.getSuplentes().get(entra).getCamisola());
             casa.substituir(entra,sai);
-            if (subst != null){
-                substituicoesCasa.add( subst);
-                setSubstCasa(setSubstCasa()+1);
-                }
+            
+            substituicoesCasa.add( subst);
+            setSubstCasa(getSubstCasa()+1);
+                
             } 
             
-        if (fora.substituicao() && (substFora<3)){
+        if (fora.substituicao()  && (fora.getSuplentes().size() != 0)){
             int sai = (int) Math.floor(Math.random()*(fora.getJogEmCampo().size()));
             int entra = (int) Math.floor(Math.random()*(fora.getSuplentes().size()));
 
-            SimpleEntry<Integer,Integer> subst = new SimpleEntry<Integer,Integer>(0,//fora.getJogEmCampo().get(sai).getCamisola(),
-                                                                                  0); // fora.getSuplentes().get(entra).getCamisola());
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<Integer,Integer>(fora.getJogEmCampo().get(sai).getCamisola(),
+                                                                                 fora.getSuplentes().get(entra).getCamisola());
             fora.substituir(entra,sai);
             
-            if (subst != null){
-                substituicoesFora.add( subst);
-                setSubstFora(setSubstFora()+1);
-                }
+            substituicoesFora.add( subst);
+            setSubstFora(getSubstFora()+1);
+            
+                
             }
+
+        view.listTitulares(casa);
+
+        view.listTitulares(fora);
     }
       
-      view.listTitulares(casa);
 
       for(int i = 0; i < 9; i++){
         
         calculaParte();
         
-        if (casa.substituicao() && (substCasa<3)){
+        if (casa.substituicao() && (casa.getSuplentes().size() != 0)){
             int sai = (int) Math.floor(Math.random()*(casa.getJogEmCampo().size()));
             int entra = (int) Math.floor(Math.random()*(casa.getSuplentes().size()));
 
-            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>( 0,//casa.getJogEmCampo().get(sai).getCamisola(),
-                                                                    0);//casa.getSuplentes().get(entra).getCamisola());
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>( casa.getJogEmCampo().get(sai).getCamisola(),
+                                                                    casa.getSuplentes().get(entra).getCamisola());
             casa.substituir(entra,sai);
             if (subst != null){
                 substituicoesCasa.add( subst);
-                setSubstCasa(setSubstCasa()+1);
+                setSubstCasa(getSubstCasa()+1);
                 }
             } 
             
-        if (fora.substituicao() && (substFora<3)){
+        if (fora.substituicao() && (fora.getSuplentes().size() != 0)){
             int sai = (int) Math.floor(Math.random()*(fora.getJogEmCampo().size()));
             int entra = (int) Math.floor(Math.random()*(fora.getSuplentes().size()));
 
-            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(0,//fora.getJogEmCampo().get(sai).getCamisola(),
-                                                                   0);//fora.getSuplentes().get(entra).getCamisola());
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(fora.getJogEmCampo().get(sai).getCamisola(),
+                                                                   fora.getSuplentes().get(entra).getCamisola());
             fora.substituir(entra,sai);
             
             if (subst != null){
                 substituicoesFora.add( subst);
-                setSubstFora(setSubstFora()+1);
+                setSubstFora(getSubstFora()+1);
                 }
             } 
+
  
     }
-        view.listTitulares(casa);
-
       
     return false;
     }

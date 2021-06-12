@@ -87,7 +87,7 @@ public class EquipaJogo {
 
     public boolean substituicao() {
         int numRand = (int) Math.floor(Math.random()*(100)+1);
-        if (10 >= numRand) return true;
+        if (100 >= numRand) return true;
         else return false;
     }
 
@@ -106,6 +106,7 @@ public class EquipaJogo {
 
     public void substituir(Jogador entra,Jogador sai){
             jogEmCampo.remove(sai);
+            
             jogEmCampo.add(entra);
 
     }

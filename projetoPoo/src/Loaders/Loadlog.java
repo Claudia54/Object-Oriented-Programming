@@ -41,9 +41,11 @@ public class Loadlog {
                 Equipa foraInfo = equipaList.verEquipa(sDividida[2]);
                 
                 ArrayList<Jogador> titularesCasa = new ArrayList<>();
-                for(int i = 6;i < 17; i++)
-                titularesCasa.add(casaInfo.getJogador(Integer.parseInt( sDividida[i])));
+                for(int i = 6;i < 17; i++){
 
+                titularesCasa.add(casaInfo.getJogador(Integer.parseInt( sDividida[i])));
+                    System.out.println(sDividida[i]);
+                }
                 ArrayList<Jogador> titularesFora = new ArrayList<>();
                 for(int i = 23;i < 34; i++)
                 titularesFora.add(foraInfo.getJogador(Integer.parseInt( sDividida[i])));
