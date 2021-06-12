@@ -31,7 +31,7 @@ public class Loadlog {
         public void parse (EquipaList equipaList, String s, JogoList jogoList) {
             
             String[] sDividida = s.split(":|,|->");  //.split(",");
-            System.out.println( sDividida[0]);
+            
                 if (sDividida[0].equals("Equipa")){
                     
                     equipaList.criaEquipa(sDividida[1]);  

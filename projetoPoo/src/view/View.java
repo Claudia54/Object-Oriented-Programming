@@ -18,6 +18,7 @@ public class View {
         sb.append("6)- Consultar Historico de Jogos\n");
         sb.append("7)- Realizar Jogo\n");
         sb.append("8)- Guardar Estado do Progama\n");
+        sb.append("9)- Ler Ficheiro\n");
 
         System.out.print(sb.toString());
          
@@ -147,6 +148,10 @@ public class View {
 
     public void jogConsultar() {
         System.out.println("Nome do jogador que pretende\n");
+    }
+
+    public void fichQueQuer() {
+        System.out.println("Nome do ficheiro que pretende\n");
     }
 }
 

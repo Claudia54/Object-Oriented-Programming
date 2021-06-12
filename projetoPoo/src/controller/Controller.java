@@ -128,7 +128,7 @@ public class Controller {
                 view.printVar("Numero do Jogador");
                 int num = scan.nextInt();
                 scan.nextLine();
-                if (!equipa.containsJogador(num)) equipa.adicionarjogador(criarJogador(), num); 
+                if (!equipa.containsJogador(num)) equipa.adicionarjogador(criarJogador(num), num); 
                 else view.jogJaExiste();
                 
             }else if (res.equals("N")){}

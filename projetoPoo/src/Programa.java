@@ -60,8 +60,6 @@ public class Programa {
 
     int instruction=0;
     int n;
-    Loadlog log = new Loadlog();
-    log.load(log.getFichDefaut(), listaEquipas, listaJogos);
        
 
     while(instruction!=-1){
@@ -214,6 +212,20 @@ public class Programa {
             WriteLog logescrita = new WriteLog(listaEquipas,listaJogos);
             logescrita.criarFicheiro();
           
+        // guardar estado do progama
+        break;
+        case 9:
+            view.fichQueQuer();
+            String fich = scan.nextLine();
+
+            Loadlog log = new Loadlog();
+
+
+            listaEquipas = new EquipaList();
+            listaJogos = new JogoList();
+
+            if(log.load(fich, listaEquipas, listaJogos));
+            else log.load(log.getFichDefaut(), listaEquipas, listaJogos);
         // guardar estado do progama
         break;
     }
