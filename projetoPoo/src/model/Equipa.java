@@ -1,7 +1,7 @@
 package model;
 
 import view.View;
-import controller.Controller;
+import controller.*;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -95,7 +95,6 @@ public class Equipa {
     public EquipaJogo criarEquipaJogo(){
         View view = new View();
         Scanner scan = new Scanner(System.in);
-        Controller controller = new Controller();
         this.verJogadores();
         ArrayList<Jogador> jogEmCampo = new ArrayList<>();
         ArrayList<Jogador> suplentes = new ArrayList<>();
@@ -114,7 +113,7 @@ public class Equipa {
         
         view.escJogSup();
 
-        while(suplentes.size()!=7){
+        while(suplentes.size()!=3){
         
             view.printVar("Digite o numero da camisola do Jogador");
             int num = scan.nextInt();
@@ -123,7 +122,7 @@ public class Equipa {
             else view.jogadorNaoExite();
         }
 
-        EquipaJogo eJogo = new EquipaJogo(0, Estado.NEUTRO, jogEmCampo, suplentes);
+        EquipaJogo eJogo = new EquipaJogo(this.equipa,0, Estado.NEUTRO, jogEmCampo, suplentes);
         
 
         return eJogo;

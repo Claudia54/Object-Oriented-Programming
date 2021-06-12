@@ -168,15 +168,33 @@ public class Jogo{
       for(int i = 0; i < 9; i++){
         
         calculaParte();
-
+        
         if (casa.substituicao() && (substCasa<3)){
-            substituicoesCasa.add( casa.substituir());
-            setSubstCasa(setSubstCasa()+1);
-        } 
+            int sai = (int) Math.floor(Math.random()*(casa.getJogEmCampo().size()));
+            int entra = (int) Math.floor(Math.random()*(casa.getSuplentes().size()));
+
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(casa.getJogEmCampo().get(sai).getCamisola(),
+                                                                   casa.getSuplentes().get(entra).getCamisola());
+            casa.substituir(entra,sai);
+            if (subst != null){
+                substituicoesCasa.add( subst);
+                setSubstCasa(setSubstCasa()+1);
+                }
+            } 
+            
         if (fora.substituicao() && (substFora<3)){
-            substituicoesFora.add( fora.substituir());
-            setSubstFora(setSubstFora()+1);
-        } 
+            int sai = (int) Math.floor(Math.random()*(fora.getJogEmCampo().size()));
+            int entra = (int) Math.floor(Math.random()*(fora.getSuplentes().size()));
+
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(fora.getJogEmCampo().get(sai).getCamisola(),
+                                                                   fora.getSuplentes().get(entra).getCamisola());
+            fora.substituir(entra,sai);
+            
+            if (subst != null){
+                substituicoesFora.add( subst);
+                setSubstFora(setSubstFora()+1);
+                }
+            }
     }
       
       view.listTitulares(casa);
@@ -184,14 +202,34 @@ public class Jogo{
       for(int i = 0; i < 9; i++){
         
         calculaParte();
-        if (casa.substituicao() && (substCasa>3)){
-            substituicoesCasa.add( casa.substituir());
-            setSubstCasa(setSubstCasa()+1);
-           } 
-        if (fora.substituicao() && (substFora>3)){
-            substituicoesFora.add( fora.substituir());
-            setSubstFora(setSubstFora()+1);
-        } 
+        
+        if (casa.substituicao() && (substCasa<3)){
+            int sai = (int) Math.floor(Math.random()*(casa.getJogEmCampo().size()));
+            int entra = (int) Math.floor(Math.random()*(casa.getSuplentes().size()));
+
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(casa.getJogEmCampo().get(sai).getCamisola(),
+                                                                   casa.getSuplentes().get(entra).getCamisola());
+            casa.substituir(entra,sai);
+            if (subst != null){
+                substituicoesCasa.add( subst);
+                setSubstCasa(setSubstCasa()+1);
+                }
+            } 
+            
+        if (fora.substituicao() && (substFora<3)){
+            int sai = (int) Math.floor(Math.random()*(fora.getJogEmCampo().size()));
+            int entra = (int) Math.floor(Math.random()*(fora.getSuplentes().size()));
+
+            SimpleEntry<Integer,Integer> subst = new SimpleEntry<>(fora.getJogEmCampo().get(sai).getCamisola(),
+                                                                   fora.getSuplentes().get(entra).getCamisola());
+            fora.substituir(entra,sai);
+            
+            if (subst != null){
+                substituicoesFora.add( subst);
+                setSubstFora(setSubstFora()+1);
+                }
+            } 
+ 
     }
         view.listTitulares(casa);
 
@@ -202,3 +240,5 @@ public class Jogo{
 
     
 }
+
+

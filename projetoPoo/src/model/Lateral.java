@@ -17,10 +17,10 @@ public class Lateral extends Jogador{
     }
 
     public Lateral (String nome, int velocidade, int destreza, int resistencia, 
-    int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico, int habilidaDeCruz){
+    int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico, int habilidaDeCruz,int camisola){
         
         super(nome, velocidade, destreza, resistencia, impulsao, jogoDeCabeca, 
-        remate, capDePasse, historico);
+        remate, capDePasse, historico,camisola);
         this.habilidaDeCruz = habilidaDeCruz;
 
     }

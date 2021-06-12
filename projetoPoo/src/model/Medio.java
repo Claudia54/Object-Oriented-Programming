@@ -16,10 +16,10 @@ public class Medio extends Jogador{
     }
 
     public Medio(String nome, int velocidade, int destreza, int resistencia, 
-    int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico,int recBola){
+    int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico,int recBola, int camisola){
         
         super(nome, velocidade, destreza, resistencia, impulsao, jogoDeCabeca, 
-        remate, capDePasse, historico);
+        remate, capDePasse, historico,camisola);
         this.recBola=recBola;
 
     }

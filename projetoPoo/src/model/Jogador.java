@@ -7,6 +7,15 @@ import java.util.stream.Collectors;
 public class Jogador{
     
     private String nome;
+    private int camisola;
+    public int getCamisola() {
+        return camisola;
+    }
+
+    public void setCamisola(int camisola) {
+        this.camisola = camisola;
+    }
+
     private int velocidade;
     private int destreza;
     private int resistencia;
@@ -31,8 +40,9 @@ public class Jogador{
     }
 
     public Jogador(String nome, int velocidade, int destreza, int resistencia, int impulsao, 
-    int jogoDeCabeca, int remate, int capDePasse , List<String> historico){
+    int jogoDeCabeca, int remate, int capDePasse , List<String> historico,int camisola){
 
+        this.camisola       = camisola;
         this.nome           = nome;
         this.velocidade     = velocidade;
         this.destreza       = destreza;

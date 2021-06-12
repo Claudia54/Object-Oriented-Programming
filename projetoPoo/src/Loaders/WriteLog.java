@@ -12,7 +12,10 @@ public class WriteLog {
     private EquipaList equipalist ;
     private JogoList jogoList ;
 
-
+    public WriteLog(EquipaList equipa, JogoList jogo){
+        this.equipalist = equipa;
+        this.jogoList = jogo;
+    }
 
     public void criarFicheiro() throws IOException{
         FileWriter arq = new FileWriter("log.txt");
@@ -20,42 +23,47 @@ public class WriteLog {
         StringBuilder sb = new StringBuilder();
       
         for (Equipa i : equipalist.getList()){
-        gravarqv.printf("Equipa : " + i.getEquipa() +"\n");
+        sb.append("Equipa:" + i.getEquipa() +"\n");
         for (Map.Entry<Integer, Jogador> jog : i.getJogadores().entrySet()){
             if( jog.getValue() instanceof GuardaRedes){
-                sb.append("Guarda-Redes: " + jog.getValue().getNome() + "," +jog.getKey()+"," + jog.getValue());
-                sb.append (jog.getValue().getVelocidade()+"," + jog.getValue().getResistencia() );
-                sb.append(jog.getValue().getDestreza() +"," + jog.getValue().getImpulsao());
-                sb.append(jog.getValue().getJogoDeCabeca()+"," +jog.getValue().getRemate());
-                sb.append (jog.getValue().getCapDePasse() + "," +((GuardaRedes) jog.getValue()).getElasticidade()); ////////////????????
+                sb.append("Guarda-Redes:" + jog.getValue().getNome() + "," +jog.getKey()+",");
+                sb.append (jog.getValue().getVelocidade()+ "," + jog.getValue().getResistencia() + ",");
+                sb.append(jog.getValue().getDestreza() +"," + jog.getValue().getImpulsao()+ ",");
+                sb.append(jog.getValue().getJogoDeCabeca()+"," +jog.getValue().getRemate()+ ",");
+                sb.append (jog.getValue().getCapDePasse() + "," +((GuardaRedes) jog.getValue()).getElasticidade());
+                sb.append("\n"); ////////////????????
                 }
             if( jog.getValue() instanceof Atacante){
-                sb.append("Avançado: " + jog.getValue().getNome() + "," +jog.getKey()+"," + jog.getValue());
-                sb.append (jog.getValue().getVelocidade()+"," + jog.getValue().getResistencia() );
-                sb.append(jog.getValue().getDestreza() +"," + jog.getValue().getImpulsao());
-                sb.append(jog.getValue().getJogoDeCabeca()+"," +jog.getValue().getRemate());
+                sb.append("Avançado:" + jog.getValue().getNome() + "," +jog.getKey()+",");
+                sb.append (jog.getValue().getVelocidade()+"," + jog.getValue().getResistencia()+ "," );
+                sb.append(jog.getValue().getDestreza() +"," + jog.getValue().getImpulsao()+ ",");
+                sb.append(jog.getValue().getJogoDeCabeca()+"," +jog.getValue().getRemate()+ ",");
                 sb.append (jog.getValue().getCapDePasse() ); 
+                sb.append("\n");
                 }
             if( jog.getValue() instanceof Defesa){
-                sb.append("Avançado: " + jog.getValue().getNome() + "," +jog.getKey()+"," + jog.getValue());
-                sb.append (jog.getValue().getVelocidade()+"," + jog.getValue().getResistencia() );
-                sb.append(jog.getValue().getDestreza() +"," + jog.getValue().getImpulsao());
-                sb.append(jog.getValue().getJogoDeCabeca()+"," +jog.getValue().getRemate());
+                sb.append("Defesa:" + jog.getValue().getNome() + "," +jog.getKey()+",");
+                sb.append (jog.getValue().getVelocidade()+"," + jog.getValue().getResistencia()+ "," );
+                sb.append(jog.getValue().getDestreza() +"," + jog.getValue().getImpulsao()+ ",");
+                sb.append(jog.getValue().getJogoDeCabeca()+"," +jog.getValue().getRemate()+ ",");
                 sb.append (jog.getValue().getCapDePasse() ); 
+                sb.append("\n");
                 }
             if( jog.getValue() instanceof Lateral){
-                sb.append("Lateral: " + jog.getValue().getNome() + "," +jog.getKey()+"," + jog.getValue());
-                sb.append (jog.getValue().getVelocidade()+"," + jog.getValue().getResistencia() );
-                sb.append(jog.getValue().getDestreza() +"," + jog.getValue().getImpulsao());
-                sb.append(jog.getValue().getJogoDeCabeca()+"," +jog.getValue().getRemate());
+                sb.append("Lateral:" + jog.getValue().getNome() + "," +jog.getKey()+",");
+                sb.append (jog.getValue().getVelocidade()+"," + jog.getValue().getResistencia()+ "," );
+                sb.append(jog.getValue().getDestreza() +"," + jog.getValue().getImpulsao()+ ",");
+                sb.append(jog.getValue().getJogoDeCabeca()+"," +jog.getValue().getRemate()+ ",");
                 sb.append (jog.getValue().getCapDePasse() + "," +((Lateral) jog.getValue()).getHabilidaDeCruz());
+                sb.append("\n");
                 }
             if( jog.getValue() instanceof Medio){
-                sb.append("Medio: " + jog.getValue().getNome() + "," +jog.getKey()+"," + jog.getValue());
-                sb.append (jog.getValue().getVelocidade()+"," + jog.getValue().getResistencia() );
-                sb.append(jog.getValue().getDestreza() +"," + jog.getValue().getImpulsao());
-                sb.append(jog.getValue().getJogoDeCabeca()+"," +jog.getValue().getRemate());
+                sb.append("Medio:" + jog.getValue().getNome() + "," +jog.getKey()+",");
+                sb.append (jog.getValue().getVelocidade()+"," + jog.getValue().getResistencia()+ "," );
+                sb.append(jog.getValue().getDestreza() +"," + jog.getValue().getImpulsao()+ ",");
+                sb.append(jog.getValue().getJogoDeCabeca()+"," +jog.getValue().getRemate()+ ",");
                 sb.append (jog.getValue().getCapDePasse() + "," + ((Medio) jog.getValue()).getRecBola()) ;
+                sb.append("\n");
                 }
             }
     
@@ -63,8 +71,8 @@ public class WriteLog {
           for (Jogo i : jogoList.getListjog ()){
 
                 sb.append("Jogo:" );
-                sb.append(i.getEquipaCasa().getNome());
-                sb.append(i.getEquipaFora().getNome());
+                sb.append(i.getEquipaCasa().getNome()).append(",");
+                sb.append(i.getEquipaFora().getNome()).append(",");
                 sb.append(i.getEquipaCasa().getScore()).append(",") ;
                 sb.append(i.getEquipaFora().getScore()).append(",");
                 sb.append(i.getTime()).append(",");
@@ -72,6 +80,7 @@ public class WriteLog {
                 sb.append(i.getSubstituicoesCasa()).append(",");
                 sb.append( i.getEquipaFora().getJogEmCampo()).append(",");
                 sb.append(i.getSubstituicoesFora()).append(",");
+                sb.append("\n");
           }
 
            gravarqv.printf(sb.toString());

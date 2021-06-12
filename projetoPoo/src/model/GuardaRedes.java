@@ -21,9 +21,9 @@ public class GuardaRedes extends Jogador{
    }
 
    public  GuardaRedes (String nome, int velocidade, int destreza, int resistencia, int impulsao, 
-   int jogoDeCabeca, int remate, int capDePasse,List<String> historico, int elasticidade) {
+   int jogoDeCabeca, int remate, int capDePasse,List<String> historico, int elasticidade,int camisola) {
 
-    super (nome,velocidade, destreza,resistencia, impulsao,jogoDeCabeca,remate,capDePasse,historico);
+    super (nome,velocidade, destreza,resistencia, impulsao,jogoDeCabeca,remate,capDePasse,historico,camisola);
     this.elasticidade = elasticidade;
    }
 

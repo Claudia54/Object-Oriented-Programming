@@ -13,10 +13,10 @@ public class Defesa extends Jogador{
     }
 
     public Defesa(String nome, int velocidade, int destreza, int resistencia, 
-    int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico){
+    int impulsao, int jogoDeCabeca, int remate, int capDePasse,List<String> historico,int camisola){
         
         super(nome, velocidade, destreza, resistencia, impulsao, jogoDeCabeca, 
-        remate, capDePasse, historico);
+        remate, capDePasse, historico,camisola);
     }
 
     public Defesa(Defesa defesa){

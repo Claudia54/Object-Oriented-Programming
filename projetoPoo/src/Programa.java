@@ -57,7 +57,6 @@ public class Programa {
     Controller controller = new Controller();
     EquipaList listaEquipas = new EquipaList();
     JogoList listaJogos = new JogoList();
-    WriteLog logescrita = new WriteLog();
 
     int instruction=0;
     int n;
@@ -173,7 +172,7 @@ public class Programa {
             n--;
             scan.nextLine();
 
-            EquipaJogo casa = listaEquipas.getEquipa(n).criarEquipaJogo();
+            //EquipaJogo casa = listaEquipas.getEquipa(n).criarEquipaJogo();
 
             view.clearScreen();
 
@@ -186,10 +185,24 @@ public class Programa {
             n--;
             scan.nextLine();
 
-            EquipaJogo fora = listaEquipas.getEquipa(n).criarEquipaJogo();
+            //EquipaJogo fora = listaEquipas.getEquipa(n).criarEquipaJogo();
 
+
+            ArrayList<Jogador> jogadores = new ArrayList<Jogador>();
+            jogadores.add(new Atacante("Gusto",52,80,70,4,5,28,7,new ArrayList<String>(),23));
+            jogadores.add(new Jogador("Gusto",48,26,39,4,5,100,7,new ArrayList<String>(),24));
+            jogadores.add(new Jogador("Gusto",48,60,60,4,5,38,7,new ArrayList<String>(),25));
+
+            ArrayList<Jogador> suplentes = new ArrayList<Jogador>();
+            suplentes.add(new Atacante("cesar",52,80,70,4,5,28,7,new ArrayList<String>(),26));
+            suplentes.add(new Jogador("olivei",48,26,39,4,5,100,7,new ArrayList<String>(),27));
+            suplentes.add(new Jogador("campos",48,60,60,4,5,38,7,new ArrayList<String>(),28));
+
+            EquipaJogo equipa1 = new EquipaJogo("CEGOS",0,Estado.ATAQUE,jogadores,suplentes);
+            EquipaJogo equipa2 = new EquipaJogo("MANCOS",0,Estado.DEFESA,jogadores,suplentes);
+    
         
-            Jogo jogo = new Jogo(LocalDate.now(),casa,fora,0,0);
+            Jogo jogo = new Jogo(LocalDate.now(),equipa1,equipa2,0,0);
             jogo.calcularResultadoJogo();
             listaJogos.addJogo(jogo);
         break;
@@ -197,6 +210,7 @@ public class Programa {
         case 8:
 
             
+            WriteLog logescrita = new WriteLog(listaEquipas,listaJogos);
             logescrita.criarFicheiro();
           
         // guardar estado do progama

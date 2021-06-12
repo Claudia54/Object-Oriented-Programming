@@ -30,7 +30,8 @@ public class Loadlog {
         
         public void parse (EquipaList equipaList, String s, JogoList jogoList) {
             
-            String[] sDividida = s.split("[:,[->]]+");  //.split(",");
+            String[] sDividida = s.split(":|,|->");  //.split(",");
+            System.out.println( sDividida[0]);
                 if (sDividida[0].equals("Equipa")){
                     
                     equipaList.criaEquipa(sDividida[1]);  
@@ -40,11 +41,11 @@ public class Loadlog {
                 Equipa foraInfo = equipaList.verEquipa(sDividida[2]);
                 
                 ArrayList<Jogador> titularesCasa = new ArrayList<>();
-                for(int i = 8;i < 19; i++)
+                for(int i = 6;i < 17; i++)
                 titularesCasa.add(casaInfo.getJogador(Integer.parseInt( sDividida[i])));
 
                 ArrayList<Jogador> titularesFora = new ArrayList<>();
-                for(int i = 25;i < 36; i++)
+                for(int i = 23;i < 34; i++)
                 titularesFora.add(foraInfo.getJogador(Integer.parseInt( sDividida[i])));
 
                 ArrayList<Jogador> suplentesCasa = new ArrayList<>();
@@ -53,12 +54,13 @@ public class Loadlog {
                 ArrayList<SimpleEntry<Integer,Integer>> supCasa = new ArrayList<>();
                 ArrayList<SimpleEntry<Integer,Integer>> supFora = new ArrayList<>();
 
-                EquipaJogo casa = new EquipaJogo( Integer.parseInt( sDividida[3]),
+                EquipaJogo casa = new EquipaJogo(sDividida[1], 
+                                                 Integer.parseInt( sDividida[3]),
                                                                    Estado.NEUTRO,
                                                                    titularesCasa,
                                                                    suplentesCasa);
                 
-                for(int i = 19;i < 25; i=i+2){
+                for(int i = 17;i < 23; i=i+2){
 
                     casa.substituir(casaInfo.getJogador(Integer.parseInt( sDividida[i+1])), 
                     casaInfo.getJogador(Integer.parseInt( sDividida[i])));
@@ -68,13 +70,14 @@ public class Loadlog {
                     
                 }
 
-                EquipaJogo fora = new EquipaJogo( Integer.parseInt( sDividida[4]),
+                EquipaJogo fora = new EquipaJogo( sDividida[2],
+                                                  Integer.parseInt( sDividida[4]),
                                                                     Estado.NEUTRO, 
                                                                     titularesFora, 
                                                                     suplentesFora);
 
                 
-                for(int i = 36;i < 42; i=i+2){
+                for(int i = 34;i < 40; i=i+2){
 
                      casa.substituir(casaInfo.getJogador(Integer.parseInt( sDividida[i+1])), 
                     casaInfo.getJogador(Integer.parseInt( sDividida[i])));
@@ -82,10 +85,10 @@ public class Loadlog {
                         Integer.parseInt( sDividida[i+1]),
                         Integer.parseInt( sDividida[i])));
                 }
-
-                Jogo jogo = new Jogo(LocalDate.of(Integer.parseInt( sDividida[5]), 
-                                                  Integer.parseInt( sDividida[6]), 
-                                                  Integer.parseInt( sDividida[7])),
+                String[] sDivididaAux = sDividida[5].split("-");
+                Jogo jogo = new Jogo(LocalDate.of(Integer.parseInt( sDivididaAux[0]), 
+                                                  Integer.parseInt( sDivididaAux[1]), 
+                                                  Integer.parseInt( sDivididaAux[2])),
                                                   casa,
                                                   fora,
                                                   3,
@@ -103,7 +106,8 @@ public class Loadlog {
                                                     Integer.parseInt(sDividida[7]), //jogo de cabeça
                                                     Integer.parseInt(sDividida[8]), //remate
                                                     Integer.parseInt(sDividida[9]), // cap de passe  
-                                                    new ArrayList<>());
+                                                    new ArrayList<>(),
+                                                    Integer.parseInt(sDividida[2]));
                     
                     if (sDividida[0].equals("Guarda-Redes")){
                         GuardaRedes guardaredes = new GuardaRedes(jogador , Integer.parseInt(sDividida[10]));

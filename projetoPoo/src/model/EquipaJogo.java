@@ -91,17 +91,17 @@ public class EquipaJogo {
         else return false;
     }
 
-    public SimpleEntry<Integer,Integer> substituir(){
+    public void substituir(int entra,int sai){
 
-        int numTit = (int) Math.floor(Math.random()*(jogEmCampo.size()));
-        int numSup = (int) Math.floor(Math.random()*(suplentes.size()));
+        int numTit = sai;
+        int numSup = entra; 
         if(suplentes.size()>0){
             jogEmCampo.remove(numTit);
             Jogador suplente = suplentes.get(numSup);
             suplentes.remove(numSup);
             jogEmCampo.add(suplente);
+            
         }
-        return new SimpleEntry<Integer,Integer>(numSup,numTit);
     }
 
     public void substituir(Jogador entra,Jogador sai){
