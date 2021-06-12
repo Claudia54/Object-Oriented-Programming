@@ -105,16 +105,25 @@ public class EquipaList {
     return f ;
     }
 
+    public Equipa getEquipaa(String nomejogador) {
+        Equipa i =null;
+        for ( Equipa aux :list){
+           for (Jogador jog : aux.getJogadores().values()){
+               i= verEquipa(jog.getHistorico().get(0));
+           }
+        }
+        return i;
+
+    }
+
     public void mudaJogador(Jogador jogador , Equipa novEquipa){
         int i;
-        i = verEquipa(novEquipa.getEquipa()).removerjogador(jogador.getNome());
+        i= getEquipaa(jogador.getNome()).removerjogador(jogador.getNome());
         if (i>=0){
         novEquipa.adicionarjogador(jogador, i);
 
         }
     }
-
- 
 
 
 }
