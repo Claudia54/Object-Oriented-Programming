@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=ManipuladorFich
-comment1.params=nomeFich
-comment1.target=java.util.List\ lerFicheiro(java.lang.String)
-comment1.text=\n\ A\ partir\ de\ um\ cont\u00E9udo\ de\ um\ ficheiro,\ este\ m\u00E9todo\ devolve\ uma\ lista\ de\ strings\ em\ que\ cada\ string\ corresponde\ a\ uma\ linha\ do\ ficheiro\n
-comment2.params=nomeFich
-comment2.target=java.lang.String[][]\ parse(java.lang.String)
-numComments=3
