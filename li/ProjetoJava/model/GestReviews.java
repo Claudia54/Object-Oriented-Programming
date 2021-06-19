@@ -7,28 +7,17 @@
  */
 package model;
 
-
 import java.io.*;
 import java.lang.*;
 import java.time.DateTimeException;
 import java.time.LocalDateTime;
 import java.time.Month;
 import java.util.*;
-import java.util.AbstractMap.SimpleEntry;
-
-import model.Business.*;
-import model.Reviews.*;
-import model.Users.*;
 import java.util.stream.*;
 
-
-public class GestReviews{
-     private BusinessList bus ;
-     private ReviewList  rev ;
-     private UserList user ;
-    
-
-  /*  public void guardaEstado(String nomeFich) throws FileNotFoundException, IOException{
+public class GestReviews
+{
+    public void guardaEstado(String nomeFich) throws FileNotFoundException, IOException{
         FileOutputStream fos = new FileOutputStream(nomeFich);
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         
@@ -37,28 +26,8 @@ public class GestReviews{
         fos.flush();
         fos.close();
     }
-////// ESTATISTICA
-O QUE FALTA :
-1. Apresenta ao utilizador os dados referentes aos últimos ficheiros lidos,
-designadamente, nome do ficheiro, número total de registos de reviews errados,
-número total de negócios x, 
-total de diferentes negócios avaliados (nº reviews > 0) x ,
-total de não avaliados, ------------- na msm funçao de cima
-número total de users e total dos que realizaram reviews,
-total de users que nada avaliaram, total de users inativos (sem reviews) e total de
-reviews com 0 impacto (0 valores no somatório de cool, funny ou useful).
-2. Apresenta em ecrã ao utilizador os números gerais respeitantes aos dados actuais já
-registados nas estruturas, designadamente:
-a. Número total de reviews por mês;
-b. Média de classificação de reviews por mês e o valor global (média global de
-reviews);
-c. Número de distintos utilizadores que avaliaram em cada mês (não interessa
-quantas vezes avaliou).
-*/
-
-public int NTotaldeNegocios(){
-    return bus.getList().size();
 }
+<<<<<<< HEAD
 public int TotalDifNegoAvaliadosNaoavaliados(){
     Set<String> business = new TreeSet<String> (); //para garantir que sao dif 
       for (Review i : rev.getList()){
@@ -213,3 +182,5 @@ public Map<String,Map<String,List<SimpleEntry<String,Integer>>>> query10() {
 
 
 
+=======
+>>>>>>> parent of 8a4a146...  ...

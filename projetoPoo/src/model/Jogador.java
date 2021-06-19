@@ -45,6 +45,7 @@ public class Jogador{
         this.capDePasse     = capDePasse;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         this.historico       = historico
 =======
         
@@ -52,6 +53,9 @@ public class Jogador{
 =======
         this.historico       = historico;
 >>>>>>> b586394... corrigir erros
+=======
+        this.historico       = historico;
+>>>>>>> 6b8cb8f... reverting LI incident
     }
 
     public Jogador(Jogador jogador){

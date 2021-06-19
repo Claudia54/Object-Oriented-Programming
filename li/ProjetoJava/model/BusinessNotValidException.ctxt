@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=BusinessNotValidException
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ UserNotValidException\ here.\r\n\r\n\ @author\ grupo\ 64\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=BusinessNotValidException()
+comment2.params=msg
+comment2.target=BusinessNotValidException(java.lang.String)
+numComments=3
