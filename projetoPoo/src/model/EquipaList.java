@@ -9,8 +9,8 @@ import java.util.List;
 import java.util.Map.Entry;
 
 
-public class EquipaList {
-   private List<Equipa> list ; 
+public class EquipaList { //  implents List // por agregacao
+   private List<Equipa> list ; // implementar List por composicao
 
    public EquipaList (){
        this.list = new ArrayList<>();
@@ -83,17 +83,17 @@ public class EquipaList {
 
     }
 
-
-
+    // int char bool 
+    
     // dado o nome do jogador diz td sobre ele 
     public Jogador consultajogador (String nome) {
         View view = new View ();
         Jogador f = null ;
     try{
-    for (Equipa aux :list ){
-        for (Jogador i : aux.getJogadores().values()){
+    for (Equipa aux : this.list ){ // List list ;  list.get("Gusto"); 
+        for (Jogador i : aux.getJogadores().values()){ // HashMap < key, value>
              if (i.getNome().equals(nome)){
-                  f= i;
+                  f = i;
                 }
         
             }
