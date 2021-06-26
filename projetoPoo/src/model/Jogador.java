@@ -43,19 +43,8 @@ public class Jogador{
         this.jogoDeCabeca   = jogoDeCabeca;
         this.remate         = remate;
         this.capDePasse     = capDePasse;
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        this.historico       = historico
-=======
+        this.historico       = historico;
         
->>>>>>> c0fe22d... fazer jogo.java e equipaJogo
-=======
-        this.historico       = historico;
->>>>>>> b586394... corrigir erros
-=======
-        this.historico       = historico;
->>>>>>> 6b8cb8f... reverting LI incident
     }
 
     public Jogador(Jogador jogador){

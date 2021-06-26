@@ -134,54 +134,16 @@ public class Equipa {
 
         return eJogo;
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-    private String nome;
-    private int velocidade;
-    private int destreza;
-    private int resistencia;
-    private int impulsao;
-    private int jogoDeCabeca;
-    private int remate;
-    private int capDePasse;
-    private List<String> historico;
-   
-<<<<<<< HEAD
-    public void verJogadores(){
-       jogadores.values().toString();
-    }
-        
-=======
-=======
- // mostra os jogadores da equipa ;
->>>>>>> a0edccd... ..
-    public void verJogadores( ){
-<<<<<<< HEAD
-    for ( Integer i : jogadores.keySet()){
-        System.out.print("Número de camisola : "+ i );
-        jogadores.get(i).toString();
-     }
-        }     
->>>>>>> c55ed60... aa
-=======
-=======
+     
  // mostra os jogadores da equipa ;
     public void verJogadores( ){
->>>>>>> 6b8cb8f... reverting LI incident
         for ( Integer i : jogadores.keySet()){
             System.out.print("Número de camisola : " + i + "\n" + jogadores.get(i).toString() + "\n" );
 
          }
-<<<<<<< HEAD
-<<<<<<< HEAD
     }     
->>>>>>> 81d0d80... Print jogadores
-=======
->>>>>>> a0edccd... ..
-=======
->>>>>>> 6b8cb8f... reverting LI incident
-    }
+    
 
     public Jogador getJogador (int num) {
       return jogadores.get(num);

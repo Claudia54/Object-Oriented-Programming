@@ -121,13 +121,7 @@ public class EquipaList { //  implents List // por agregacao
         if (i>=0){
         novEquipa.adicionarjogador(jogador, i);
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 8b9c5c8... controller
-=======
->>>>>>> 737efd7... merge
-=======
->>>>>>> 6b8cb8f... reverting LI incident
+
     }
 
 
