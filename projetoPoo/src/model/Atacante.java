@@ -42,21 +42,55 @@ public class Atacante extends Jogador{
                                     this.getRemate()        * perRem +
                                     this.getCapDePasse()    * perCdp);
     }
+    // toString method to print the attributes of the class
     public String toString(){
-    
-        StringBuilder sb = new StringBuilder();
-        
-        sb.append("Atacante ");
-        sb.append("[Nome=")           .append(this.getNome());
-        sb.append(", Velocidade=")    .append(this.getVelocidade());
-        sb.append(", Destreza=")      .append(this.getDestreza());
-        sb.append(", Resistencia=")   .append(this.getResistencia());
-        sb.append(", Impulsão=")      .append(this.getImpulsao());
-        sb.append(", Jogo de cabeca=").append(this.getJogoDeCabeca());
-        sb.append(", Remate=")        .append(this.getRemate());
-        sb.append(", Cap. de Passe=") .append(this.getCapDePasse());
-        sb.append(", Histórico=")     .append(this.getHistorico()).append("]\n");
-        return sb.toString();
+        return "Nome: " + this.getNome() + "\n" +
+                "Velocidade: " + this.getVelocidade() + "\n" +
+                "Destreza: " + this.getDestreza() + "\n" +
+                "Resistencia: " + this.getResistencia() + "\n" +
+                "Impulso: " + this.getImpulsao() + "\n" +
+                "Jogo de Cabeca: " + this.getJogoDeCabeca() + "\n" +
+                "Remate: " + this.getRemate() + "\n" +
+                "Cap de Passe: " + this.getCapDePasse() + "\n" +
+                "Historico: " + this.getHistorico() + "\n" +
+                "Camisola: " + this.getCamisola() + "\n" +
+                "Habilidade: " + this.calculaHabilidade() + "\n";
     }
+
+    public boolean equals(Object obj){
+        if(obj == null) return false;
+        if(obj == this) return true;
+        if(obj.getClass() != this.getClass()) return false;
+        Atacante atacante = (Atacante) obj;
+        return this.getNome().equals(atacante.getNome()) &&
+                this.getVelocidade() == atacante.getVelocidade() &&
+                this.getDestreza() == atacante.getDestreza() &&
+                this.getResistencia() == atacante.getResistencia() &&
+                this.getImpulsao() == atacante.getImpulsao() &&
+                this.getJogoDeCabeca() == atacante.getJogoDeCabeca() &&
+                this.getRemate() == atacante.getRemate() &&
+                this.getCapDePasse() == atacante.getCapDePasse() &&
+                this.getHistorico().equals(atacante.getHistorico()) &&
+                this.getCamisola() == atacante.getCamisola();
+    }
+    // criar um clone do objeto
+    public Atacante clone(){
+        return new Atacante(this);
+    }
+
+    // criar metodo para calcular a media de todos os atributos
+    public int mediaAtributos(){
+        int media = 0;
+        media += this.getVelocidade();
+        media += this.getDestreza();
+        media += this.getResistencia();
+        media += this.getImpulsao();
+        media += this.getJogoDeCabeca();
+        media += this.getRemate();
+        media += this.getCapDePasse();
+        media += this.getCamisola();
+        return media/8;
+    }
+
 }
 
