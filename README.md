@@ -1,1 +1,1 @@
-# POO
+# Object-Oriented Programming
