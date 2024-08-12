@@ -1,1 +1,5 @@
-# Projeto POO 2020/21
+# Object Oriented Programming
+In this project, we developed a program inspired by the well-known Football Manager game, aiming to create a management and simulation system for teams in a specific sport, such as football. The system is designed to handle teams composed of a fixed set of players, where each match involves N starting players and the use of M substitutes. Each player is defined by a unique set of characteristics and, at any given moment, has a skill level that reflects their current abilities.
+
+The development of this program required careful consideration of object-oriented programming principles, allowing us to model real-world entities like players and teams effectively. The resulting system provides users with an interactive and realistic platform for managing teams, making strategic decisions, and simulating the outcomes of matches based on the players' attributes and skills.
+
