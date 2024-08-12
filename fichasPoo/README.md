@@ -1,1 +1,0 @@
-# Fichas das aulas praticas
